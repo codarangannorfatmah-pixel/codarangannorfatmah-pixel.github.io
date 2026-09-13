@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NFCreatives | Creative Digital Services</title>
+
+    <meta name="description"
+          content="NFCreatives offers creative digital services including video editing, graphic design, layouts, posters, infographics, and creative content.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f7f9fc;
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1769ff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #111;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #1769ff;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background:
+                linear-gradient(135deg, #eef5ff, #ffffff, #f1f7ff);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .hero h1 span {
+            color: #1769ff;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #1769ff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0d4dcc;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid #1769ff;
+            color: #1769ff;
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            background: #1769ff;
+            color: white;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* ================= PORTFOLIO ================= */
+
+        .portfolio {
+            background: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .portfolio-card {
+            height: 220px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #1769ff, #73a7ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 45px 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .contact-box p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            color: #bbb;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+        <div class="navbar">
+
+            <a href="#home" class="logo">
+                NF<span>Creatives</span>
+            </a>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Create. Design.<br>
+                <span>Make an Impact.</span>
+            </h1>
+
+            <p>
+                Welcome to NFCreatives — a creative digital space
+                for video editing, graphic design, layouts, posters,
+                infographics, and other creative services.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#services" class="btn btn-primary">
+                    Explore Services
+                </a>
+
+                <a href="#portfolio" class="btn btn-secondary">
+                    View Portfolio
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>About NFCreatives</h2>
+
+                <p>
+                    Creativity with purpose.
+                </p>
+
+            </div>
+
+            <div class="about-content">
+
+                <p>
+                    NFCreatives is a creative digital service platform
+                    focused on turning ideas into meaningful visual
+                    content. From academic materials and social media
+                    graphics to video editing and digital layouts,
+                    NFCreatives aims to provide simple, creative, and
+                    purposeful designs.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>What I Can Do</h2>
+
+                <p>
+                    Creative services designed around your needs.
+                </p>
+
+            </div>
+
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <div class="service-icon">🎬</div>
+
+                    <h3>Video Editing</h3>
+
+                    <p>
+                        Engaging video edits for social media,
+                        school projects, presentations, and events.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">🎨</div>
+
+                    <h3>Graphic Design</h3>
+
+                    <p>
+                        Posters, flyers, announcements, digital
+                        graphics, and creative visual materials.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">📊</div>
+
+                    <h3>Infographics</h3>
+
+                    <p>
+                        Clear and creative visual presentations
+                        that make information easier to understand.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">📱</div>
+
+                    <h3>Social Media Content</h3>
+
+                    <p>
+                        Creative posts and visual content for
+                        pages, organizations, and online campaigns.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">📝</div>
+
+                    <h3>Academic Materials</h3>
+
+                    <p>
+                        Presentation layouts, research visuals,
+                        educational materials, and other academic
+                        design needs.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">💡</div>
+
+                    <h3>Creative Projects</h3>
+
+                    <p>
+                        Customized digital projects created from
+                        your ideas and requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PORTFOLIO ================= -->
+
+    <section class="portfolio" id="portfolio">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>My Portfolio</h2>
+
+                <p>
+                    A collection of creative works.
+                </p>
+
+            </div>
+
+
+            <div class="portfolio-grid">
+
+                <div class="portfolio-card">
+                    Video Editing
+                </div>
+
+                <div class="portfolio-card">
+                    Poster Design
+                </div>
+
+                <div class="portfolio-card">
+                    Social Media Graphics
+                </div>
+
+                <div class="portfolio-card">
+                    Infographics
+                </div>
+
+                <div class="portfolio-card">
+                    Presentation Design
+                </div>
+
+                <div class="portfolio-card">
+                    More Creative Works
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Let's Create Something</h2>
+
+                <p>
+                    Have an idea or project in mind?
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <p>
+                    I'd love to hear about your project.
+                    Send a message and let's turn your idea
+                    into something creative.
+                </p>
+
+                <a
+                    href="mailto:your-email@example.com"
+                    class="btn btn-primary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 NFCreatives. All Rights Reserved.
+        </p>
+
+        <p>
+            Create. Design. Make an Impact.
+        </p>
+
+    </footer>
+
+</body>
+</html>
