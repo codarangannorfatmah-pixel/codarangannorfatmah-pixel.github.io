@@ -533,6 +533,13 @@
             box-shadow: 0 12px 28px rgba(91, 53, 245, 0.25);
         }
 
+        .submit-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
         .form-note {
             text-align: center;
             color: #7a8097;
@@ -1132,6 +1139,7 @@
                                     type="file"
                                     id="reference"
                                     name="reference"
+                                    accept=".jpg,.jpeg,.png,.webp,.pdf"
                                     style="margin-top:15px;"
                                 >
 
@@ -1241,21 +1249,314 @@
 
 
     <!-- =========================
-         TEMPORARY FORM SCRIPT
+         SUPABASE CONNECTION
     ========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
 
-        document.getElementById("commissionForm").addEventListener("submit", function(event) {
+        /* =========================
+           SUPABASE CONFIGURATION
+        ========================== */
 
-            event.preventDefault();
+        const SUPABASE_URL =
+            "https://fdahlwkhcgsisvyupxom.supabase.co";
 
-            alert(
-                "Thank you for your commission request! ✨\n\n" +
-                "Your form design is ready. The next step is connecting this form to NFCreatives so that submitted requests can actually be received."
-            );
+        const SUPABASE_PUBLISHABLE_KEY =
+            "sb_publishable_FgUaEbGQphxWKRzo5dGJ4A_5fopRfch";
 
-        });
+
+        const supabase = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+
+        /* =========================
+           COMMISSION FORM
+        ========================== */
+
+        document
+            .getElementById("commissionForm")
+            .addEventListener("submit", async function(event) {
+
+                event.preventDefault();
+
+
+                const form = this;
+
+                const submitButton =
+                    form.querySelector(".submit-button");
+
+
+                /* Disable button while submitting */
+
+                submitButton.disabled = true;
+
+                submitButton.textContent =
+                    "Submitting...";
+
+
+                try {
+
+                    /* =========================
+                       GET FORM VALUES
+                    ========================= */
+
+                    const customerName =
+                        document
+                            .getElementById("name")
+                            .value
+                            .trim();
+
+                    const email =
+                        document
+                            .getElementById("email")
+                            .value
+                            .trim();
+
+                    const phone =
+                        document
+                            .getElementById("contact")
+                            .value
+                            .trim();
+
+                    const service =
+                        document
+                            .getElementById("service")
+                            .value;
+
+                    const output =
+                        document
+                            .getElementById("output")
+                            .value;
+
+                    const description =
+                        document
+                            .getElementById("description")
+                            .value
+                            .trim();
+
+                    const size =
+                        document
+                            .getElementById("size")
+                            .value
+                            .trim();
+
+                    const deadline =
+                        document
+                            .getElementById("deadline")
+                            .value;
+
+                    const budget =
+                        document
+                            .getElementById("budget")
+                            .value
+                            .trim();
+
+
+                    /* =========================
+                       UPLOAD REFERENCE FILE
+                    ========================= */
+
+                    const fileInput =
+                        document.getElementById("reference");
+
+                    const file =
+                        fileInput.files[0];
+
+                    let referenceLink = null;
+
+
+                    if (file) {
+
+                        /* Check file size */
+
+                        if (file.size > 10 * 1024 * 1024) {
+
+                            throw new Error(
+                                "The reference file is larger than 10 MB."
+                            );
+
+                        }
+
+
+                        /* Check allowed file types */
+
+                        const allowedTypes = [
+                            "image/jpeg",
+                            "image/png",
+                            "image/webp",
+                            "application/pdf"
+                        ];
+
+
+                        if (!allowedTypes.includes(file.type)) {
+
+                            throw new Error(
+                                "Please upload a JPG, PNG, WEBP, or PDF file."
+                            );
+
+                        }
+
+
+                        /* Create safe file name */
+
+                        const safeName =
+                            file.name.replace(
+                                /[^a-zA-Z0-9._-]/g,
+                                "_"
+                            );
+
+
+                        const filePath =
+                            `${Date.now()}-${safeName}`;
+
+
+                        /* Upload to Supabase Storage */
+
+                        const {
+                            error: uploadError
+                        } = await supabase
+                            .storage
+                            .from("commission-references")
+                            .upload(
+                                filePath,
+                                file,
+                                {
+                                    cacheControl: "3600",
+                                    upsert: false
+                                }
+                            );
+
+
+                        if (uploadError) {
+
+                            throw uploadError;
+
+                        }
+
+
+                        /*
+                         * Store the file path in the database.
+                         * The bucket is private, so this is NOT
+                         * a public URL.
+                         */
+
+                        referenceLink =
+                            filePath;
+
+                    }
+
+
+                    /* =========================
+                       SAVE COMMISSION REQUEST
+                    ========================== */
+
+                    const {
+                        error: databaseError
+                    } = await supabase
+                        .from("commission_requests")
+                        .insert([
+
+                            {
+
+                                customer_name:
+                                    customerName,
+
+                                email:
+                                    email,
+
+                                phone:
+                                    phone || null,
+
+                                service:
+                                    service,
+
+                                output:
+                                    output,
+
+                                description:
+                                    description,
+
+                                size:
+                                    size || null,
+
+                                deadline:
+                                    deadline || null,
+
+                                budget:
+                                    budget || null,
+
+                                reference_link:
+                                    referenceLink,
+
+                                status:
+                                    "Pending"
+
+                            }
+
+                        ]);
+
+
+                    if (databaseError) {
+
+                        throw databaseError;
+
+                    }
+
+
+                    /* =========================
+                       SUCCESS MESSAGE
+                    ========================== */
+
+                    alert(
+                        "Thank you for your commission request! ✨\n\n" +
+                        "Your request has been submitted successfully.\n\n" +
+                        "NFCreatives will review your details and " +
+                        "get back to you soon."
+                    );
+
+
+                    /* Clear the form */
+
+                    form.reset();
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Commission submission error:",
+                        error
+                    );
+
+
+                    /* =========================
+                       ERROR MESSAGE
+                    ========================== */
+
+                    alert(
+                        "Sorry, your commission request could not be submitted.\n\n" +
+                        "Please try again. If the problem continues, " +
+                        "please contact NFCreatives directly.\n\n" +
+                        "Error: " +
+                        error.message
+                    );
+
+
+                } finally {
+
+                    /* Re-enable button */
+
+                    submitButton.disabled = false;
+
+                    submitButton.textContent =
+                        "Submit Commission Request →";
+
+                }
+
+            });
 
     </script>
 
