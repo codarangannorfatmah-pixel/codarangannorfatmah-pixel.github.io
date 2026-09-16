@@ -3,47 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="NFCreatives - Creative graphic design, video editing, social media content, academic materials, and digital creative services.">
-    <meta name="author" content="NFCreatives">
-
-    <title>NFCreatives | Creative Design & Digital Services</title>
+    <title>NFCreatives | Creative Digital Services</title>
 
     <style>
         :root {
             --blue: #1769ff;
-            --deep-blue: #0b3d91;
+            --deep-blue: #0b3fa8;
             --light-blue: #eaf3ff;
-            --purple: #7c3aed;
-            --pink: #ec4899;
-            --yellow: #fbbf24;
-            --cyan: #06b6d4;
+            --purple: #7b4dff;
+            --pink: #f45b9a;
+            --cyan: #16c7d9;
+            --yellow: #ffc928;
 
-            --dark: #111827;
-            --text: #374151;
-            --muted: #6b7280;
-
+            --dark: #182033;
+            --gray: #687386;
+            --light-gray: #f5f7fb;
             --white: #ffffff;
-            --light: #f7f9ff;
 
-            --shadow: 0 10px 30px rgba(23, 105, 255, 0.10);
-            --shadow-hover: 0 18px 40px rgba(23, 105, 255, 0.18);
+            --shadow: 0 10px 30px rgba(23, 50, 100, 0.08);
+            --radius: 20px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            color: var(--text);
             background: var(--white);
+            color: var(--dark);
             line-height: 1.6;
         }
 
@@ -54,53 +45,48 @@
 
         a {
             text-decoration: none;
+            color: inherit;
         }
 
         /* =========================
            HEADER
-        ========================== */
+        ========================= */
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(15px);
-
-            border-bottom: 1px solid rgba(23, 105, 255, 0.10);
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid #e9edf5;
         }
 
         .nav-container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
+            min-height: 75px;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
-
-            min-height: 75px;
+            justify-content: space-between;
+            gap: 30px;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            width: 145px;
+            width: 150px;
             height: auto;
         }
 
-        nav ul {
-            list-style: none;
+        nav {
             display: flex;
-            gap: 28px;
+            align-items: center;
+            gap: 22px;
         }
 
         nav a {
-            color: var(--dark);
+            color: #4a5568;
+            font-size: 14px;
             font-weight: 600;
             transition: 0.3s ease;
         }
@@ -111,27 +97,28 @@
 
         /* =========================
            HERO
-        ========================== */
+        ========================= */
 
         .hero {
             position: relative;
             overflow: hidden;
-
             min-height: 650px;
 
             display: flex;
             align-items: center;
 
             background:
-                radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.25), transparent 30%),
-                radial-gradient(circle at 90% 20%, rgba(236, 72, 153, 0.22), transparent 30%),
-                linear-gradient(135deg, #eef6ff, #f8f2ff 50%, #fff1f8);
+                radial-gradient(circle at 10% 20%, rgba(22, 199, 217, 0.16), transparent 25%),
+                radial-gradient(circle at 90% 20%, rgba(123, 77, 255, 0.16), transparent 28%),
+                radial-gradient(circle at 80% 90%, rgba(244, 91, 154, 0.13), transparent 25%),
+                #ffffff;
         }
 
-        .hero-container {
+        .hero-content {
             width: 90%;
             max-width: 1200px;
             margin: auto;
+            padding: 80px 0;
 
             position: relative;
             z-index: 2;
@@ -139,26 +126,21 @@
 
         .hero-badge {
             display: inline-block;
-
-            padding: 8px 18px;
-            border-radius: 30px;
-
-            background: var(--white);
+            background: var(--light-blue);
             color: var(--blue);
-
+            border: 1px solid #d7e6ff;
+            padding: 9px 18px;
+            border-radius: 50px;
+            font-size: 14px;
             font-weight: 700;
-
-            box-shadow: var(--shadow);
-
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 7vw, 6rem);
-            line-height: 1.05;
-
             max-width: 850px;
-
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 1.02;
+            letter-spacing: -3px;
             margin-bottom: 25px;
         }
 
@@ -176,26 +158,26 @@
 
         .hero p {
             max-width: 650px;
-
-            font-size: 1.2rem;
-            color: var(--text);
-
-            margin-bottom: 30px;
+            color: var(--gray);
+            font-size: 18px;
+            margin-bottom: 35px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
+            gap: 15px;
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
             padding: 13px 25px;
+            border-radius: 50px;
 
-            border-radius: 30px;
-
+            font-size: 14px;
             font-weight: 700;
 
             transition: 0.3s ease;
@@ -204,67 +186,59 @@
         .btn-primary {
             background: var(--blue);
             color: white;
-
-            box-shadow: 0 10px 25px rgba(23, 105, 255, 0.25);
+            box-shadow: 0 8px 20px rgba(23, 105, 255, 0.22);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
             background: var(--deep-blue);
+            transform: translateY(-2px);
         }
 
-        .btn-secondary {
+        .btn-outline {
+            border: 1.5px solid #d9e0eb;
             background: white;
-            color: var(--purple);
-
-            border: 2px solid var(--purple);
+            color: var(--dark);
         }
 
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            background: var(--purple);
-            color: white;
+        .btn-outline:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            transform: translateY(-2px);
         }
 
-        .circle {
+        .decor-circle {
             position: absolute;
             border-radius: 50%;
             opacity: 0.7;
         }
 
         .circle-one {
-            width: 180px;
-            height: 180px;
-
-            background: var(--yellow);
-
-            right: 7%;
-            top: 15%;
+            width: 120px;
+            height: 120px;
+            background: #e6f8fb;
+            right: 8%;
+            top: 18%;
         }
 
         .circle-two {
-            width: 120px;
-            height: 120px;
-
-            background: var(--cyan);
-
-            right: 20%;
-            bottom: 10%;
+            width: 70px;
+            height: 70px;
+            background: #fff3c4;
+            right: 22%;
+            bottom: 15%;
         }
 
         .circle-three {
             width: 90px;
             height: 90px;
-
-            background: var(--pink);
-
+            background: #f3eaff;
             left: 5%;
-            bottom: 15%;
+            bottom: 10%;
         }
 
         /* =========================
            GENERAL SECTIONS
-        ========================== */
+        ========================= */
 
         section {
             padding: 90px 0;
@@ -276,446 +250,476 @@
             margin: auto;
         }
 
-        .section-title {
+        .section-heading {
             text-align: center;
-            margin-bottom: 50px;
+            max-width: 720px;
+            margin: 0 auto 50px;
         }
 
-        .section-title h2 {
-            font-size: 2.5rem;
+        .section-heading span {
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 10px 0 15px;
             color: var(--dark);
-            margin-bottom: 10px;
         }
 
-        .section-title p {
-            color: var(--muted);
-            max-width: 700px;
-            margin: auto;
+        .section-heading p {
+            color: var(--gray);
         }
 
         /* =========================
            ABOUT
-        ========================== */
+        ========================= */
 
         .about {
-            background: var(--white);
+            background: #ffffff;
         }
 
-        .about-content {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .about-content p {
-            font-size: 1.08rem;
-            color: var(--text);
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .about-highlight {
+            background: var(--light-blue);
+            border-left: 4px solid var(--blue);
+            padding: 25px;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .about-highlight p {
+            margin: 0;
+            color: #43516a;
         }
 
         /* =========================
            SERVICES
-        ========================== */
+        ========================= */
 
         .services {
-            background: var(--light);
+            background: var(--light-gray);
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 22px;
         }
 
         .service-card {
             background: white;
-
             padding: 30px;
-
-            border-radius: 20px;
-
+            border-radius: var(--radius);
+            border: 1px solid #e9edf5;
             box-shadow: var(--shadow);
-
-            border-top: 5px solid var(--blue);
-
             transition: 0.3s ease;
         }
 
-        .service-card:nth-child(2) {
-            border-top-color: var(--purple);
-        }
-
-        .service-card:nth-child(3) {
-            border-top-color: var(--pink);
-        }
-
-        .service-card:nth-child(4) {
-            border-top-color: var(--cyan);
-        }
-
-        .service-card:nth-child(5) {
-            border-top-color: var(--yellow);
-        }
-
-        .service-card:nth-child(6) {
-            border-top-color: var(--purple);
-        }
-
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(23, 50, 100, 0.12);
         }
 
         .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 20px;
+
+            background: var(--light-blue);
+            color: var(--blue);
         }
 
-        .service-card h3 {
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            color: var(--muted);
-        }
-
-        /* =========================
-           SELECTED DESIGN PROJECTS
-        ========================== */
-
-        .graphic-design {
-            background:
-                linear-gradient(
-                    135deg,
-                    #f7f9ff 0%,
-                    #fdf8ff 50%,
-                    #fff7fb 100%
-                );
-        }
-
-        .project-note {
-            max-width: 800px;
-            margin: -20px auto 40px;
-
-            text-align: center;
-
-            padding: 16px 22px;
-
-            border-radius: 15px;
-
-            background: rgba(255, 255, 255, 0.8);
-
-            border: 1px solid rgba(124, 58, 237, 0.12);
-
-            color: var(--muted);
-
-            font-size: 0.95rem;
-        }
-
-        .project-note strong {
+        .service-card:nth-child(2) .service-icon {
+            background: #f1eaff;
             color: var(--purple);
         }
 
-        .graphic-grid {
+        .service-card:nth-child(3) .service-icon {
+            background: #fff0f6;
+            color: var(--pink);
+        }
+
+        .service-card:nth-child(4) .service-icon {
+            background: #e9fbfd;
+            color: var(--cyan);
+        }
+
+        .service-card:nth-child(5) .service-icon {
+            background: #fff8db;
+            color: #d39d00;
+        }
+
+        .service-card:nth-child(6) .service-icon {
+            background: #eef0ff;
+            color: #5668d8;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* =========================
+           DESIGN PROJECTS
+        ========================= */
+
+        .design-projects {
+            background: white;
+        }
+
+        .design-note {
+            max-width: 850px;
+            margin: -20px auto 40px;
+
+            background: #fffaf0;
+            border: 1px solid #f5dfaa;
+            border-radius: 15px;
+            padding: 18px 22px;
+
+            color: #6c5a2b;
+            font-size: 14px;
+        }
+
+        .design-note strong {
+            color: #8c6a00;
+        }
+
+        .design-grid {
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 25px;
         }
 
-        .graphic-card {
+        .design-card {
+            overflow: hidden;
             background: white;
-
-            border-radius: 20px;
-
-            overflow: hidden;
-
+            border-radius: var(--radius);
+            border: 1px solid #e8edf5;
             box-shadow: var(--shadow);
-
-            transition: 0.35s ease;
-
-            position: relative;
+            transition: 0.3s ease;
         }
 
-        .graphic-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
+        .design-card:hover {
+            transform: translateY(-5px);
         }
 
-        .graphic-image {
-            position: relative;
-            overflow: hidden;
-
-            background: #f0f4ff;
-        }
-
-        .graphic-image img {
+        .design-card img {
             width: 100%;
-            height: 330px;
-
+            aspect-ratio: 4 / 3;
             object-fit: cover;
-
-            transition: 0.4s ease;
+            background: #f4f6fa;
         }
 
-        .graphic-card:hover .graphic-image img {
-            transform: scale(1.05);
+        .design-info {
+            padding: 20px;
         }
 
-        .graphic-label {
-            padding: 18px 20px;
+        .design-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
         }
 
-        .graphic-label h3 {
-            color: var(--dark);
-            margin-bottom: 4px;
-        }
-
-        .graphic-label p {
-            color: var(--muted);
-            font-size: 0.9rem;
+        .design-info p {
+            color: var(--gray);
+            font-size: 13px;
         }
 
         /* =========================
            PORTFOLIO
-        ========================== */
+        ========================= */
 
         .portfolio {
-            background: white;
+            background: var(--light-gray);
         }
 
         .portfolio-grid {
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
-            gap: 25px;
+            gap: 22px;
         }
 
         .portfolio-card {
-            min-height: 230px;
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid #e9edf5;
+            min-height: 180px;
 
             display: flex;
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-
-            border-radius: 20px;
-
-            padding: 30px;
-
-            background: linear-gradient(
-                135deg,
-                #eef5ff,
-                #f8f0ff
-            );
+            flex-direction: column;
+            justify-content: flex-end;
 
             box-shadow: var(--shadow);
-
-            transition: 0.3s ease;
         }
 
-        .portfolio-card:nth-child(2) {
-            background: linear-gradient(
-                135deg,
-                #fff0f8,
-                #f7efff
-            );
-        }
-
-        .portfolio-card:nth-child(3) {
-            background: linear-gradient(
-                135deg,
-                #ecfbff,
-                #eef4ff
-            );
-        }
-
-        .portfolio-card:nth-child(4) {
-            background: linear-gradient(
-                135deg,
-                #fff9e9,
-                #fff1f8
-            );
-        }
-
-        .portfolio-card:nth-child(5) {
-            background: linear-gradient(
-                135deg,
-                #effff9,
-                #eef5ff
-            );
-        }
-
-        .portfolio-card:nth-child(6) {
-            background: linear-gradient(
-                135deg,
-                #f6efff,
-                #fff0f7
-            );
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-7px);
-            box-shadow: var(--shadow-hover);
+        .portfolio-card span {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
         .portfolio-card h3 {
-            color: var(--dark);
+            font-size: 21px;
             margin-bottom: 8px;
         }
 
         .portfolio-card p {
-            color: var(--muted);
+            color: var(--gray);
+            font-size: 14px;
         }
 
         /* =========================
            POSTER DESIGN
-        ========================== */
+        ========================= */
 
-        .posters {
-            background: var(--light);
+        .poster-design {
+            background: white;
         }
 
         .poster-grid {
             display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 25px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
         .poster-card {
-            background: white;
-
-            border-radius: 20px;
-
             overflow: hidden;
-
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e8edf5;
             box-shadow: var(--shadow);
-
             transition: 0.3s ease;
         }
 
         .poster-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
         }
 
         .poster-card img {
             width: 100%;
-            height: 400px;
-
+            aspect-ratio: 3 / 4;
             object-fit: cover;
-
-            transition: 0.4s ease;
         }
 
-        .poster-card:hover img {
-            transform: scale(1.03);
+        /* =========================
+           CREATIVE PROCESS
+        ========================= */
+
+        .process {
+            background: var(--light-gray);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            background: white;
+            padding: 28px;
+            border-radius: var(--radius);
+            border: 1px solid #e9edf5;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .process-number {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--blue);
+            color: white;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .process-card:nth-child(2) .process-number {
+            background: var(--purple);
+        }
+
+        .process-card:nth-child(3) .process-number {
+            background: var(--pink);
+        }
+
+        .process-card:nth-child(4) .process-number {
+            background: var(--cyan);
+        }
+
+        .process-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .process-card p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* =========================
+           DESIGN STYLE
+        ========================= */
+
+        .design-style {
+            background: white;
+        }
+
+        .style-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            padding: 45px 30px;
+
+            border-radius: 25px;
+            background:
+                linear-gradient(135deg, #f7fbff, #ffffff);
+            border: 1px solid #e5ebf4;
+            box-shadow: var(--shadow);
+        }
+
+        .style-box h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .style-box p {
+            color: var(--gray);
+            max-width: 650px;
+            margin: auto;
         }
 
         /* =========================
            CONTACT
-        ========================== */
+        ========================= */
 
         .contact {
-            position: relative;
-            overflow: hidden;
-
             background:
-                linear-gradient(
-                    135deg,
-                    var(--deep-blue),
-                    var(--blue),
-                    var(--purple)
-                );
-
-            color: white;
+                linear-gradient(135deg, #eef6ff, #faf8ff);
         }
 
-        .contact-content {
-            text-align: center;
-            max-width: 750px;
+        .contact-box {
+            max-width: 800px;
             margin: auto;
-
-            position: relative;
-            z-index: 2;
+            text-align: center;
         }
 
-        .contact h2 {
-            font-size: 2.7rem;
+        .contact-box h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 15px;
         }
 
-        .contact p {
+        .contact-box p {
+            color: var(--gray);
             margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .contact .btn {
-            background: white;
-            color: var(--blue);
-        }
-
-        .contact .btn:hover {
-            background: var(--yellow);
-            color: var(--dark);
         }
 
         /* =========================
            FOOTER
-        ========================== */
+        ========================= */
 
         footer {
-            background: #071d49;
-            color: white;
-
-            text-align: center;
-
-            padding: 25px;
+            background: #ffffff;
+            border-top: 1px solid #e9edf5;
+            padding: 30px 0;
         }
 
-        footer p {
-            opacity: 0.85;
+        .footer-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-content p {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        .footer-brand {
+            color: var(--blue);
+            font-weight: 800;
         }
 
         /* =========================
            RESPONSIVE
-        ========================== */
+        ========================= */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
 
             .services-grid,
-            .graphic-grid,
-            .portfolio-grid,
-            .poster-grid {
+            .design-grid,
+            .portfolio-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            nav ul {
-                gap: 15px;
+            .poster-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
 
-            .hero h1 {
-                font-size: 4rem;
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 750px) {
 
             .nav-container {
                 flex-direction: column;
                 padding: 15px 0;
-                gap: 10px;
             }
 
-            nav ul {
+            nav {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 12px;
             }
 
             .hero {
@@ -723,46 +727,61 @@
             }
 
             .hero h1 {
-                font-size: 3rem;
+                letter-spacing: -2px;
             }
 
-            .hero p {
-                font-size: 1rem;
+            .about-grid {
+                grid-template-columns: 1fr;
             }
+
+            .services-grid,
+            .design-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .poster-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
 
             section {
                 padding: 70px 0;
             }
 
-            .services-grid,
-            .graphic-grid,
-            .portfolio-grid,
+            .hero-content {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
             .poster-grid {
                 grid-template-columns: 1fr;
             }
 
-            .graphic-image img {
-                height: auto;
-                max-height: 500px;
+            .hero-buttons {
+                flex-direction: column;
             }
 
-            .poster-card img {
-                height: auto;
-            }
-
-            .circle-one {
-                width: 100px;
-                height: 100px;
-            }
-
-            .circle-two {
-                width: 70px;
-                height: 70px;
-            }
-
-            .circle-three {
-                width: 60px;
-                height: 60px;
+            .btn {
+                width: 100%;
             }
         }
     </style>
@@ -777,20 +796,18 @@
     <header>
         <div class="nav-container">
 
-            <a href="#home" class="logo">
-                <img src="logo.png" alt="NFCreatives Logo">
+            <a href="#home">
+                <img src="logo.png" alt="NFCreatives Logo" class="logo">
             </a>
 
             <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#graphic-design">Design Projects</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#posters">Poster Design</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#design-projects">Design Projects</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#posters">Poster Design</a>
+                <a href="#contact">Contact</a>
             </nav>
 
         </div>
@@ -803,15 +820,15 @@
 
     <section class="hero" id="home">
 
-        <div class="circle circle-one"></div>
-        <div class="circle circle-two"></div>
-        <div class="circle circle-three"></div>
+        <div class="decor-circle circle-one"></div>
+        <div class="decor-circle circle-two"></div>
+        <div class="decor-circle circle-three"></div>
 
-        <div class="hero-container">
+        <div class="hero-content">
 
-            <span class="hero-badge">
-                ✨ Welcome to NFCreatives
-            </span>
+            <div class="hero-badge">
+                Creative Digital Services
+            </div>
 
             <h1>
                 <span class="blue">Create.</span><br>
@@ -820,21 +837,18 @@
             </h1>
 
             <p>
-                Creative digital solutions for posters, graphic designs,
-                video editing, social media content, academic materials,
-                and other creative projects.
+                NFCreatives turns ideas into engaging digital content through
+                creative design, editing, and customized digital services.
             </p>
 
             <div class="hero-buttons">
-
-                <a href="#graphic-design" class="btn btn-primary">
-                    View My Works
+                <a href="#services" class="btn btn-primary">
+                    Explore Services
                 </a>
 
-                <a href="#contact" class="btn btn-secondary">
-                    Let's Work Together
+                <a href="#portfolio" class="btn btn-outline">
+                    View Projects
                 </a>
-
             </div>
 
         </div>
@@ -850,26 +864,41 @@
 
         <div class="container">
 
-            <div class="section-title">
-
-                <h2>About NFCreatives</h2>
-
-                <p>
-                    Creativity with purpose, design with impact.
-                </p>
-
+            <div class="section-heading">
+                <span>About NFCreatives</span>
+                <h2>Turning Ideas Into Creative Digital Content</h2>
             </div>
 
-            <div class="about-content">
+            <div class="about-grid">
 
-                <p>
-                    NFCreatives is a personal creative service brand focused
-                    on transforming ideas into visually engaging digital
-                    materials. From graphic design and poster creation to
-                    video editing and academic materials, NFCreatives aims
-                    to provide creative and meaningful solutions for
-                    individuals, students, organizations, and businesses.
-                </p>
+                <div class="about-text">
+
+                    <h3>Creative. Simple. Purposeful.</h3>
+
+                    <p>
+                        NFCreatives is a creative digital service brand that
+                        turns ideas into engaging visual content. We offer
+                        graphic design, video editing, social media content,
+                        academic materials, posters, and customized creative projects.
+                    </p>
+
+                    <p>
+                        As a growing creative brand, we continue to develop
+                        our skills, explore new ideas, and build meaningful
+                        projects through digital creativity.
+                    </p>
+
+                </div>
+
+                <div class="about-highlight">
+
+                    <p>
+                        Our creative style is modern, simple, and functional.
+                        We believe good design should be clear, engaging,
+                        and visually appealing.
+                    </p>
+
+                </div>
 
             </div>
 
@@ -886,29 +915,27 @@
 
         <div class="container">
 
-            <div class="section-title">
-
-                <h2>What I Can Create</h2>
+            <div class="section-heading">
+                <span>What We Do</span>
+                <h2>Creative Digital Services</h2>
 
                 <p>
-                    Creative services designed to turn your ideas into
-                    something meaningful and visually engaging.
+                    Providing creative digital services that turn ideas into
+                    engaging, meaningful, and visually appealing content.
                 </p>
-
             </div>
-
 
             <div class="services-grid">
 
                 <div class="service-card">
 
-                    <div class="service-icon">🎬</div>
+                    <div class="service-icon">V</div>
 
                     <h3>Video Editing</h3>
 
                     <p>
-                        Engaging video content for social media,
-                        presentations, events, and personal projects.
+                        Creating engaging video content for personal,
+                        academic, social media, and creative projects.
                     </p>
 
                 </div>
@@ -916,13 +943,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">🎨</div>
+                    <div class="service-icon">G</div>
 
                     <h3>Graphic Design</h3>
 
                     <p>
-                        Creative visual designs including posters,
-                        layouts, promotional materials, and digital graphics.
+                        Creating clean and creative digital visuals for
+                        different personal, academic, and social media needs.
                     </p>
 
                 </div>
@@ -930,13 +957,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">📊</div>
+                    <div class="service-icon">I</div>
 
                     <h3>Infographics</h3>
 
                     <p>
-                        Clear and attractive visual presentations
-                        that make information easier to understand.
+                        Turning information and ideas into simple,
+                        organized, and visually engaging materials.
                     </p>
 
                 </div>
@@ -944,13 +971,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">📱</div>
+                    <div class="service-icon">S</div>
 
                     <h3>Social Media Content</h3>
 
                     <p>
-                        Creative posts, announcements, promotional
-                        graphics, and other social media materials.
+                        Creating engaging visuals while building our
+                        creative presence and growing our audience.
                     </p>
 
                 </div>
@@ -958,13 +985,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">📚</div>
+                    <div class="service-icon">A</div>
 
                     <h3>Academic Materials</h3>
 
                     <p>
-                        Presentation materials, layouts, visual aids,
-                        research-related designs, and other academic needs.
+                        Designing presentations, posters, layouts,
+                        and other digital materials for academic purposes.
                     </p>
 
                 </div>
@@ -972,13 +999,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">✨</div>
+                    <div class="service-icon">C</div>
 
                     <h3>Creative Projects</h3>
 
                     <p>
-                        Customized digital projects based on your
-                        ideas, needs, and creative vision.
+                        Developing customized digital materials based on
+                        individual ideas, needs, and project goals.
                     </p>
 
                 </div>
@@ -991,143 +1018,91 @@
 
 
     <!-- =========================
-         SELECTED DESIGN PROJECTS
+         DESIGN PROJECTS
     ========================== -->
 
-    <section class="graphic-design" id="graphic-design">
+    <section class="design-projects" id="design-projects">
 
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-heading">
+
+                <span>Selected Work</span>
 
                 <h2>Selected Design Projects</h2>
 
                 <p>
-                    A selection of visual projects that showcase my
-                    experience in designing and customizing digital
-                    materials.
+                    A selection of visual projects that showcase my experience
+                    in designing and customizing digital materials.
                 </p>
 
             </div>
 
 
-            <div class="project-note">
+            <div class="design-note">
 
                 <strong>Design Note:</strong>
                 Some projects in this section were created by customizing
                 Canva templates and design resources. The displayed work
                 represents my customization, layout decisions, editing,
                 and creative application of the available design tools.
+
             </div>
 
 
-            <div class="graphic-grid">
+            <div class="design-grid">
 
-                <div class="graphic-card">
-
-                    <div class="graphic-image">
-                        <img src="graphicdesign1.png"
-                             alt="NFCreatives Selected Design Project 1">
-                    </div>
-
-                    <div class="graphic-label">
-
+                <div class="design-card">
+                    <img src="graphicdesign1.png" alt="Design Project 01">
+                    <div class="design-info">
                         <h3>Design Project 01</h3>
-
                         <p>Canva-Based Design Customization</p>
-
                     </div>
-
                 </div>
 
 
-                <div class="graphic-card">
-
-                    <div class="graphic-image">
-                        <img src="graphicdesign2.png"
-                             alt="NFCreatives Selected Design Project 2">
-                    </div>
-
-                    <div class="graphic-label">
-
+                <div class="design-card">
+                    <img src="graphicdesign2.png" alt="Design Project 02">
+                    <div class="design-info">
                         <h3>Design Project 02</h3>
-
                         <p>Canva-Based Design Customization</p>
-
                     </div>
-
                 </div>
 
 
-                <div class="graphic-card">
-
-                    <div class="graphic-image">
-                        <img src="graphicdesign3.png"
-                             alt="NFCreatives Selected Design Project 3">
-                    </div>
-
-                    <div class="graphic-label">
-
+                <div class="design-card">
+                    <img src="graphicdesign3.png" alt="Design Project 03">
+                    <div class="design-info">
                         <h3>Design Project 03</h3>
-
                         <p>Canva-Based Design Customization</p>
-
                     </div>
-
                 </div>
 
 
-                <div class="graphic-card">
-
-                    <div class="graphic-image">
-                        <img src="graphicdesign4.png"
-                             alt="NFCreatives Selected Design Project 4">
-                    </div>
-
-                    <div class="graphic-label">
-
+                <div class="design-card">
+                    <img src="graphicdesign4.png" alt="Design Project 04">
+                    <div class="design-info">
                         <h3>Design Project 04</h3>
-
                         <p>Canva-Based Design Customization</p>
-
                     </div>
-
                 </div>
 
 
-                <div class="graphic-card">
-
-                    <div class="graphic-image">
-                        <img src="graphicdesign5.png"
-                             alt="NFCreatives Selected Design Project 5">
-                    </div>
-
-                    <div class="graphic-label">
-
+                <div class="design-card">
+                    <img src="graphicdesign5.png" alt="Design Project 05">
+                    <div class="design-info">
                         <h3>Design Project 05</h3>
-
                         <p>Canva-Based Design Customization</p>
-
                     </div>
-
                 </div>
 
 
-                <div class="graphic-card">
-
-                    <div class="graphic-image">
-                        <img src="graphicdesign6.png"
-                             alt="NFCreatives Selected Design Project 6">
-                    </div>
-
-                    <div class="graphic-label">
-
+                <div class="design-card">
+                    <img src="graphicdesign6.png" alt="Design Project 06">
+                    <div class="design-info">
                         <h3>Design Project 06</h3>
-
                         <p>Canva-Based Design Customization</p>
-
                     </div>
-
                 </div>
 
             </div>
@@ -1145,12 +1120,15 @@
 
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-heading">
+
+                <span>Our Work</span>
 
                 <h2>Creative Portfolio</h2>
 
                 <p>
-                    More creative works and projects will be featured here.
+                    A growing collection of creative digital projects
+                    and services we're developing.
                 </p>
 
             </div>
@@ -1159,80 +1137,56 @@
             <div class="portfolio-grid">
 
                 <div class="portfolio-card">
-
-                    <div>
-                        <h3>Video Projects</h3>
-
-                        <p>
-                            Video editing and storytelling projects.
-                        </p>
-                    </div>
-
+                    <span>01</span>
+                    <h3>Video Projects</h3>
+                    <p>
+                        Creative video editing and digital storytelling projects.
+                    </p>
                 </div>
 
 
                 <div class="portfolio-card">
-
-                    <div>
-                        <h3>Social Media Content</h3>
-
-                        <p>
-                            Creative content designed for online audiences.
-                        </p>
-                    </div>
-
+                    <span>02</span>
+                    <h3>Social Media Content</h3>
+                    <p>
+                        Visual content created for social media platforms.
+                    </p>
                 </div>
 
 
                 <div class="portfolio-card">
-
-                    <div>
-                        <h3>Infographics</h3>
-
-                        <p>
-                            Information transformed into engaging visuals.
-                        </p>
-                    </div>
-
+                    <span>03</span>
+                    <h3>Infographics</h3>
+                    <p>
+                        Clear and engaging visual presentations of information.
+                    </p>
                 </div>
 
 
                 <div class="portfolio-card">
-
-                    <div>
-                        <h3>Academic Materials</h3>
-
-                        <p>
-                            Educational and academic design projects.
-                        </p>
-                    </div>
-
+                    <span>04</span>
+                    <h3>Academic Materials</h3>
+                    <p>
+                        Digital materials designed for academic and educational use.
+                    </p>
                 </div>
 
 
                 <div class="portfolio-card">
-
-                    <div>
-                        <h3>Digital Layouts</h3>
-
-                        <p>
-                            Creative layouts for different digital needs.
-                        </p>
-                    </div>
-
+                    <span>05</span>
+                    <h3>Digital Layouts</h3>
+                    <p>
+                        Creative layouts for posters, publications, and digital content.
+                    </p>
                 </div>
 
 
                 <div class="portfolio-card">
-
-                    <div>
-                        <h3>Custom Projects</h3>
-
-                        <p>
-                            Unique projects created according to client needs.
-                        </p>
-                    </div>
-
+                    <span>06</span>
+                    <h3>Custom Projects</h3>
+                    <p>
+                        Customized creative materials based on individual project needs.
+                    </p>
                 </div>
 
             </div>
@@ -1246,11 +1200,13 @@
          POSTER DESIGN
     ========================== -->
 
-    <section class="posters" id="posters">
+    <section class="poster-design" id="posters">
 
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-heading">
+
+                <span>Poster Collection</span>
 
                 <h2>Poster Design</h2>
 
@@ -1265,45 +1221,144 @@
             <div class="poster-grid">
 
                 <div class="poster-card">
-                    <img src="poster1.jpg"
-                         alt="NFCreatives Poster Design 1">
+                    <img src="poster1.jpg" alt="Poster Design 01">
                 </div>
-
 
                 <div class="poster-card">
-                    <img src="Poster2.jpg"
-                         alt="NFCreatives Poster Design 2">
+                    <img src="Poster2.jpg" alt="Poster Design 02">
                 </div>
-
 
                 <div class="poster-card">
-                    <img src="poster3.jpg"
-                         alt="NFCreatives Poster Design 3">
+                    <img src="poster3.jpg" alt="Poster Design 03">
                 </div>
-
 
                 <div class="poster-card">
-                    <img src="poster4.jpg"
-                         alt="NFCreatives Poster Design 4">
+                    <img src="poster4.jpg" alt="Poster Design 04">
                 </div>
-
 
                 <div class="poster-card">
-                    <img src="poster5.jpg"
-                         alt="NFCreatives Poster Design 5">
+                    <img src="poster5.jpg" alt="Poster Design 05">
                 </div>
-
 
                 <div class="poster-card">
-                    <img src="poster6.jpg"
-                         alt="NFCreatives Poster Design 6">
+                    <img src="poster6.jpg" alt="Poster Design 06">
                 </div>
-
 
                 <div class="poster-card">
-                    <img src="poster7.jpg"
-                         alt="NFCreatives Poster Design 7">
+                    <img src="poster7.jpg" alt="Poster Design 07">
                 </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CREATIVE PROCESS
+    ========================== -->
+
+    <section class="process" id="process">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>How We Work</span>
+
+                <h2>Our Creative Process</h2>
+
+                <p>
+                    A simple process that helps us turn ideas
+                    into meaningful digital outputs.
+                </p>
+
+            </div>
+
+
+            <div class="process-grid">
+
+                <div class="process-card">
+
+                    <div class="process-number">1</div>
+
+                    <h3>Understand</h3>
+
+                    <p>
+                        We learn about your idea, purpose, audience,
+                        and preferred style.
+                    </p>
+
+                </div>
+
+
+                <div class="process-card">
+
+                    <div class="process-number">2</div>
+
+                    <h3>Create</h3>
+
+                    <p>
+                        We plan and turn your ideas into engaging
+                        digital content.
+                    </p>
+
+                </div>
+
+
+                <div class="process-card">
+
+                    <div class="process-number">3</div>
+
+                    <h3>Refine</h3>
+
+                    <p>
+                        We review the work and make adjustments
+                        based on your needs.
+                    </p>
+
+                </div>
+
+
+                <div class="process-card">
+
+                    <div class="process-number">4</div>
+
+                    <h3>Deliver</h3>
+
+                    <p>
+                        We finalize and provide your completed
+                        project in the appropriate format.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DESIGN STYLE
+    ========================== -->
+
+    <section class="design-style">
+
+        <div class="container">
+
+            <div class="style-box">
+
+                <h3>Our Creative Style</h3>
+
+                <p>
+                    NFCreatives uses digital design tools to create
+                    clean, engaging, and purposeful visual content.
+                    As a growing creative brand, we continue to explore
+                    new ideas and improve our creative work.
+                </p>
 
             </div>
 
@@ -1318,19 +1373,22 @@
 
     <section class="contact" id="contact">
 
-        <div class="contact-content">
+        <div class="container">
 
-            <h2>Have a Creative Project?</h2>
+            <div class="contact-box">
 
-            <p>
-                Let's turn your ideas into something visually engaging,
-                meaningful, and impactful.
-            </p>
+                <h2>Have an Idea?</h2>
 
-            <a href="mailto:your-email@example.com"
-               class="btn">
-                Contact Me
-            </a>
+                <p>
+                    Let's turn your idea into something creative,
+                    meaningful, and visually engaging.
+                </p>
+
+                <a href="mailto:your-email@example.com" class="btn btn-primary">
+                    Contact Me
+                </a>
+
+            </div>
 
         </div>
 
@@ -1343,11 +1401,21 @@
 
     <footer>
 
-        <p>
-            © 2026 NFCreatives. Create. Design. Make an Impact.
-        </p>
+        <div class="footer-content">
+
+            <p>
+                © 2026 <span class="footer-brand">NFCreatives</span>.
+                All rights reserved.
+            </p>
+
+            <p>
+                Creative Digital Services
+            </p>
+
+        </div>
 
     </footer>
+
 
 </body>
 </html>
