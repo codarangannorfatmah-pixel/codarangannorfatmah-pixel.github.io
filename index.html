@@ -2,22 +2,24 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="NFCreatives - Creative digital services including graphic design, video editing, posters, infographics, social media content, and academic materials.">
+        content="NFCreatives - Creative digital services including graphic design, video editing, posters, infographics, social media content, academic materials, and creative projects.">
 
     <meta name="author" content="NFCreatives">
 
-    <title>NFCreatives | Creative Design & Digital Services</title>
+    <title>NFCreatives | Create. Design. Make an Impact.</title>
+
 
     <style>
 
-        /* =========================
-           GENERAL
-        ========================= */
+        /* =========================================
+           NFCREATIVES - VIBRANT DESIGN
+        ========================================= */
 
         * {
             margin: 0;
@@ -26,135 +28,389 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            background: #ffffff;
+
+        :root {
+
+            --blue: #1769ff;
+            --deep-blue: #0b3d91;
+            --light-blue: #eaf3ff;
+
+            --purple: #7c3aed;
+            --pink: #ec4899;
+            --yellow: #fbbf24;
+            --cyan: #06b6d4;
+
+            --dark: #111827;
+            --text: #374151;
+            --muted: #6b7280;
+
+            --white: #ffffff;
+            --light: #f7f9ff;
+
+            --shadow:
+                0 10px 30px rgba(23, 105, 255, 0.10);
+
+            --shadow-hover:
+                0 18px 40px rgba(23, 105, 255, 0.18);
+
         }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            line-height: 1.6;
+
+            color: var(--text);
+
+            background: var(--white);
+
+            overflow-x: hidden;
+
+        }
+
 
         a {
             text-decoration: none;
         }
 
+
         img {
             max-width: 100%;
         }
 
+
         .container {
+
             width: 90%;
+
             max-width: 1150px;
+
             margin: auto;
+
         }
 
 
-        /* =========================
+        /* =========================================
            HEADER
-        ========================= */
+        ========================================= */
 
         header {
+
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.97);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+
+            background:
+                rgba(255, 255, 255, 0.96);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid rgba(23, 105, 255, 0.08);
+
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.05);
+
         }
+
 
         .navbar {
+
             width: 90%;
+
             max-width: 1200px;
+
+            min-height: 78px;
+
             margin: auto;
 
-            min-height: 75px;
-
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
         }
+
 
         .logo {
+
             display: flex;
+
             align-items: center;
+
         }
+
 
         .logo img {
+
             height: 55px;
+
             width: auto;
+
             display: block;
+
         }
+
 
         nav {
+
             display: flex;
+
             align-items: center;
-            gap: 25px;
+
+            gap: 24px;
+
         }
+
 
         nav a {
-            color: #222;
+
+            position: relative;
+
+            color: var(--dark);
+
             font-weight: 600;
+
             font-size: 15px;
+
             transition: 0.3s;
+
         }
+
+
+        nav a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 3px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple),
+                    var(--pink)
+                );
+
+            transition: 0.3s;
+
+        }
+
 
         nav a:hover {
-            color: #1769ff;
+
+            color: var(--blue);
+
         }
 
 
-        /* =========================
+        nav a:hover::after {
+
+            width: 100%;
+
+        }
+
+
+        /* =========================================
            HERO
-        ========================= */
+        ========================================= */
 
         .hero {
+
+            position: relative;
+
             min-height: 88vh;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             text-align: center;
 
-            padding: 80px 20px;
+            padding: 100px 20px;
+
+            overflow: hidden;
 
             background:
                 linear-gradient(
                     135deg,
-                    #eef5ff,
-                    #ffffff,
-                    #eaf1ff
+                    #eaf3ff 0%,
+                    #ffffff 42%,
+                    #f3ecff 75%,
+                    #fff0f7 100%
                 );
+
         }
+
+
+        /* Decorative shapes */
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 320px;
+
+            height: 320px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(23, 105, 255, 0.12);
+
+            top: -100px;
+
+            left: -100px;
+
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(236, 72, 153, 0.10);
+
+            bottom: -100px;
+
+            right: -70px;
+
+        }
+
 
         .hero-content {
-            max-width: 800px;
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 850px;
+
         }
+
+
+        .hero-badge {
+
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            margin-bottom: 22px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            color: var(--blue);
+
+            background: white;
+
+            border: 1px solid #dbeafe;
+
+            box-shadow:
+                0 8px 20px rgba(23, 105, 255, 0.08);
+
+        }
+
 
         .hero h1 {
-            font-size: clamp(42px, 7vw, 75px);
-            line-height: 1.1;
+
+            font-size:
+                clamp(44px, 7vw, 78px);
+
+            line-height: 1.05;
+
+            color: var(--dark);
+
             margin-bottom: 25px;
 
-            color: #111;
+            letter-spacing: -2px;
+
         }
 
-        .hero h1 span {
-            color: #1769ff;
+
+        .hero h1 .blue {
+
+            color: var(--blue);
+
         }
+
+
+        .hero h1 .purple {
+
+            color: var(--purple);
+
+        }
+
+
+        .hero h1 .pink {
+
+            color: var(--pink);
+
+        }
+
 
         .hero p {
-            font-size: 20px;
-            color: #555;
-            margin-bottom: 35px;
+
+            max-width: 720px;
+
+            margin: auto auto 35px;
+
+            font-size: 19px;
+
+            color: var(--muted);
+
         }
+
 
         .hero-buttons {
+
             display: flex;
+
             justify-content: center;
+
             gap: 15px;
+
             flex-wrap: wrap;
+
         }
 
+
         .btn {
+
             display: inline-block;
 
             padding: 14px 28px;
@@ -164,220 +420,584 @@
             font-weight: bold;
 
             transition: 0.3s;
+
         }
+
 
         .btn-primary {
-            background: #1769ff;
+
             color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--purple)
+                );
+
+            box-shadow:
+                0 10px 25px
+                rgba(23, 105, 255, 0.25);
+
         }
+
 
         .btn-primary:hover {
-            background: #0d52d6;
-            transform: translateY(-3px);
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(23, 105, 255, 0.30);
+
         }
+
 
         .btn-secondary {
-            border: 2px solid #1769ff;
-            color: #1769ff;
+
+            color: var(--blue);
+
             background: white;
+
+            border:
+                2px solid var(--blue);
+
         }
+
 
         .btn-secondary:hover {
-            background: #1769ff;
+
             color: white;
-            transform: translateY(-3px);
+
+            background: var(--blue);
+
+            transform: translateY(-4px);
+
         }
 
 
-        /* =========================
-           SECTIONS
-        ========================= */
+        /* =========================================
+           GENERAL SECTIONS
+        ========================================= */
 
         section {
-            padding: 90px 0;
+
+            padding: 95px 0;
+
         }
+
 
         .section-title {
+
+            max-width: 760px;
+
+            margin:
+                0 auto 55px;
+
             text-align: center;
-            max-width: 750px;
-            margin: 0 auto 55px;
+
         }
+
 
         .section-title h2 {
+
             font-size: 40px;
+
+            color: var(--dark);
+
             margin-bottom: 15px;
-            color: #111;
+
         }
+
+
+        .section-title h2::after {
+
+            content: "";
+
+            display: block;
+
+            width: 55px;
+
+            height: 4px;
+
+            margin: 12px auto 0;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple),
+                    var(--pink)
+                );
+
+        }
+
 
         .section-title p {
-            color: #666;
+
+            color: var(--muted);
+
             font-size: 17px;
+
         }
 
 
-        /* =========================
+        /* =========================================
            ABOUT
-        ========================= */
+        ========================================= */
 
         .about {
+
             background: white;
+
         }
+
 
         .about-content {
+
             max-width: 850px;
+
             margin: auto;
+
             text-align: center;
+
         }
+
 
         .about-content p {
+
             font-size: 18px;
-            color: #555;
-            margin-bottom: 18px;
+
+            color: var(--text);
+
+            margin-bottom: 20px;
+
         }
 
 
-        /* =========================
+        .about-highlight {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 12px 22px;
+
+            border-radius: 30px;
+
+            background: var(--light-blue);
+
+            color: var(--blue);
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================================
            SERVICES
-        ========================= */
+        ========================================= */
 
         #services {
-            background: #f7f9fc;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7f9ff,
+                    #ffffff
+                );
+
         }
 
+
         .services-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
             gap: 25px;
+
         }
 
+
         .service-card {
+
+            position: relative;
+
             background: white;
 
-            padding: 35px 25px;
+            padding: 35px 28px;
 
-            border-radius: 18px;
+            border-radius: 22px;
 
             text-align: center;
 
-            box-shadow:
-                0 8px 25px
-                rgba(0, 0, 0, 0.06);
+            overflow: hidden;
 
-            transition: 0.3s;
+            border:
+                1px solid #edf2ff;
+
+            box-shadow: var(--shadow);
+
+            transition: 0.35s;
+
         }
+
+
+        .service-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple),
+                    var(--pink)
+                );
+
+        }
+
 
         .service-card:hover {
-            transform: translateY(-8px);
+
+            transform:
+                translateY(-10px);
 
             box-shadow:
-                0 15px 35px
-                rgba(0, 0, 0, 0.12);
+                var(--shadow-hover);
+
         }
+
 
         .service-icon {
-            font-size: 42px;
-            margin-bottom: 20px;
+
+            width: 70px;
+
+            height: 70px;
+
+            margin:
+                0 auto 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 20px;
+
+            font-size: 34px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf3ff,
+                    #f3ecff
+                );
+
         }
+
+
+        .service-card:nth-child(2)
+        .service-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f7,
+                    #f3ecff
+                );
+
+        }
+
+
+        .service-card:nth-child(3)
+        .service-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ecfeff,
+                    #eaf3ff
+                );
+
+        }
+
+
+        .service-card:nth-child(4)
+        .service-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff7d6,
+                    #fff0f7
+                );
+
+        }
+
+
+        .service-card:nth-child(5)
+        .service-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf3ff,
+                    #ecfeff
+                );
+
+        }
+
+
+        .service-card:nth-child(6)
+        .service-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f3ecff,
+                    #fff0f7
+                );
+
+        }
+
 
         .service-card h3 {
+
             font-size: 21px;
+
+            color: var(--dark);
+
             margin-bottom: 12px;
+
         }
+
 
         .service-card p {
-            color: #666;
+
+            color: var(--muted);
+
             font-size: 15px;
+
         }
 
 
-        /* =========================
+        /* =========================================
            PORTFOLIO
-        ========================= */
+        ========================================= */
 
         .portfolio {
+
             background: white;
+
         }
 
+
         .portfolio-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
             gap: 25px;
+
         }
 
+
         .portfolio-item {
+
+            position: relative;
+
             min-height: 230px;
 
-            border-radius: 18px;
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            border-radius: 22px;
+
+            overflow: hidden;
 
             background:
                 linear-gradient(
                     135deg,
                     #eef5ff,
-                    #dfeaff
+                    #f4efff
                 );
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border:
+                1px solid #e6ecff;
 
-            text-align: center;
+            transition: 0.35s;
 
-            padding: 25px;
-
-            transition: 0.3s;
         }
+
+
+        .portfolio-item:nth-child(2) {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f7,
+                    #f3ecff
+                );
+
+        }
+
+
+        .portfolio-item:nth-child(3) {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ecfeff,
+                    #eaf3ff
+                );
+
+        }
+
+
+        .portfolio-item:nth-child(4) {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff9df,
+                    #fff0f7
+                );
+
+        }
+
+
+        .portfolio-item:nth-child(5) {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef5ff,
+                    #ecfeff
+                );
+
+        }
+
+
+        .portfolio-item:nth-child(6) {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f3ecff,
+                    #fff0f7
+                );
+
+        }
+
 
         .portfolio-item:hover {
-            transform: translateY(-6px);
+
+            transform:
+                translateY(-8px)
+                scale(1.01);
+
+            box-shadow:
+                var(--shadow-hover);
+
         }
+
 
         .portfolio-item h3 {
+
+            color: var(--dark);
+
             margin-bottom: 8px;
+
+            font-size: 22px;
+
         }
+
 
         .portfolio-item p {
-            color: #666;
+
+            color: var(--muted);
+
             font-size: 14px;
+
         }
 
 
-        /* =========================
+        /* =========================================
            POSTER DESIGN
-        ========================= */
+        ========================================= */
 
         .creative-projects {
-            background: #f7f9fc;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7f9ff,
+                    #ffffff
+                );
+
         }
 
+
         .poster-card {
+
             background: white;
 
-            border-radius: 18px;
+            border-radius: 20px;
 
             overflow: hidden;
 
+            border:
+                1px solid #e9edfa;
+
             box-shadow:
                 0 8px 25px
-                rgba(0, 0, 0, 0.08);
+                rgba(0, 0, 0, 0.07);
 
-            transition: 0.3s;
+            transition: 0.35s;
+
         }
+
 
         .poster-card:hover {
-            transform: translateY(-7px);
+
+            transform:
+                translateY(-9px);
 
             box-shadow:
-                0 15px 35px
-                rgba(0, 0, 0, 0.14);
+                0 18px 40px
+                rgba(23, 105, 255, 0.16);
+
         }
 
+
         .poster-card img {
+
             width: 100%;
 
             height: 420px;
@@ -385,52 +1005,190 @@
             object-fit: cover;
 
             display: block;
+
+            transition: 0.4s;
+
         }
 
+
+        .poster-card:hover img {
+
+            transform: scale(1.025);
+
+        }
+
+
         .poster-info {
+
             padding: 18px;
 
             text-align: center;
+
         }
 
+
         .poster-info h3 {
+
+            color: var(--dark);
+
             font-size: 18px;
 
             margin-bottom: 5px;
+
         }
+
 
         .poster-info p {
+
+            color: var(--muted);
+
             font-size: 14px;
 
-            color: #666;
         }
 
 
-        /* =========================
+        /* =========================================
            CONTACT
-        ========================= */
+        ========================================= */
 
         .contact {
-            background: white;
+
+            position: relative;
+
+            overflow: hidden;
 
             text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b3d91,
+                    #1769ff 45%,
+                    #7c3aed 78%,
+                    #ec4899
+                );
+
         }
 
+
+        .contact::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            top: -150px;
+
+            right: -100px;
+
+        }
+
+
+        .contact .container {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .contact .section-title h2 {
+
+            color: white;
+
+        }
+
+
+        .contact .section-title h2::after {
+
+            background: white;
+
+        }
+
+
+        .contact .section-title p {
+
+            color:
+                rgba(255, 255, 255, 0.85);
+
+        }
+
+
         .contact-content {
+
             max-width: 700px;
 
             margin: auto;
+
         }
+
 
         .contact-content p {
+
             font-size: 18px;
 
-            color: #555;
+            color:
+                rgba(255, 255, 255, 0.9);
 
-            margin-bottom: 25px;
+            margin-bottom: 28px;
+
         }
 
+
+        .contact .btn-primary {
+
+            color: var(--blue);
+
+            background: white;
+
+            box-shadow: none;
+
+        }
+
+
+        .contact .btn-primary:hover {
+
+            color: white;
+
+            background: var(--dark);
+
+        }
+
+
+        .contact .btn-secondary {
+
+            color: white;
+
+            background: transparent;
+
+            border-color: white;
+
+        }
+
+
+        .contact .btn-secondary:hover {
+
+            color: var(--blue);
+
+            background: white;
+
+        }
+
+
         .contact-buttons {
+
             display: flex;
 
             justify-content: center;
@@ -438,47 +1196,73 @@
             gap: 15px;
 
             flex-wrap: wrap;
+
         }
 
 
-        /* =========================
+        /* =========================================
            FOOTER
-        ========================= */
+        ========================================= */
 
         footer {
-            background: #111;
 
-            color: white;
+            padding: 30px 20px;
 
             text-align: center;
 
-            padding: 30px 20px;
+            color: white;
+
+            background:
+                #071a3d;
+
         }
+
 
         footer p {
+
+            color:
+                rgba(255, 255, 255, 0.75);
+
             font-size: 14px;
 
-            color: #ccc;
+            margin: 4px 0;
+
         }
 
 
-        /* =========================
+        footer strong {
+
+            color: white;
+
+        }
+
+
+        /* =========================================
            MOBILE
-        ========================= */
+        ========================================= */
 
         @media (max-width: 900px) {
 
             nav {
-                gap: 12px;
+
+                gap: 13px;
+
             }
 
+
             nav a {
+
                 font-size: 13px;
+
             }
+
 
             .services-grid,
             .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
             }
 
         }
@@ -487,43 +1271,91 @@
         @media (max-width: 650px) {
 
             .navbar {
+
                 min-height: 70px;
+
             }
+
 
             .logo img {
+
                 height: 48px;
+
             }
+
 
             nav {
+
                 display: none;
+
             }
+
 
             section {
+
                 padding: 70px 0;
+
             }
+
 
             .hero {
-                min-height: 80vh;
+
+                min-height: 82vh;
+
+                padding:
+                    80px 20px;
+
             }
+
+
+            .hero h1 {
+
+                font-size: 45px;
+
+                letter-spacing: -1px;
+
+            }
+
 
             .hero p {
+
                 font-size: 17px;
+
             }
 
+
             .section-title h2 {
-                font-size: 30px;
+
+                font-size: 31px;
+
             }
+
 
             .services-grid,
             .portfolio-grid {
+
                 grid-template-columns: 1fr;
+
             }
 
+
             .poster-card img {
+
                 height: auto;
+
+            }
+
+
+            .btn {
+
+                width: 100%;
+
+                max-width: 300px;
+
             }
 
         }
+
 
     </style>
 
@@ -533,9 +1365,9 @@
 <body>
 
 
-    <!-- =========================
+    <!-- =========================================
          HEADER
-    ========================== -->
+    ========================================== -->
 
     <header>
 
@@ -585,25 +1417,50 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          HERO
-    ========================== -->
+    ========================================== -->
 
-    <section class="hero" id="home">
+    <section
+        class="hero"
+        id="home"
+    >
 
         <div class="hero-content">
 
+
+            <div class="hero-badge">
+
+                ✨ Welcome to NFCreatives
+
+            </div>
+
+
             <h1>
-                Create.
-                <span>Design.</span>
-                Make an Impact.
+
+                <span class="blue">
+                    Create.
+                </span>
+
+                <span class="purple">
+                    Design.
+                </span>
+
+                <span class="pink">
+                    Make an Impact.
+                </span>
+
             </h1>
 
+
             <p>
-                Welcome to NFCreatives — a creative space
-                for digital design, video editing,
-                visual content, and meaningful creative work.
+
+                Turning ideas into creative visuals,
+                engaging digital content, and meaningful
+                designs that connect with people.
+
             </p>
+
 
             <div class="hero-buttons">
 
@@ -611,14 +1468,19 @@
                     href="#services"
                     class="btn btn-primary"
                 >
+
                     Explore Services
+
                 </a>
+
 
                 <a
                     href="#projects"
                     class="btn btn-secondary"
                 >
+
                     View My Designs
+
                 </a>
 
             </div>
@@ -629,13 +1491,17 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          ABOUT
-    ========================== -->
+    ========================================== -->
 
-    <section class="about" id="about">
+    <section
+        class="about"
+        id="about"
+    >
 
         <div class="container">
+
 
             <div class="section-title">
 
@@ -643,25 +1509,41 @@
                     About NFCreatives
                 </h2>
 
+                <p>
+                    Where creativity meets purpose.
+                </p>
+
             </div>
 
 
             <div class="about-content">
 
                 <p>
+
                     NFCreatives is a personal creative
                     service and portfolio platform focused
-                    on turning ideas into engaging visual
-                    and digital content.
+                    on transforming ideas into engaging
+                    visual and digital content.
+
                 </p>
 
+
                 <p>
+
                     From posters and graphic designs to
                     video editing, social media content,
                     infographics, and academic materials,
-                    NFCreatives aims to create work that is
+                    NFCreatives creates work that is
                     creative, clear, useful, and meaningful.
+
                 </p>
+
+
+                <span class="about-highlight">
+
+                    🎨 Ideas into visuals • Stories into impact
+
+                </span>
 
             </div>
 
@@ -671,24 +1553,27 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          SERVICES
-    ========================== -->
+    ========================================== -->
 
     <section id="services">
 
         <div class="container">
 
+
             <div class="section-title">
 
                 <h2>
-                    My Services
+                    Creative Services
                 </h2>
 
                 <p>
-                    Creative and digital services designed
-                    for students, organizations, businesses,
-                    and individuals.
+
+                    Creative and digital services for
+                    students, organizations, businesses,
+                    creators, and individuals.
+
                 </p>
 
             </div>
@@ -696,8 +1581,6 @@
 
             <div class="services-grid">
 
-
-                <!-- Service 1 -->
 
                 <div class="service-card">
 
@@ -710,15 +1593,16 @@
                     </h3>
 
                     <p>
+
                         Short videos, promotional videos,
-                        school projects, social media
-                        content, and other creative edits.
+                        school projects, social media content,
+                        and other creative edits.
+
                     </p>
 
                 </div>
 
 
-                <!-- Service 2 -->
 
                 <div class="service-card">
 
@@ -731,15 +1615,16 @@
                     </h3>
 
                     <p>
+
                         Creative layouts, digital graphics,
                         announcements, branding materials,
                         and other visual designs.
+
                     </p>
 
                 </div>
 
 
-                <!-- Service 3 -->
 
                 <div class="service-card">
 
@@ -752,15 +1637,16 @@
                     </h3>
 
                     <p>
+
                         Clear and attractive infographics
                         designed to present information
                         in an easy-to-understand format.
+
                     </p>
 
                 </div>
 
 
-                <!-- Service 4 -->
 
                 <div class="service-card">
 
@@ -773,15 +1659,16 @@
                     </h3>
 
                     <p>
+
                         Social media graphics, promotional
                         content, announcements, captions,
                         and digital campaign materials.
+
                     </p>
 
                 </div>
 
 
-                <!-- Service 5 -->
 
                 <div class="service-card">
 
@@ -794,15 +1681,16 @@
                     </h3>
 
                     <p>
+
                         Presentations, educational graphics,
                         research materials, scripts,
                         layouts, and other academic content.
+
                     </p>
 
                 </div>
 
 
-                <!-- Service 6 -->
 
                 <div class="service-card">
 
@@ -815,9 +1703,11 @@
                     </h3>
 
                     <p>
+
                         Custom creative projects developed
                         according to your ideas, needs,
                         events, campaigns, or concepts.
+
                     </p>
 
                 </div>
@@ -831,13 +1721,17 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          PORTFOLIO
-    ========================== -->
+    ========================================== -->
 
-    <section class="portfolio" id="portfolio">
+    <section
+        class="portfolio"
+        id="portfolio"
+    >
 
         <div class="container">
+
 
             <div class="section-title">
 
@@ -846,8 +1740,10 @@
                 </h2>
 
                 <p>
-                    A glimpse of the creative work and
-                    projects developed by NFCreatives.
+
+                    A glimpse of the creative work
+                    and projects developed by NFCreatives.
+
                 </p>
 
             </div>
@@ -861,7 +1757,7 @@
                     <div>
 
                         <h3>
-                            Video Editing
+                            🎬 Video Editing
                         </h3>
 
                         <p>
@@ -873,12 +1769,13 @@
                 </div>
 
 
+
                 <div class="portfolio-item">
 
                     <div>
 
                         <h3>
-                            Graphic Design
+                            🎨 Graphic Design
                         </h3>
 
                         <p>
@@ -890,12 +1787,13 @@
                 </div>
 
 
+
                 <div class="portfolio-item">
 
                     <div>
 
                         <h3>
-                            Infographics
+                            📊 Infographics
                         </h3>
 
                         <p>
@@ -907,12 +1805,13 @@
                 </div>
 
 
+
                 <div class="portfolio-item">
 
                     <div>
 
                         <h3>
-                            Social Media
+                            📱 Social Media
                         </h3>
 
                         <p>
@@ -924,12 +1823,13 @@
                 </div>
 
 
+
                 <div class="portfolio-item">
 
                     <div>
 
                         <h3>
-                            Academic Projects
+                            📚 Academic Projects
                         </h3>
 
                         <p>
@@ -941,12 +1841,13 @@
                 </div>
 
 
+
                 <div class="portfolio-item">
 
                     <div>
 
                         <h3>
-                            Custom Projects
+                            💻 Custom Projects
                         </h3>
 
                         <p>
@@ -966,9 +1867,9 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          POSTER DESIGN
-    ========================== -->
+    ========================================== -->
 
     <section
         class="creative-projects"
@@ -977,6 +1878,7 @@
 
         <div class="container">
 
+
             <div class="section-title">
 
                 <h2>
@@ -984,9 +1886,11 @@
                 </h2>
 
                 <p>
+
                     A selection of poster designs created
                     by NFCreatives for events, announcements,
                     promotions, campaigns, and special occasions.
+
                 </p>
 
             </div>
@@ -995,7 +1899,7 @@
             <div class="portfolio-grid">
 
 
-                <!-- Poster 1 -->
+                <!-- POSTER 1 -->
 
                 <div class="poster-card">
 
@@ -1019,12 +1923,13 @@
                 </div>
 
 
-                <!-- Poster 2 -->
+
+                <!-- POSTER 2 -->
 
                 <div class="poster-card">
 
                     <img
-                        src="poster2.jpg"
+                        src="Poster2.jpg"
                         alt="NFCreatives Poster Design 2"
                     >
 
@@ -1043,7 +1948,8 @@
                 </div>
 
 
-                <!-- Poster 3 -->
+
+                <!-- POSTER 3 -->
 
                 <div class="poster-card">
 
@@ -1067,7 +1973,8 @@
                 </div>
 
 
-                <!-- Poster 4 -->
+
+                <!-- POSTER 4 -->
 
                 <div class="poster-card">
 
@@ -1091,7 +1998,8 @@
                 </div>
 
 
-                <!-- Poster 5 -->
+
+                <!-- POSTER 5 -->
 
                 <div class="poster-card">
 
@@ -1115,7 +2023,8 @@
                 </div>
 
 
-                <!-- Poster 6 -->
+
+                <!-- POSTER 6 -->
 
                 <div class="poster-card">
 
@@ -1139,7 +2048,8 @@
                 </div>
 
 
-                <!-- Poster 7 -->
+
+                <!-- POSTER 7 -->
 
                 <div class="poster-card">
 
@@ -1171,13 +2081,17 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          CONTACT
-    ========================== -->
+    ========================================== -->
 
-    <section class="contact" id="contact">
+    <section
+        class="contact"
+        id="contact"
+    >
 
         <div class="container">
+
 
             <div class="section-title">
 
@@ -1186,9 +2100,11 @@
                 </h2>
 
                 <p>
+
                     Have a project, idea, or creative request?
                     Let's turn your idea into something
                     meaningful and visually engaging.
+
                 </p>
 
             </div>
@@ -1197,27 +2113,36 @@
             <div class="contact-content">
 
                 <p>
+
                     Get in touch with NFCreatives for
                     creative projects, design services,
                     academic materials, and digital content.
+
                 </p>
 
 
                 <div class="contact-buttons">
 
+
                     <a
                         href="mailto:your-email@example.com"
                         class="btn btn-primary"
                     >
+
                         Contact Me
+
                     </a>
+
 
                     <a
                         href="#projects"
                         class="btn btn-secondary"
                     >
+
                         See My Work
+
                     </a>
+
 
                 </div>
 
@@ -1229,18 +2154,24 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          FOOTER
-    ========================== -->
+    ========================================== -->
 
     <footer>
 
         <p>
-            © 2026 NFCreatives. All Rights Reserved.
+
+            © 2026
+            <strong>NFCreatives</strong>.
+            All Rights Reserved.
+
         </p>
 
         <p>
+
             Create. Design. Make an Impact.
+
         </p>
 
     </footer>
