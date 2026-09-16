@@ -8,20 +8,20 @@
     <style>
         :root {
             --blue: #1769ff;
-            --deep-blue: #0b3fa8;
-            --light-blue: #eaf3ff;
+            --deep-blue: #083b9c;
             --purple: #7b4dff;
-            --pink: #f45b9a;
-            --cyan: #16c7d9;
+            --pink: #f04f9d;
+            --cyan: #10c7d8;
             --yellow: #ffc928;
+            --orange: #ff8a34;
 
-            --dark: #182033;
-            --gray: #687386;
-            --light-gray: #f5f7fb;
+            --dark: #172033;
+            --gray: #667085;
+            --light: #f6f8fc;
             --white: #ffffff;
 
-            --shadow: 0 10px 30px rgba(23, 50, 100, 0.08);
-            --radius: 20px;
+            --shadow: 0 12px 35px rgba(30, 60, 120, 0.10);
+            --radius: 22px;
         }
 
         * {
@@ -50,32 +50,33 @@
 
         /* =========================
            HEADER
-        ========================= */
+        ========================== */
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid #e9edf5;
+
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid #e8edf6;
         }
 
         .nav-container {
             width: 90%;
             max-width: 1200px;
+            min-height: 78px;
             margin: auto;
-            min-height: 75px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 30px;
+            gap: 25px;
         }
 
         .logo {
             width: 150px;
-            height: auto;
         }
 
         nav {
@@ -85,10 +86,10 @@
         }
 
         nav a {
-            color: #4a5568;
+            color: #4d596d;
             font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s ease;
+            font-weight: 700;
+            transition: 0.3s;
         }
 
         nav a:hover {
@@ -97,20 +98,21 @@
 
         /* =========================
            HERO
-        ========================= */
+        ========================== */
 
         .hero {
             position: relative;
             overflow: hidden;
-            min-height: 650px;
+            min-height: 690px;
 
             display: flex;
             align-items: center;
 
             background:
-                radial-gradient(circle at 10% 20%, rgba(22, 199, 217, 0.16), transparent 25%),
-                radial-gradient(circle at 90% 20%, rgba(123, 77, 255, 0.16), transparent 28%),
-                radial-gradient(circle at 80% 90%, rgba(244, 91, 154, 0.13), transparent 25%),
+                radial-gradient(circle at 8% 20%, rgba(16,199,216,0.25), transparent 22%),
+                radial-gradient(circle at 90% 15%, rgba(123,77,255,0.25), transparent 25%),
+                radial-gradient(circle at 85% 85%, rgba(240,79,157,0.20), transparent 25%),
+                radial-gradient(circle at 35% 90%, rgba(255,201,40,0.16), transparent 20%),
                 #ffffff;
         }
 
@@ -118,7 +120,7 @@
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            padding: 80px 0;
+            padding: 90px 0;
 
             position: relative;
             z-index: 2;
@@ -126,22 +128,34 @@
 
         .hero-badge {
             display: inline-block;
-            background: var(--light-blue);
-            color: var(--blue);
-            border: 1px solid #d7e6ff;
-            padding: 9px 18px;
+
+            padding: 10px 20px;
+            margin-bottom: 24px;
+
             border-radius: 50px;
+
+            background: linear-gradient(
+                90deg,
+                #e7f3ff,
+                #f0eaff,
+                #fff0f7
+            );
+
+            border: 1px solid #dfe7f5;
+
+            color: var(--blue);
             font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 22px;
+            font-weight: 800;
         }
 
         .hero h1 {
-            max-width: 850px;
-            font-size: clamp(3rem, 7vw, 6rem);
-            line-height: 1.02;
-            letter-spacing: -3px;
-            margin-bottom: 25px;
+            max-width: 900px;
+
+            font-size: clamp(3.2rem, 7vw, 6.5rem);
+            line-height: 0.98;
+            letter-spacing: -4px;
+
+            margin-bottom: 28px;
         }
 
         .hero h1 .blue {
@@ -157,9 +171,11 @@
         }
 
         .hero p {
-            max-width: 650px;
+            max-width: 680px;
+
             color: var(--gray);
             font-size: 18px;
+
             margin-bottom: 35px;
         }
 
@@ -174,74 +190,108 @@
             align-items: center;
             justify-content: center;
 
-            padding: 13px 25px;
+            padding: 14px 27px;
+
             border-radius: 50px;
 
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 800;
 
-            transition: 0.3s ease;
+            transition: 0.3s;
         }
 
         .btn-primary {
-            background: var(--blue);
             color: white;
-            box-shadow: 0 8px 20px rgba(23, 105, 255, 0.22);
+
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                var(--purple)
+            );
+
+            box-shadow: 0 10px 25px rgba(75, 80, 220, 0.25);
         }
 
         .btn-primary:hover {
-            background: var(--deep-blue);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(75, 80, 220, 0.30);
         }
 
         .btn-outline {
-            border: 1.5px solid #d9e0eb;
-            background: white;
             color: var(--dark);
+            background: white;
+            border: 2px solid #e1e6ef;
         }
 
         .btn-outline:hover {
-            border-color: var(--blue);
             color: var(--blue);
-            transform: translateY(-2px);
+            border-color: var(--blue);
+            transform: translateY(-3px);
         }
 
-        .decor-circle {
+        /* Decorative shapes */
+
+        .shape {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.7;
+            z-index: 1;
         }
 
-        .circle-one {
-            width: 120px;
-            height: 120px;
-            background: #e6f8fb;
+        .shape-one {
+            width: 150px;
+            height: 150px;
             right: 8%;
             top: 18%;
+
+            background: linear-gradient(
+                135deg,
+                var(--cyan),
+                #8ae9f0
+            );
+
+            opacity: 0.35;
         }
 
-        .circle-two {
-            width: 70px;
-            height: 70px;
-            background: #fff3c4;
-            right: 22%;
-            bottom: 15%;
-        }
-
-        .circle-three {
+        .shape-two {
             width: 90px;
             height: 90px;
-            background: #f3eaff;
-            left: 5%;
+            right: 23%;
+            bottom: 14%;
+
+            background: var(--yellow);
+            opacity: 0.55;
+        }
+
+        .shape-three {
+            width: 110px;
+            height: 110px;
+            left: 4%;
             bottom: 10%;
+
+            background: linear-gradient(
+                135deg,
+                var(--pink),
+                var(--purple)
+            );
+
+            opacity: 0.18;
+        }
+
+        .shape-four {
+            width: 25px;
+            height: 25px;
+            right: 38%;
+            top: 15%;
+
+            background: var(--orange);
         }
 
         /* =========================
-           GENERAL SECTIONS
-        ========================= */
+           GENERAL
+        ========================== */
 
         section {
-            padding: 90px 0;
+            padding: 100px 0;
         }
 
         .container {
@@ -251,23 +301,38 @@
         }
 
         .section-heading {
+            max-width: 750px;
+            margin: 0 auto 55px;
             text-align: center;
-            max-width: 720px;
-            margin: 0 auto 50px;
         }
 
         .section-heading span {
-            color: var(--blue);
-            font-size: 14px;
-            font-weight: 800;
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+
+            background: linear-gradient(
+                90deg,
+                var(--blue),
+                var(--purple),
+                var(--pink)
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .section-heading h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin: 10px 0 15px;
-            color: var(--dark);
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            line-height: 1.1;
+
+            margin-bottom: 16px;
         }
 
         .section-heading p {
@@ -276,10 +341,12 @@
 
         /* =========================
            ABOUT
-        ========================= */
+        ========================== */
 
         .about {
-            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            background: white;
         }
 
         .about-grid {
@@ -290,95 +357,178 @@
         }
 
         .about-text h3 {
-            font-size: 30px;
+            font-size: 32px;
             margin-bottom: 18px;
         }
 
         .about-text p {
             color: var(--gray);
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         .about-highlight {
-            background: var(--light-blue);
-            border-left: 4px solid var(--blue);
-            padding: 25px;
-            border-radius: 0 16px 16px 0;
+            position: relative;
+
+            padding: 38px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf6ff,
+                    #f5efff,
+                    #fff1f7
+                );
+
+            border: 1px solid #e2e8f5;
+
+            box-shadow: var(--shadow);
+        }
+
+        .about-highlight::before {
+            content: "";
+            position: absolute;
+
+            width: 12px;
+            height: 70%;
+
+            left: 0;
+            top: 15%;
+
+            border-radius: 20px;
+
+            background: linear-gradient(
+                var(--blue),
+                var(--purple),
+                var(--pink)
+            );
         }
 
         .about-highlight p {
             margin: 0;
-            color: #43516a;
+            color: #46536a;
+            padding-left: 12px;
         }
 
         /* =========================
            SERVICES
-        ========================= */
+        ========================== */
 
         .services {
-            background: var(--light-gray);
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7f9ff,
+                    #eef5ff
+                );
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            gap: 25px;
         }
 
         .service-card {
+            position: relative;
+            overflow: hidden;
+
             background: white;
-            padding: 30px;
+
+            padding: 32px;
+
             border-radius: var(--radius);
-            border: 1px solid #e9edf5;
+
+            border: 1px solid #e6ebf4;
+
             box-shadow: var(--shadow);
-            transition: 0.3s ease;
+
+            transition: 0.3s;
+        }
+
+        .service-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 80px;
+            height: 80px;
+
+            right: -35px;
+            bottom: -35px;
+
+            border-radius: 50%;
+
+            background: #eef4ff;
         }
 
         .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(23, 50, 100, 0.12);
+            transform: translateY(-8px);
         }
 
         .service-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
+            width: 52px;
+            height: 52px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            font-size: 21px;
-            font-weight: 800;
+            border-radius: 16px;
+
             margin-bottom: 20px;
 
-            background: var(--light-blue);
-            color: var(--blue);
+            font-size: 21px;
+            font-weight: 900;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                var(--purple)
+            );
         }
 
         .service-card:nth-child(2) .service-icon {
-            background: #f1eaff;
-            color: var(--purple);
+            background: linear-gradient(
+                135deg,
+                var(--purple),
+                var(--pink)
+            );
         }
 
         .service-card:nth-child(3) .service-icon {
-            background: #fff0f6;
-            color: var(--pink);
+            background: linear-gradient(
+                135deg,
+                var(--pink),
+                var(--orange)
+            );
         }
 
         .service-card:nth-child(4) .service-icon {
-            background: #e9fbfd;
-            color: var(--cyan);
+            background: linear-gradient(
+                135deg,
+                var(--cyan),
+                var(--blue)
+            );
         }
 
         .service-card:nth-child(5) .service-icon {
-            background: #fff8db;
-            color: #d39d00;
+            background: linear-gradient(
+                135deg,
+                var(--yellow),
+                var(--orange)
+            );
         }
 
         .service-card:nth-child(6) .service-icon {
-            background: #eef0ff;
-            color: #5668d8;
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                var(--cyan)
+            );
         }
 
         .service-card h3 {
@@ -393,57 +543,92 @@
 
         /* =========================
            DESIGN PROJECTS
-        ========================= */
+        ========================== */
 
         .design-projects {
             background: white;
         }
 
         .design-note {
-            max-width: 850px;
-            margin: -20px auto 40px;
+            max-width: 900px;
+            margin: -15px auto 45px;
 
-            background: #fffaf0;
-            border: 1px solid #f5dfaa;
-            border-radius: 15px;
-            padding: 18px 22px;
+            padding: 20px 24px;
 
-            color: #6c5a2b;
+            border-radius: 16px;
+
+            background: linear-gradient(
+                135deg,
+                #fff9df,
+                #fff5ec
+            );
+
+            border: 1px solid #f2dfaa;
+
+            color: #66572e;
             font-size: 14px;
         }
 
         .design-note strong {
-            color: #8c6a00;
+            color: #9a7200;
         }
 
         .design-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 28px;
         }
 
         .design-card {
             overflow: hidden;
+
             background: white;
+
             border-radius: var(--radius);
-            border: 1px solid #e8edf5;
+
+            border: 1px solid #e4e9f2;
+
             box-shadow: var(--shadow);
-            transition: 0.3s ease;
+
+            transition: 0.3s;
         }
 
         .design-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
+            box-shadow: 0 18px 40px rgba(30,60,120,0.14);
         }
 
         .design-card img {
             width: 100%;
             aspect-ratio: 4 / 3;
             object-fit: cover;
-            background: #f4f6fa;
+
+            background: #f1f4f9;
         }
 
         .design-info {
-            padding: 20px;
+            padding: 21px;
+            border-top: 4px solid var(--blue);
+        }
+
+        .design-card:nth-child(2) .design-info {
+            border-color: var(--purple);
+        }
+
+        .design-card:nth-child(3) .design-info {
+            border-color: var(--pink);
+        }
+
+        .design-card:nth-child(4) .design-info {
+            border-color: var(--cyan);
+        }
+
+        .design-card:nth-child(5) .design-info {
+            border-color: var(--yellow);
+        }
+
+        .design-card:nth-child(6) .design-info {
+            border-color: var(--orange);
         }
 
         .design-info h3 {
@@ -458,37 +643,115 @@
 
         /* =========================
            PORTFOLIO
-        ========================= */
+        ========================== */
 
         .portfolio {
-            background: var(--light-gray);
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef6ff,
+                    #f7efff
+                );
         }
 
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            gap: 25px;
         }
 
         .portfolio-card {
-            background: white;
+            position: relative;
+            overflow: hidden;
+
+            min-height: 210px;
+
             padding: 30px;
-            border-radius: var(--radius);
-            border: 1px solid #e9edf5;
-            min-height: 180px;
 
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
 
+            background: white;
+
+            border-radius: var(--radius);
+
+            border: 1px solid #e3e8f2;
+
             box-shadow: var(--shadow);
+
+            transition: 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .portfolio-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 110px;
+            height: 110px;
+
+            right: -45px;
+            top: -45px;
+
+            border-radius: 50%;
+
+            background: var(--light);
+        }
+
+        .portfolio-card:nth-child(1)::before {
+            background: #dfeaff;
+        }
+
+        .portfolio-card:nth-child(2)::before {
+            background: #eadfff;
+        }
+
+        .portfolio-card:nth-child(3)::before {
+            background: #ffe0ef;
+        }
+
+        .portfolio-card:nth-child(4)::before {
+            background: #dff8fb;
+        }
+
+        .portfolio-card:nth-child(5)::before {
+            background: #fff1bd;
+        }
+
+        .portfolio-card:nth-child(6)::before {
+            background: #ffe3cf;
         }
 
         .portfolio-card span {
             color: var(--blue);
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 900;
             margin-bottom: 8px;
+        }
+
+        .portfolio-card:nth-child(2) span {
+            color: var(--purple);
+        }
+
+        .portfolio-card:nth-child(3) span {
+            color: var(--pink);
+        }
+
+        .portfolio-card:nth-child(4) span {
+            color: var(--cyan);
+        }
+
+        .portfolio-card:nth-child(5) span {
+            color: #d39d00;
+        }
+
+        .portfolio-card:nth-child(6) span {
+            color: var(--orange);
         }
 
         .portfolio-card h3 {
@@ -502,8 +765,8 @@
         }
 
         /* =========================
-           POSTER DESIGN
-        ========================= */
+           POSTERS
+        ========================== */
 
         .poster-design {
             background: white;
@@ -512,20 +775,25 @@
         .poster-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 22px;
         }
 
         .poster-card {
             overflow: hidden;
+
             background: white;
-            border-radius: 16px;
-            border: 1px solid #e8edf5;
+
+            border-radius: 18px;
+
+            border: 1px solid #e5eaf2;
+
             box-shadow: var(--shadow);
-            transition: 0.3s ease;
+
+            transition: 0.3s;
         }
 
         .poster-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px) rotate(0.5deg);
         }
 
         .poster-card img {
@@ -535,11 +803,16 @@
         }
 
         /* =========================
-           CREATIVE PROCESS
-        ========================= */
+           PROCESS
+        ========================== */
 
         .process {
-            background: var(--light-gray);
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7f9ff,
+                    #ffffff
+                );
         }
 
         .process-grid {
@@ -549,27 +822,40 @@
         }
 
         .process-card {
+            padding: 30px;
+
             background: white;
-            padding: 28px;
+
             border-radius: var(--radius);
-            border: 1px solid #e9edf5;
+
+            border: 1px solid #e4e9f2;
+
             box-shadow: var(--shadow);
-            position: relative;
+
+            transition: 0.3s;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
         }
 
         .process-number {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
+            width: 45px;
+            height: 45px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            background: var(--blue);
-            color: white;
-            font-weight: 800;
             margin-bottom: 18px;
+
+            border-radius: 50%;
+
+            background: var(--blue);
+
+            color: white;
+
+            font-weight: 900;
         }
 
         .process-card:nth-child(2) .process-number {
@@ -594,69 +880,174 @@
         }
 
         /* =========================
-           DESIGN STYLE
-        ========================= */
+           CREATIVE STYLE
+        ========================== */
 
         .design-style {
             background: white;
         }
 
         .style-box {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            padding: 45px 30px;
+            position: relative;
+            overflow: hidden;
 
-            border-radius: 25px;
+            max-width: 900px;
+            margin: auto;
+
+            padding: 55px 35px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
             background:
-                linear-gradient(135deg, #f7fbff, #ffffff);
-            border: 1px solid #e5ebf4;
+                linear-gradient(
+                    135deg,
+                    #eaf4ff,
+                    #f1eaff,
+                    #fff0f7
+                );
+
+            border: 1px solid #e1e7f2;
+
             box-shadow: var(--shadow);
         }
 
+        .style-box::before,
+        .style-box::after {
+            content: "";
+
+            position: absolute;
+
+            border-radius: 50%;
+        }
+
+        .style-box::before {
+            width: 130px;
+            height: 130px;
+
+            left: -50px;
+            top: -50px;
+
+            background: rgba(16,199,216,0.20);
+        }
+
+        .style-box::after {
+            width: 110px;
+            height: 110px;
+
+            right: -40px;
+            bottom: -40px;
+
+            background: rgba(240,79,157,0.18);
+        }
+
         .style-box h3 {
-            font-size: 28px;
+            position: relative;
+            z-index: 2;
+
+            font-size: 30px;
             margin-bottom: 15px;
         }
 
         .style-box p {
-            color: var(--gray);
-            max-width: 650px;
+            position: relative;
+            z-index: 2;
+
+            max-width: 700px;
             margin: auto;
+
+            color: #566277;
         }
 
         /* =========================
            CONTACT
-        ========================= */
+        ========================== */
 
         .contact {
+            position: relative;
+            overflow: hidden;
+
             background:
-                linear-gradient(135deg, #eef6ff, #faf8ff);
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--purple),
+                    var(--pink)
+                );
+
+            color: white;
+        }
+
+        .contact::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            right: -100px;
+            top: -100px;
+
+            background: rgba(255,255,255,0.12);
+        }
+
+        .contact::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            left: -60px;
+            bottom: -70px;
+
+            background: rgba(255,201,40,0.20);
         }
 
         .contact-box {
+            position: relative;
+            z-index: 2;
+
             max-width: 800px;
             margin: auto;
+
             text-align: center;
         }
 
         .contact-box h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             margin-bottom: 15px;
         }
 
         .contact-box p {
-            color: var(--gray);
+            color: rgba(255,255,255,0.88);
             margin-bottom: 30px;
+        }
+
+        .contact .btn-primary {
+            background: white;
+            color: var(--blue);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .contact .btn-primary:hover {
+            color: var(--purple);
         }
 
         /* =========================
            FOOTER
-        ========================= */
+        ========================== */
 
         footer {
             background: #ffffff;
-            border-top: 1px solid #e9edf5;
+            border-top: 1px solid #e7ebf3;
             padding: 30px 0;
         }
 
@@ -666,8 +1057,9 @@
             margin: auto;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+
             gap: 20px;
         }
 
@@ -677,13 +1069,22 @@
         }
 
         .footer-brand {
-            color: var(--blue);
-            font-weight: 800;
+            font-weight: 900;
+
+            background: linear-gradient(
+                90deg,
+                var(--blue),
+                var(--purple),
+                var(--pink)
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* =========================
            RESPONSIVE
-        ========================= */
+        ========================== */
 
         @media (max-width: 1000px) {
 
@@ -723,7 +1124,7 @@
             }
 
             .hero {
-                min-height: 600px;
+                min-height: 620px;
             }
 
             .hero h1 {
@@ -757,7 +1158,7 @@
         @media (max-width: 480px) {
 
             section {
-                padding: 70px 0;
+                padding: 75px 0;
             }
 
             .hero-content {
@@ -765,7 +1166,7 @@
             }
 
             .hero h1 {
-                font-size: 3.2rem;
+                font-size: 3.3rem;
             }
 
             .hero p {
@@ -794,6 +1195,7 @@
     ========================== -->
 
     <header>
+
         <div class="nav-container">
 
             <a href="#home">
@@ -811,6 +1213,7 @@
             </nav>
 
         </div>
+
     </header>
 
 
@@ -820,9 +1223,10 @@
 
     <section class="hero" id="home">
 
-        <div class="decor-circle circle-one"></div>
-        <div class="decor-circle circle-two"></div>
-        <div class="decor-circle circle-three"></div>
+        <div class="shape shape-one"></div>
+        <div class="shape shape-two"></div>
+        <div class="shape shape-three"></div>
+        <div class="shape shape-four"></div>
 
         <div class="hero-content">
 
@@ -837,11 +1241,13 @@
             </h1>
 
             <p>
-                NFCreatives turns ideas into engaging digital content through
-                creative design, editing, and customized digital services.
+                NFCreatives turns ideas into engaging digital content
+                through creative design, editing, and customized
+                digital services.
             </p>
 
             <div class="hero-buttons">
+
                 <a href="#services" class="btn btn-primary">
                     Explore Services
                 </a>
@@ -849,6 +1255,7 @@
                 <a href="#portfolio" class="btn btn-outline">
                     View Projects
                 </a>
+
             </div>
 
         </div>
@@ -865,30 +1272,40 @@
         <div class="container">
 
             <div class="section-heading">
+
                 <span>About NFCreatives</span>
-                <h2>Turning Ideas Into Creative Digital Content</h2>
+
+                <h2>
+                    Turning Ideas Into Creative Digital Content
+                </h2>
+
             </div>
+
 
             <div class="about-grid">
 
                 <div class="about-text">
 
-                    <h3>Creative. Simple. Purposeful.</h3>
+                    <h3>
+                        Creative. Simple. Purposeful.
+                    </h3>
 
                     <p>
-                        NFCreatives is a creative digital service brand that
-                        turns ideas into engaging visual content. We offer
-                        graphic design, video editing, social media content,
-                        academic materials, posters, and customized creative projects.
+                        NFCreatives is a creative digital service brand
+                        that turns ideas into engaging visual content.
+                        We offer graphic design, video editing,
+                        social media content, academic materials,
+                        posters, and customized creative projects.
                     </p>
 
                     <p>
-                        As a growing creative brand, we continue to develop
-                        our skills, explore new ideas, and build meaningful
-                        projects through digital creativity.
+                        As a growing creative brand, we continue to
+                        develop our skills, explore new ideas, and
+                        build meaningful projects through digital creativity.
                     </p>
 
                 </div>
+
 
                 <div class="about-highlight">
 
@@ -916,14 +1333,18 @@
         <div class="container">
 
             <div class="section-heading">
+
                 <span>What We Do</span>
+
                 <h2>Creative Digital Services</h2>
 
                 <p>
-                    Providing creative digital services that turn ideas into
-                    engaging, meaningful, and visually appealing content.
+                    Providing creative digital services that turn ideas
+                    into engaging, meaningful, and visually appealing content.
                 </p>
+
             </div>
+
 
             <div class="services-grid">
 
@@ -948,8 +1369,8 @@
                     <h3>Graphic Design</h3>
 
                     <p>
-                        Creating clean and creative digital visuals for
-                        different personal, academic, and social media needs.
+                        Creating clean and creative digital visuals
+                        for different personal, academic, and social media needs.
                     </p>
 
                 </div>
@@ -1004,8 +1425,8 @@
                     <h3>Creative Projects</h3>
 
                     <p>
-                        Developing customized digital materials based on
-                        individual ideas, needs, and project goals.
+                        Developing customized digital materials based
+                        on individual ideas, needs, and project goals.
                     </p>
 
                 </div>
@@ -1032,8 +1453,8 @@
                 <h2>Selected Design Projects</h2>
 
                 <p>
-                    A selection of visual projects that showcase my experience
-                    in designing and customizing digital materials.
+                    A selection of visual projects that showcase my
+                    experience in designing and customizing digital materials.
                 </p>
 
             </div>
@@ -1053,56 +1474,122 @@
             <div class="design-grid">
 
                 <div class="design-card">
-                    <img src="graphicdesign1.png" alt="Design Project 01">
+
+                    <img
+                        src="graphicdesign1.png"
+                        alt="Design Project 01"
+                    >
+
                     <div class="design-info">
+
                         <h3>Design Project 01</h3>
-                        <p>Canva-Based Design Customization</p>
+
+                        <p>
+                            Canva-Based Design Customization
+                        </p>
+
                     </div>
+
                 </div>
 
 
                 <div class="design-card">
-                    <img src="graphicdesign2.png" alt="Design Project 02">
+
+                    <img
+                        src="graphicdesign2.png"
+                        alt="Design Project 02"
+                    >
+
                     <div class="design-info">
+
                         <h3>Design Project 02</h3>
-                        <p>Canva-Based Design Customization</p>
+
+                        <p>
+                            Canva-Based Design Customization
+                        </p>
+
                     </div>
+
                 </div>
 
 
                 <div class="design-card">
-                    <img src="graphicdesign3.png" alt="Design Project 03">
+
+                    <img
+                        src="graphicdesign3.png"
+                        alt="Design Project 03"
+                    >
+
                     <div class="design-info">
+
                         <h3>Design Project 03</h3>
-                        <p>Canva-Based Design Customization</p>
+
+                        <p>
+                            Canva-Based Design Customization
+                        </p>
+
                     </div>
+
                 </div>
 
 
                 <div class="design-card">
-                    <img src="graphicdesign4.png" alt="Design Project 04">
+
+                    <img
+                        src="graphicdesign4.png"
+                        alt="Design Project 04"
+                    >
+
                     <div class="design-info">
+
                         <h3>Design Project 04</h3>
-                        <p>Canva-Based Design Customization</p>
+
+                        <p>
+                            Canva-Based Design Customization
+                        </p>
+
                     </div>
+
                 </div>
 
 
                 <div class="design-card">
-                    <img src="graphicdesign5.png" alt="Design Project 05">
+
+                    <img
+                        src="graphicdesign5.png"
+                        alt="Design Project 05"
+                    >
+
                     <div class="design-info">
+
                         <h3>Design Project 05</h3>
-                        <p>Canva-Based Design Customization</p>
+
+                        <p>
+                            Canva-Based Design Customization
+                        </p>
+
                     </div>
+
                 </div>
 
 
                 <div class="design-card">
-                    <img src="graphicdesign6.png" alt="Design Project 06">
+
+                    <img
+                        src="graphicdesign6.png"
+                        alt="Design Project 06"
+                    >
+
                     <div class="design-info">
+
                         <h3>Design Project 06</h3>
-                        <p>Canva-Based Design Customization</p>
+
+                        <p>
+                            Canva-Based Design Customization
+                        </p>
+
                     </div>
+
                 </div>
 
             </div>
@@ -1137,56 +1624,82 @@
             <div class="portfolio-grid">
 
                 <div class="portfolio-card">
+
                     <span>01</span>
+
                     <h3>Video Projects</h3>
+
                     <p>
                         Creative video editing and digital storytelling projects.
                     </p>
+
                 </div>
 
 
                 <div class="portfolio-card">
+
                     <span>02</span>
+
                     <h3>Social Media Content</h3>
+
                     <p>
                         Visual content created for social media platforms.
                     </p>
+
                 </div>
 
 
                 <div class="portfolio-card">
+
                     <span>03</span>
+
                     <h3>Infographics</h3>
+
                     <p>
                         Clear and engaging visual presentations of information.
                     </p>
+
                 </div>
 
 
                 <div class="portfolio-card">
+
                     <span>04</span>
+
                     <h3>Academic Materials</h3>
+
                     <p>
                         Digital materials designed for academic and educational use.
                     </p>
+
                 </div>
 
 
                 <div class="portfolio-card">
+
                     <span>05</span>
+
                     <h3>Digital Layouts</h3>
+
                     <p>
-                        Creative layouts for posters, publications, and digital content.
+                        Creative layouts for posters, publications,
+                        and digital content.
                     </p>
+
                 </div>
 
 
                 <div class="portfolio-card">
+
                     <span>06</span>
+
                     <h3>Custom Projects</h3>
+
                     <p>
-                        Customized creative materials based on individual project needs.
+                        Customized creative materials based on
+                        individual project needs.
                     </p>
+
                 </div>
 
             </div>
@@ -1342,7 +1855,7 @@
 
 
     <!-- =========================
-         DESIGN STYLE
+         CREATIVE STYLE
     ========================== -->
 
     <section class="design-style">
@@ -1384,7 +1897,10 @@
                     meaningful, and visually engaging.
                 </p>
 
-                <a href="mailto:your-email@example.com" class="btn btn-primary">
+                <a
+                    href="mailto:your-email@example.com"
+                    class="btn btn-primary"
+                >
                     Contact Me
                 </a>
 
@@ -1404,7 +1920,8 @@
         <div class="footer-content">
 
             <p>
-                © 2026 <span class="footer-brand">NFCreatives</span>.
+                © 2026
+                <span class="footer-brand">NFCreatives</span>.
                 All rights reserved.
             </p>
 
@@ -1415,7 +1932,6 @@
         </div>
 
     </footer>
-
 
 </body>
 </html>
