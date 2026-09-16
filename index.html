@@ -7,9 +7,12 @@
     <title>NFCreatives | Creative Digital Services</title>
 
     <meta name="description"
-          content="NFCreatives offers creative digital services including video editing, graphic design, layouts, posters, infographics, and creative content.">
+          content="NFCreatives offers creative digital services including video editing, graphic design, posters, infographics, social media content, academic materials, and creative projects.">
 
     <style>
+
+        /* ================= RESET ================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -24,13 +27,14 @@
             line-height: 1.6;
         }
 
+
         /* ================= HEADER ================= */
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.97);
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         }
 
@@ -43,7 +47,7 @@
             align-items: center;
         }
 
-       .logo {
+        .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
@@ -55,8 +59,9 @@
             display: block;
         }
 
-        .logo span {
-            color: #111;
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
@@ -71,6 +76,7 @@
             color: #1769ff;
         }
 
+
         /* ================= HERO ================= */
 
         .hero {
@@ -81,7 +87,12 @@
             text-align: center;
             padding: 80px 20px;
             background:
-                linear-gradient(135deg, #eef5ff, #ffffff, #f1f7ff);
+                linear-gradient(
+                    135deg,
+                    #eef5ff,
+                    #ffffff,
+                    #f1f7ff
+                );
         }
 
         .hero-content {
@@ -143,6 +154,7 @@
             color: white;
         }
 
+
         /* ================= GENERAL ================= */
 
         section {
@@ -162,11 +174,15 @@
         .section-title h2 {
             font-size: 38px;
             margin-bottom: 10px;
+            color: #111;
         }
 
         .section-title p {
             color: #666;
+            max-width: 700px;
+            margin: auto;
         }
+
 
         /* ================= ABOUT ================= */
 
@@ -181,6 +197,7 @@
             font-size: 18px;
             color: #555;
         }
+
 
         /* ================= SERVICES ================= */
 
@@ -217,6 +234,7 @@
             color: #666;
         }
 
+
         /* ================= PORTFOLIO ================= */
 
         .portfolio {
@@ -230,18 +248,78 @@
         }
 
         .portfolio-card {
-            height: 220px;
+            background: white;
             border-radius: 18px;
-            background: linear-gradient(135deg, #1769ff, #73a7ff);
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .portfolio-placeholder {
+            min-height: 220px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             font-size: 22px;
             font-weight: bold;
+            color: white;
+            background:
+                linear-gradient(
+                    135deg,
+                    #1769ff,
+                    #73a7ff
+                );
         }
+
+
+        /* ================= POSTER DESIGN ================= */
+
+        .creative-projects {
+            background: #f7f9fc;
+        }
+
+        .poster-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .poster-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.14);
+        }
+
+        .poster-card img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .poster-info {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .poster-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .poster-info p {
+            font-size: 14px;
+            color: #666;
+        }
+
 
         /* ================= CONTACT ================= */
 
@@ -263,6 +341,7 @@
             margin-bottom: 25px;
         }
 
+
         /* ================= FOOTER ================= */
 
         footer {
@@ -274,7 +353,9 @@
 
         footer p {
             color: #bbb;
+            margin: 5px 0;
         }
+
 
         /* ================= MOBILE ================= */
 
@@ -296,15 +377,24 @@
             .section-title h2 {
                 font-size: 30px;
             }
+
+            .poster-card img {
+                height: auto;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
+
 
     <!-- ================= HEADER ================= -->
 
     <header>
+
         <div class="navbar">
 
             <a href="#home" class="logo">
@@ -312,15 +402,25 @@
             </a>
 
             <nav>
+
                 <a href="#home">Home</a>
+
                 <a href="#about">About</a>
+
                 <a href="#services">Services</a>
+
                 <a href="#portfolio">Portfolio</a>
+
+                <a href="#projects">Poster Design</a>
+
                 <a href="#contact">Contact</a>
+
             </nav>
 
         </div>
+
     </header>
+
 
 
     <!-- ================= HERO ================= -->
@@ -357,6 +457,7 @@
     </section>
 
 
+
     <!-- ================= ABOUT ================= -->
 
     <section class="about" id="about">
@@ -391,6 +492,7 @@
     </section>
 
 
+
     <!-- ================= SERVICES ================= -->
 
     <section id="services">
@@ -410,11 +512,16 @@
 
             <div class="services-grid">
 
+
                 <div class="service-card">
 
-                    <div class="service-icon">🎬</div>
+                    <div class="service-icon">
+                        🎬
+                    </div>
 
-                    <h3>Video Editing</h3>
+                    <h3>
+                        Video Editing
+                    </h3>
 
                     <p>
                         Engaging video edits for social media,
@@ -426,9 +533,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">🎨</div>
+                    <div class="service-icon">
+                        🎨
+                    </div>
 
-                    <h3>Graphic Design</h3>
+                    <h3>
+                        Graphic Design
+                    </h3>
 
                     <p>
                         Posters, flyers, announcements, digital
@@ -440,9 +551,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">📊</div>
+                    <div class="service-icon">
+                        📊
+                    </div>
 
-                    <h3>Infographics</h3>
+                    <h3>
+                        Infographics
+                    </h3>
 
                     <p>
                         Clear and creative visual presentations
@@ -454,9 +569,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">📱</div>
+                    <div class="service-icon">
+                        📱
+                    </div>
 
-                    <h3>Social Media Content</h3>
+                    <h3>
+                        Social Media Content
+                    </h3>
 
                     <p>
                         Creative posts and visual content for
@@ -468,9 +587,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">📝</div>
+                    <div class="service-icon">
+                        📝
+                    </div>
 
-                    <h3>Academic Materials</h3>
+                    <h3>
+                        Academic Materials
+                    </h3>
 
                     <p>
                         Presentation layouts, research visuals,
@@ -483,57 +606,28 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">💡</div>
+                    <div class="service-icon">
+                        💡
+                    </div>
 
-                    <h3>Creative Projects</h3>
+                    <h3>
+                        Creative Projects
+                    </h3>
 
-                    <section class="creative-projects" id="projects">
+                    <p>
+                        Custom creative solutions for personal,
+                        academic, organizational, and digital projects.
+                    </p>
 
-    <div class="container">
+                </div>
 
-        <div class="section-title">
-            <h2>Poster Design</h2>
-            <p>
-                Creative and engaging poster designs made for events,
-                announcements, promotions, campaigns, and special occasions.
-            </p>
-        </div>
 
-        <div class="portfolio-grid">
-
-            <div class="portfolio-card">
-                <img src="images/poster1.jpg" alt="Poster Design 1">
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/poster2.jpg" alt="Poster Design 2">
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/poster3.jpg" alt="Poster Design 3">
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/poster4.jpg" alt="Poster Design 4">
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/poster5.jpg" alt="Poster Design 5">
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/poster6.jpg" alt="Poster Design 6">
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/poster7.jpg" alt="Poster Design 7">
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
 
     <!-- ================= PORTFOLIO ================= -->
@@ -544,7 +638,9 @@
 
             <div class="section-title">
 
-                <h2>My Portfolio</h2>
+                <h2>
+                    My Portfolio
+                </h2>
 
                 <p>
                     A collection of creative works.
@@ -555,29 +651,84 @@
 
             <div class="portfolio-grid">
 
-                <div class="portfolio-card">
-                    Video Editing
-                </div>
 
                 <div class="portfolio-card">
-                    Poster Design
+
+                    <div class="portfolio-placeholder">
+
+                        🎬
+                        <br>
+                        Video Editing
+
+                    </div>
+
                 </div>
 
-                <div class="portfolio-card">
-                    Social Media Graphics
-                </div>
 
                 <div class="portfolio-card">
-                    Infographics
+
+                    <div class="portfolio-placeholder">
+
+                        🎨
+                        <br>
+                        Poster Design
+
+                    </div>
+
                 </div>
 
-                <div class="portfolio-card">
-                    Presentation Design
-                </div>
 
                 <div class="portfolio-card">
-                    More Creative Works
+
+                    <div class="portfolio-placeholder">
+
+                        📱
+                        <br>
+                        Social Media Graphics
+
+                    </div>
+
                 </div>
+
+
+                <div class="portfolio-card">
+
+                    <div class="portfolio-placeholder">
+
+                        📊
+                        <br>
+                        Infographics
+
+                    </div>
+
+                </div>
+
+
+                <div class="portfolio-card">
+
+                    <div class="portfolio-placeholder">
+
+                        🖥️
+                        <br>
+                        Presentation Design
+
+                    </div>
+
+                </div>
+
+
+                <div class="portfolio-card">
+
+                    <div class="portfolio-placeholder">
+
+                        💡
+                        <br>
+                        More Creative Works
+
+                    </div>
+
+                </div>
+
 
             </div>
 
@@ -586,15 +737,213 @@
     </section>
 
 
+
+    <!-- ================= POSTER DESIGN ================= -->
+
+    <section class="creative-projects" id="projects">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <h2>
+                    Poster Design
+                </h2>
+
+                <p>
+                    A selection of poster designs created by
+                    NFCreatives for events, announcements,
+                    promotions, campaigns, and special occasions.
+                </p>
+
+            </div>
+
+
+            <div class="portfolio-grid">
+
+
+                <!-- POSTER 1 -->
+
+                <div class="poster-card">
+
+                    <img
+                        src="images/poster1.jpg"
+                        alt="NFCreatives Poster Design 1">
+
+                    <div class="poster-info">
+
+                        <h3>
+                            Poster Design 1
+                        </h3>
+
+                        <p>
+                            Creative Poster
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- POSTER 2 -->
+
+                <div class="poster-card">
+
+                    <img
+                        src="images/poster2.jpg"
+                        alt="NFCreatives Poster Design 2">
+
+                    <div class="poster-info">
+
+                        <h3>
+                            Poster Design 2
+                        </h3>
+
+                        <p>
+                            Creative Poster
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- POSTER 3 -->
+
+                <div class="poster-card">
+
+                    <img
+                        src="images/poster3.jpg"
+                        alt="NFCreatives Poster Design 3">
+
+                    <div class="poster-info">
+
+                        <h3>
+                            Poster Design 3
+                        </h3>
+
+                        <p>
+                            Creative Poster
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- POSTER 4 -->
+
+                <div class="poster-card">
+
+                    <img
+                        src="images/poster4.jpg"
+                        alt="NFCreatives Poster Design 4">
+
+                    <div class="poster-info">
+
+                        <h3>
+                            Poster Design 4
+                        </h3>
+
+                        <p>
+                            Creative Poster
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- POSTER 5 -->
+
+                <div class="poster-card">
+
+                    <img
+                        src="images/poster5.jpg"
+                        alt="NFCreatives Poster Design 5">
+
+                    <div class="poster-info">
+
+                        <h3>
+                            Poster Design 5
+                        </h3>
+
+                        <p>
+                            Creative Poster
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- POSTER 6 -->
+
+                <div class="poster-card">
+
+                    <img
+                        src="images/poster6.jpg"
+                        alt="NFCreatives Poster Design 6">
+
+                    <div class="poster-info">
+
+                        <h3>
+                            Poster Design 6
+                        </h3>
+
+                        <p>
+                            Creative Poster
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- POSTER 7 -->
+
+                <div class="poster-card">
+
+                    <img
+                        src="images/poster7.jpg"
+                        alt="NFCreatives Poster Design 7">
+
+                    <div class="poster-info">
+
+                        <h3>
+                            Poster Design 7
+                        </h3>
+
+                        <p>
+                            Creative Poster
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
     <!-- ================= CONTACT ================= -->
 
     <section class="contact" id="contact">
 
         <div class="container">
 
+
             <div class="section-title">
 
-                <h2>Let's Create Something</h2>
+                <h2>
+                    Let's Create Something
+                </h2>
 
                 <p>
                     Have an idea or project in mind?
@@ -611,10 +960,13 @@
                     into something creative.
                 </p>
 
+
                 <a
                     href="mailto:your-email@example.com"
                     class="btn btn-primary">
+
                     Contact Me
+
                 </a>
 
             </div>
@@ -622,6 +974,7 @@
         </div>
 
     </section>
+
 
 
     <!-- ================= FOOTER ================= -->
@@ -637,6 +990,7 @@
         </p>
 
     </footer>
+
 
 </body>
 </html>
