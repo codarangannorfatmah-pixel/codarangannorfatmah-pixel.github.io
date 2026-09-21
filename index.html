@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Mobile Responsive Viewport -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>NFCreatives | Creative Digital Services</title>
 
     <style>
+
+        /* =========================
+           COLOR VARIABLES
+        ========================== */
+
         :root {
             --blue: #1769ff;
             --deep-blue: #083b9c;
@@ -24,6 +36,11 @@
             --radius: 22px;
         }
 
+
+        /* =========================
+           GENERAL RESET
+        ========================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -31,15 +48,28 @@
             scroll-behavior: smooth;
         }
 
+        html {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
+            width: 100%;
+            min-width: 0;
+
             font-family: Arial, Helvetica, sans-serif;
+
             background: var(--white);
             color: var(--dark);
+
             line-height: 1.6;
+
+            overflow-x: hidden;
         }
 
         img {
             max-width: 100%;
+            height: auto;
             display: block;
         }
 
@@ -47,6 +77,11 @@
             text-decoration: none;
             color: inherit;
         }
+
+        button {
+            font-family: inherit;
+        }
+
 
         /* =========================
            HEADER
@@ -57,8 +92,12 @@
             top: 0;
             z-index: 1000;
 
-            background: rgba(255, 255, 255, 0.92);
+            width: 100%;
+
+            background: rgba(255, 255, 255, 0.94);
+
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
 
             border-bottom: 1px solid #e8edf6;
         }
@@ -67,34 +106,114 @@
             width: 90%;
             max-width: 1200px;
             min-height: 65px;
+
             margin: auto;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             gap: 25px;
         }
 
-        .logo {
-            width: 150px;
+        .logo-link {
+            display: flex;
+            align-items: center;
+
+            flex-shrink: 0;
         }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+
+        /* =========================
+           DESKTOP NAVIGATION
+        ========================== */
 
         nav {
             display: flex;
             align-items: center;
+            justify-content: flex-end;
+
             gap: 22px;
         }
 
         nav a {
             color: #4d596d;
+
             font-size: 14px;
             font-weight: 700;
+
             transition: 0.3s;
+
+            white-space: nowrap;
         }
 
         nav a:hover {
             color: var(--blue);
         }
+
+
+        /* =========================
+           MOBILE MENU BUTTON
+        ========================== */
+
+        .menu-toggle {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #f2f5fb;
+            color: var(--dark);
+
+            cursor: pointer;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+            gap: 5px;
+
+            transition: 0.3s;
+        }
+
+        .menu-toggle:hover {
+            background: #e8efff;
+            color: var(--blue);
+        }
+
+        .menu-toggle span {
+            display: block;
+
+            width: 21px;
+            height: 2px;
+
+            border-radius: 10px;
+
+            background: currentColor;
+
+            transition: 0.3s;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
 
         /* =========================
            HERO
@@ -103,22 +222,40 @@
         .hero {
             position: relative;
             overflow: hidden;
+
             min-height: 690px;
 
             display: flex;
             align-items: center;
 
             background:
-                radial-gradient(circle at 8% 20%, rgba(16,199,216,0.25), transparent 22%),
-                radial-gradient(circle at 90% 15%, rgba(123,77,255,0.25), transparent 25%),
-                radial-gradient(circle at 85% 85%, rgba(240,79,157,0.20), transparent 25%),
-                radial-gradient(circle at 35% 90%, rgba(255,201,40,0.16), transparent 20%),
+                radial-gradient(
+                    circle at 8% 20%,
+                    rgba(16,199,216,0.25),
+                    transparent 22%
+                ),
+                radial-gradient(
+                    circle at 90% 15%,
+                    rgba(123,77,255,0.25),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 85% 85%,
+                    rgba(240,79,157,0.20),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 35% 90%,
+                    rgba(255,201,40,0.16),
+                    transparent 20%
+                ),
                 #ffffff;
         }
 
         .hero-content {
             width: 90%;
             max-width: 1200px;
+
             margin: auto;
             padding: 90px 0;
 
@@ -134,16 +271,18 @@
 
             border-radius: 50px;
 
-            background: linear-gradient(
-                90deg,
-                #e7f3ff,
-                #f0eaff,
-                #fff0f7
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #e7f3ff,
+                    #f0eaff,
+                    #fff0f7
+                );
 
             border: 1px solid #dfe7f5;
 
             color: var(--blue);
+
             font-size: 14px;
             font-weight: 800;
         }
@@ -152,6 +291,7 @@
             max-width: 900px;
 
             font-size: clamp(3.2rem, 7vw, 6.5rem);
+
             line-height: 0.98;
             letter-spacing: -4px;
 
@@ -174,6 +314,7 @@
             max-width: 680px;
 
             color: var(--gray);
+
             font-size: 18px;
 
             margin-bottom: 35px;
@@ -181,14 +322,24 @@
 
         .hero-buttons {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 15px;
         }
 
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
         .btn {
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
+
+            min-height: 50px;
 
             padding: 14px 27px;
 
@@ -197,57 +348,78 @@
             font-size: 14px;
             font-weight: 800;
 
+            text-align: center;
+
             transition: 0.3s;
+
+            cursor: pointer;
         }
 
         .btn-primary {
             color: white;
 
-            background: linear-gradient(
-                135deg,
-                var(--blue),
-                var(--purple)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--purple)
+                );
 
-            box-shadow: 0 10px 25px rgba(75, 80, 220, 0.25);
+            box-shadow:
+                0 10px 25px rgba(75, 80, 220, 0.25);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(75, 80, 220, 0.30);
+
+            box-shadow:
+                0 15px 30px rgba(75, 80, 220, 0.30);
         }
 
         .btn-outline {
             color: var(--dark);
+
             background: white;
+
             border: 2px solid #e1e6ef;
         }
 
         .btn-outline:hover {
             color: var(--blue);
+
             border-color: var(--blue);
+
             transform: translateY(-3px);
         }
 
-        /* Decorative shapes */
+
+        /* =========================
+           DECORATIVE SHAPES
+        ========================== */
 
         .shape {
             position: absolute;
+
             border-radius: 50%;
+
             z-index: 1;
+
+            pointer-events: none;
         }
 
         .shape-one {
             width: 150px;
             height: 150px;
+
             right: 8%;
             top: 18%;
 
-            background: linear-gradient(
-                135deg,
-                var(--cyan),
-                #8ae9f0
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--cyan),
+                    #8ae9f0
+                );
 
             opacity: 0.35;
         }
@@ -255,24 +427,28 @@
         .shape-two {
             width: 90px;
             height: 90px;
+
             right: 23%;
             bottom: 14%;
 
             background: var(--yellow);
+
             opacity: 0.55;
         }
 
         .shape-three {
             width: 110px;
             height: 110px;
+
             left: 4%;
             bottom: 10%;
 
-            background: linear-gradient(
-                135deg,
-                var(--pink),
-                var(--purple)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink),
+                    var(--purple)
+                );
 
             opacity: 0.18;
         }
@@ -280,14 +456,16 @@
         .shape-four {
             width: 25px;
             height: 25px;
+
             right: 38%;
             top: 15%;
 
             background: var(--orange);
         }
 
+
         /* =========================
-           GENERAL
+           GENERAL SECTIONS
         ========================== */
 
         section {
@@ -297,12 +475,15 @@
         .container {
             width: 90%;
             max-width: 1200px;
+
             margin: auto;
         }
 
         .section-heading {
             max-width: 750px;
+
             margin: 0 auto 55px;
+
             text-align: center;
         }
 
@@ -315,14 +496,16 @@
             font-weight: 900;
 
             letter-spacing: 2px;
+
             text-transform: uppercase;
 
-            background: linear-gradient(
-                90deg,
-                var(--blue),
-                var(--purple),
-                var(--pink)
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple),
+                    var(--pink)
+                );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -330,6 +513,7 @@
 
         .section-heading h2 {
             font-size: clamp(2.1rem, 4vw, 3.2rem);
+
             line-height: 1.1;
 
             margin-bottom: 16px;
@@ -339,30 +523,38 @@
             color: var(--gray);
         }
 
+
         /* =========================
            ABOUT
         ========================== */
 
         .about {
             position: relative;
+
             overflow: hidden;
+
             background: white;
         }
 
         .about-grid {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 60px;
+
             align-items: center;
         }
 
         .about-text h3 {
             font-size: 32px;
+
             margin-bottom: 18px;
         }
 
         .about-text p {
             color: var(--gray);
+
             margin-bottom: 16px;
         }
 
@@ -388,6 +580,7 @@
 
         .about-highlight::before {
             content: "";
+
             position: absolute;
 
             width: 12px;
@@ -398,18 +591,22 @@
 
             border-radius: 20px;
 
-            background: linear-gradient(
-                var(--blue),
-                var(--purple),
-                var(--pink)
-            );
+            background:
+                linear-gradient(
+                    var(--blue),
+                    var(--purple),
+                    var(--pink)
+                );
         }
 
         .about-highlight p {
             margin: 0;
+
             color: #46536a;
+
             padding-left: 12px;
         }
+
 
         /* =========================
            SERVICES
@@ -426,12 +623,15 @@
 
         .services-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 25px;
         }
 
         .service-card {
             position: relative;
+
             overflow: hidden;
 
             background: white;
@@ -461,6 +661,8 @@
             border-radius: 50%;
 
             background: #eef4ff;
+
+            pointer-events: none;
         }
 
         .service-card:hover {
@@ -472,6 +674,7 @@
             height: 52px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
@@ -484,62 +687,71 @@
 
             color: white;
 
-            background: linear-gradient(
-                135deg,
-                var(--blue),
-                var(--purple)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--purple)
+                );
         }
 
         .service-card:nth-child(2) .service-icon {
-            background: linear-gradient(
-                135deg,
-                var(--purple),
-                var(--pink)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    var(--pink)
+                );
         }
 
         .service-card:nth-child(3) .service-icon {
-            background: linear-gradient(
-                135deg,
-                var(--pink),
-                var(--orange)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink),
+                    var(--orange)
+                );
         }
 
         .service-card:nth-child(4) .service-icon {
-            background: linear-gradient(
-                135deg,
-                var(--cyan),
-                var(--blue)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--cyan),
+                    var(--blue)
+                );
         }
 
         .service-card:nth-child(5) .service-icon {
-            background: linear-gradient(
-                135deg,
-                var(--yellow),
-                var(--orange)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--yellow),
+                    var(--orange)
+                );
         }
 
         .service-card:nth-child(6) .service-icon {
-            background: linear-gradient(
-                135deg,
-                var(--blue),
-                var(--cyan)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--cyan)
+                );
         }
 
         .service-card h3 {
             margin-bottom: 10px;
+
             font-size: 20px;
         }
 
         .service-card p {
             color: var(--gray);
+
             font-size: 14px;
         }
+
 
         /* =========================
            DESIGN PROJECTS
@@ -551,21 +763,24 @@
 
         .design-note {
             max-width: 900px;
+
             margin: -15px auto 45px;
 
             padding: 20px 24px;
 
             border-radius: 16px;
 
-            background: linear-gradient(
-                135deg,
-                #fff9df,
-                #fff5ec
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff9df,
+                    #fff5ec
+                );
 
             border: 1px solid #f2dfaa;
 
             color: #66572e;
+
             font-size: 14px;
         }
 
@@ -575,7 +790,9 @@
 
         .design-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 28px;
         }
 
@@ -595,12 +812,16 @@
 
         .design-card:hover {
             transform: translateY(-7px);
-            box-shadow: 0 18px 40px rgba(30,60,120,0.14);
+
+            box-shadow:
+                0 18px 40px rgba(30,60,120,0.14);
         }
 
         .design-card img {
             width: 100%;
+
             aspect-ratio: 4 / 3;
+
             object-fit: cover;
 
             background: #f1f4f9;
@@ -608,6 +829,7 @@
 
         .design-info {
             padding: 21px;
+
             border-top: 4px solid var(--blue);
         }
 
@@ -633,13 +855,16 @@
 
         .design-info h3 {
             font-size: 18px;
+
             margin-bottom: 5px;
         }
 
         .design-info p {
             color: var(--gray);
+
             font-size: 13px;
         }
+
 
         /* =========================
            PORTFOLIO
@@ -656,12 +881,15 @@
 
         .portfolio-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 25px;
         }
 
         .portfolio-card {
             position: relative;
+
             overflow: hidden;
 
             min-height: 210px;
@@ -669,7 +897,9 @@
             padding: 30px;
 
             display: flex;
+
             flex-direction: column;
+
             justify-content: flex-end;
 
             background: white;
@@ -729,8 +959,10 @@
 
         .portfolio-card span {
             color: var(--blue);
+
             font-size: 13px;
             font-weight: 900;
+
             margin-bottom: 8px;
         }
 
@@ -756,13 +988,16 @@
 
         .portfolio-card h3 {
             font-size: 21px;
+
             margin-bottom: 8px;
         }
 
         .portfolio-card p {
             color: var(--gray);
+
             font-size: 14px;
         }
+
 
         /* =========================
            POSTERS
@@ -774,7 +1009,9 @@
 
         .poster-grid {
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
+
             gap: 22px;
         }
 
@@ -798,9 +1035,12 @@
 
         .poster-card img {
             width: 100%;
+
             aspect-ratio: 3 / 4;
+
             object-fit: cover;
         }
+
 
         /* =========================
            PROCESS
@@ -817,7 +1057,9 @@
 
         .process-grid {
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
+
             gap: 20px;
         }
 
@@ -844,6 +1086,7 @@
             height: 45px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
@@ -876,8 +1119,10 @@
 
         .process-card p {
             color: var(--gray);
+
             font-size: 14px;
         }
+
 
         /* =========================
            CREATIVE STYLE
@@ -889,9 +1134,11 @@
 
         .style-box {
             position: relative;
+
             overflow: hidden;
 
             max-width: 900px;
+
             margin: auto;
 
             padding: 55px 35px;
@@ -944,21 +1191,26 @@
 
         .style-box h3 {
             position: relative;
+
             z-index: 2;
 
             font-size: 30px;
+
             margin-bottom: 15px;
         }
 
         .style-box p {
             position: relative;
+
             z-index: 2;
 
             max-width: 700px;
+
             margin: auto;
 
             color: #566277;
         }
+
 
         /* =========================
            CONTACT
@@ -966,6 +1218,7 @@
 
         .contact {
             position: relative;
+
             overflow: hidden;
 
             background:
@@ -1013,9 +1266,11 @@
 
         .contact-box {
             position: relative;
+
             z-index: 2;
 
             max-width: 800px;
+
             margin: auto;
 
             text-align: center;
@@ -1023,23 +1278,29 @@
 
         .contact-box h2 {
             font-size: clamp(2.2rem, 5vw, 3.8rem);
+
             margin-bottom: 15px;
         }
 
         .contact-box p {
             color: rgba(255,255,255,0.88);
+
             margin-bottom: 30px;
         }
 
         .contact .btn-primary {
             background: white;
+
             color: var(--blue);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.15);
         }
 
         .contact .btn-primary:hover {
             color: var(--purple);
         }
+
 
         /* =========================
            FOOTER
@@ -1047,17 +1308,22 @@
 
         footer {
             background: #ffffff;
+
             border-top: 1px solid #e7ebf3;
+
             padding: 30px 0;
         }
 
         .footer-content {
             width: 90%;
             max-width: 1200px;
+
             margin: auto;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             gap: 20px;
@@ -1065,28 +1331,35 @@
 
         .footer-content p {
             color: var(--gray);
+
             font-size: 13px;
         }
 
         .footer-brand {
             font-weight: 900;
 
-            background: linear-gradient(
-                90deg,
-                var(--blue),
-                var(--purple),
-                var(--pink)
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple),
+                    var(--pink)
+                );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* =========================
-           RESPONSIVE
-        ========================== */
 
-        @media (max-width: 1000px) {
+        /* ==================================================
+           TABLET
+        ================================================== */
+
+        @media (max-width: 1100px) {
+
+            .nav-container {
+                width: 92%;
+            }
 
             nav {
                 gap: 14px;
@@ -1111,29 +1384,231 @@
             }
         }
 
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
         @media (max-width: 750px) {
 
+            /* ---------- HEADER ---------- */
+
+            header {
+                position: sticky;
+            }
+
             .nav-container {
-                flex-direction: column;
-                padding: 15px 0;
+                width: 92%;
+
+                min-height: 62px;
+
+                padding: 9px 0;
+
+                position: relative;
+            }
+
+            .logo {
+                width: 48px;
+            }
+
+            .menu-toggle {
+                display: flex;
             }
 
             nav {
-                flex-wrap: wrap;
-                justify-content: center;
+                display: none;
+
+                position: absolute;
+
+                top: calc(100% + 1px);
+                left: 0;
+                right: 0;
+
+                width: 100%;
+
+                padding: 14px;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 4px;
+
+                background: rgba(255,255,255,0.98);
+
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+
+                border: 1px solid #e8edf6;
+
+                border-top: none;
+
+                border-radius: 0 0 18px 18px;
+
+                box-shadow:
+                    0 15px 35px rgba(30,60,120,0.12);
             }
 
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                display: block;
+
+                width: 100%;
+
+                padding: 13px 15px;
+
+                border-radius: 10px;
+
+                font-size: 14px;
+            }
+
+            nav a:hover {
+                background: #f2f6ff;
+            }
+
+
+            /* ---------- HERO ---------- */
+
             .hero {
-                min-height: 620px;
+                min-height: auto;
+            }
+
+            .hero-content {
+                width: 90%;
+
+                padding: 80px 0;
+            }
+
+            .hero-badge {
+                padding: 9px 16px;
+
+                font-size: 12px;
+
+                margin-bottom: 20px;
             }
 
             .hero h1 {
+                font-size: clamp(3rem, 14vw, 4.5rem);
+
+                line-height: 0.98;
+
                 letter-spacing: -2px;
+
+                margin-bottom: 24px;
             }
+
+            .hero p {
+                font-size: 16px;
+
+                line-height: 1.7;
+
+                margin-bottom: 28px;
+            }
+
+            .hero-buttons {
+                width: 100%;
+
+                flex-direction: column;
+
+                gap: 11px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+
+            /* ---------- DECORATIVE SHAPES ---------- */
+
+            .shape-one {
+                width: 90px;
+                height: 90px;
+
+                right: -20px;
+                top: 14%;
+            }
+
+            .shape-two {
+                width: 60px;
+                height: 60px;
+
+                right: 10%;
+                bottom: 8%;
+            }
+
+            .shape-three {
+                width: 70px;
+                height: 70px;
+
+                left: -20px;
+                bottom: 6%;
+            }
+
+            .shape-four {
+                width: 18px;
+                height: 18px;
+
+                right: 20%;
+                top: 11%;
+            }
+
+
+            /* ---------- SECTIONS ---------- */
+
+            section {
+                padding: 75px 0;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .section-heading {
+                margin-bottom: 38px;
+            }
+
+            .section-heading span {
+                font-size: 11px;
+
+                letter-spacing: 1.5px;
+            }
+
+            .section-heading h2 {
+                font-size: 2.2rem;
+
+                line-height: 1.15;
+            }
+
+            .section-heading p {
+                font-size: 15px;
+            }
+
+
+            /* ---------- ABOUT ---------- */
 
             .about-grid {
                 grid-template-columns: 1fr;
+
+                gap: 30px;
             }
+
+            .about-text h3 {
+                font-size: 27px;
+            }
+
+            .about-text p {
+                font-size: 15px;
+            }
+
+            .about-highlight {
+                padding: 30px 25px;
+            }
+
+
+            /* ---------- SERVICES ---------- */
 
             .services-grid,
             .design-grid,
@@ -1141,86 +1616,301 @@
                 grid-template-columns: 1fr;
             }
 
+            .service-card {
+                padding: 28px;
+            }
+
+
+            /* ---------- DESIGN PROJECTS ---------- */
+
+            .design-note {
+                margin: -5px auto 35px;
+
+                padding: 18px;
+
+                font-size: 13px;
+
+                line-height: 1.6;
+            }
+
+            .design-card img {
+                aspect-ratio: 4 / 3;
+            }
+
+
+            /* ---------- PORTFOLIO ---------- */
+
+            .portfolio-card {
+                min-height: 190px;
+
+                padding: 27px;
+            }
+
+
+            /* ---------- POSTERS ---------- */
+
             .poster-grid {
                 grid-template-columns: repeat(2, 1fr);
+
+                gap: 15px;
             }
+
+            .poster-card {
+                border-radius: 15px;
+            }
+
+
+            /* ---------- PROCESS ---------- */
 
             .process-grid {
                 grid-template-columns: 1fr;
             }
 
+            .process-card {
+                padding: 27px;
+            }
+
+
+            /* ---------- CREATIVE STYLE ---------- */
+
+            .style-box {
+                padding: 45px 25px;
+
+                border-radius: 25px;
+            }
+
+            .style-box h3 {
+                font-size: 27px;
+            }
+
+            .style-box p {
+                font-size: 15px;
+            }
+
+
+            /* ---------- CONTACT ---------- */
+
+            .contact-box h2 {
+                font-size: 2.7rem;
+            }
+
+            .contact-box p {
+                font-size: 15px;
+            }
+
+            .contact .btn {
+                width: 100%;
+            }
+
+
+            /* ---------- FOOTER ---------- */
+
             .footer-content {
                 flex-direction: column;
+
                 text-align: center;
+
+                gap: 8px;
+            }
+
+            .footer-content p {
+                font-size: 12px;
             }
         }
 
+
+        /* ==================================================
+           SMALL PHONES
+        ================================================== */
+
         @media (max-width: 480px) {
 
-            section {
-                padding: 75px 0;
+            .nav-container {
+                width: 90%;
+            }
+
+            .logo {
+                width: 45px;
+            }
+
+            .menu-toggle {
+                width: 42px;
+                height: 42px;
             }
 
             .hero-content {
-                padding: 70px 0;
+                width: 90%;
+
+                padding: 65px 0;
             }
 
             .hero h1 {
-                font-size: 3.3rem;
+                font-size: 3.15rem;
+
+                letter-spacing: -2px;
             }
 
             .hero p {
-                font-size: 16px;
+                font-size: 15px;
+            }
+
+            .hero-badge {
+                font-size: 11px;
+
+                padding: 8px 13px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+
+            .about-highlight {
+                padding: 25px 20px;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
+
+            .poster-grid {
+                grid-template-columns: 1fr 1fr;
+
+                gap: 12px;
+            }
+
+            .poster-card {
+                border-radius: 12px;
+            }
+
+            .portfolio-card {
+                min-height: 175px;
+
+                padding: 24px;
+            }
+
+            .style-box {
+                padding: 40px 20px;
+            }
+
+            .contact-box h2 {
+                font-size: 2.4rem;
+            }
+        }
+
+
+        /* ==================================================
+           VERY SMALL PHONES
+        ================================================== */
+
+        @media (max-width: 360px) {
+
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+
+            .hero-content {
+                width: 88%;
+            }
+
+            .container {
+                width: 88%;
             }
 
             .poster-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
+            .section-heading h2 {
+                font-size: 1.8rem;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- =========================
+
+    <!-- ==================================================
          HEADER
-    ========================== -->
+    ================================================== -->
 
     <header>
 
         <div class="nav-container">
 
-            <a href="#home">
-                <img src="logo.png" alt="NFCreatives Logo" style="width: 50px; height: auto;">
+            <a href="#home" class="logo-link">
+
+                <img
+                    src="logo.png"
+                    alt="NFCreatives Logo"
+                    class="logo"
+                >
+
             </a>
 
-            <nav>
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mainNav"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- NAVIGATION -->
+
+            <nav id="mainNav">
+
                 <a href="#home">Home</a>
+
                 <a href="#about">About</a>
+
                 <a href="#services">Services</a>
-                <a href="#design-projects">Design Projects</a>
+
+                <a href="#design-projects">
+                    Design Projects
+                </a>
+
                 <a href="#portfolio">Portfolio</a>
-                <a href="#posters">Poster Design</a>
-                <a href="commission.html">Commission</a>
-                <a href="#contact">Contact</a>
+
+                <a href="#posters">
+                    Poster Design
+                </a>
+
+                <a href="commission.html">
+                    Commission
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
             </nav>
-            
+
         </div>
 
     </header>
 
 
-    <!-- =========================
+    <!-- ==================================================
          HERO
-    ========================== -->
+    ================================================== -->
 
     <section class="hero" id="home">
 
@@ -1229,17 +1919,34 @@
         <div class="shape shape-three"></div>
         <div class="shape shape-four"></div>
 
+
         <div class="hero-content">
 
             <div class="hero-badge">
                 Creative Digital Services
             </div>
 
+
             <h1>
-                <span class="blue">Create.</span><br>
-                <span class="purple">Design.</span><br>
-                <span class="pink">Make an Impact.</span>
+
+                <span class="blue">
+                    Create.
+                </span>
+
+                <br>
+
+                <span class="purple">
+                    Design.
+                </span>
+
+                <br>
+
+                <span class="pink">
+                    Make an Impact.
+                </span>
+
             </h1>
+
 
             <p>
                 NFCreatives turns ideas into engaging digital content
@@ -1247,19 +1954,31 @@
                 digital services.
             </p>
 
+
             <div class="hero-buttons">
 
-                <a href="commission.html" class="btn btn-primary">
+                <a
+                    href="commission.html"
+                    class="btn btn-primary"
+                >
                     Request a Commission
                 </a>
 
-                <a href="#services" class="btn btn-outline">
+
+                <a
+                    href="#services"
+                    class="btn btn-outline"
+                >
                     Explore Services
                 </a>
 
-                <a href="#portfolio" class="btn btn-outline">
+
+                <a
+                    href="#portfolio"
+                    class="btn btn-outline"
+                >
                     View Projects
-            </a>
+                </a>
 
             </div>
 
@@ -1268,9 +1987,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          ABOUT
-    ========================== -->
+    ================================================== -->
 
     <section class="about" id="about">
 
@@ -1278,7 +1997,9 @@
 
             <div class="section-heading">
 
-                <span>About NFCreatives</span>
+                <span>
+                    About NFCreatives
+                </span>
 
                 <h2>
                     Turning Ideas Into Creative Digital Content
@@ -1295,6 +2016,7 @@
                         Creative. Simple. Purposeful.
                     </h3>
 
+
                     <p>
                         NFCreatives is a creative digital service brand
                         that turns ideas into engaging visual content.
@@ -1302,6 +2024,7 @@
                         social media content, academic materials,
                         posters, and customized creative projects.
                     </p>
+
 
                     <p>
                         As a growing creative brand, we continue to
@@ -1329,9 +2052,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          SERVICES
-    ========================== -->
+    ================================================== -->
 
     <section class="services" id="services">
 
@@ -1339,9 +2062,13 @@
 
             <div class="section-heading">
 
-                <span>What We Do</span>
+                <span>
+                    What We Do
+                </span>
 
-                <h2>Creative Digital Services</h2>
+                <h2>
+                    Creative Digital Services
+                </h2>
 
                 <p>
                     Providing creative digital services that turn ideas
@@ -1353,11 +2080,16 @@
 
             <div class="services-grid">
 
+
                 <div class="service-card">
 
-                    <div class="service-icon">V</div>
+                    <div class="service-icon">
+                        V
+                    </div>
 
-                    <h3>Video Editing</h3>
+                    <h3>
+                        Video Editing
+                    </h3>
 
                     <p>
                         Creating engaging video content for personal,
@@ -1369,9 +2101,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">G</div>
+                    <div class="service-icon">
+                        G
+                    </div>
 
-                    <h3>Graphic Design</h3>
+                    <h3>
+                        Graphic Design
+                    </h3>
 
                     <p>
                         Creating clean and creative digital visuals
@@ -1383,9 +2119,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">I</div>
+                    <div class="service-icon">
+                        I
+                    </div>
 
-                    <h3>Infographics</h3>
+                    <h3>
+                        Infographics
+                    </h3>
 
                     <p>
                         Turning information and ideas into simple,
@@ -1397,9 +2137,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">S</div>
+                    <div class="service-icon">
+                        S
+                    </div>
 
-                    <h3>Social Media Content</h3>
+                    <h3>
+                        Social Media Content
+                    </h3>
 
                     <p>
                         Creating engaging visuals while building our
@@ -1411,9 +2155,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">A</div>
+                    <div class="service-icon">
+                        A
+                    </div>
 
-                    <h3>Academic Materials</h3>
+                    <h3>
+                        Academic Materials
+                    </h3>
 
                     <p>
                         Designing presentations, posters, layouts,
@@ -1425,9 +2173,13 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">C</div>
+                    <div class="service-icon">
+                        C
+                    </div>
 
-                    <h3>Creative Projects</h3>
+                    <h3>
+                        Creative Projects
+                    </h3>
 
                     <p>
                         Developing customized digital materials based
@@ -1443,19 +2195,26 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          DESIGN PROJECTS
-    ========================== -->
+    ================================================== -->
 
-    <section class="design-projects" id="design-projects">
+    <section
+        class="design-projects"
+        id="design-projects"
+    >
 
         <div class="container">
 
             <div class="section-heading">
 
-                <span>Selected Work</span>
+                <span>
+                    Selected Work
+                </span>
 
-                <h2>Selected Design Projects</h2>
+                <h2>
+                    Selected Design Projects
+                </h2>
 
                 <p>
                     A selection of visual projects that showcase my
@@ -1467,7 +2226,10 @@
 
             <div class="design-note">
 
-                <strong>Design Note:</strong>
+                <strong>
+                    Design Note:
+                </strong>
+
                 Some projects in this section were created by customizing
                 Canva templates and design resources. The displayed work
                 represents my customization, layout decisions, editing,
@@ -1478,16 +2240,20 @@
 
             <div class="design-grid">
 
+
                 <div class="design-card">
 
                     <img
                         src="graphicdesign1.png"
                         alt="Design Project 01"
+                        loading="lazy"
                     >
 
                     <div class="design-info">
 
-                        <h3>Design Project 01</h3>
+                        <h3>
+                            Design Project 01
+                        </h3>
 
                         <p>
                             Canva-Based Design Customization
@@ -1503,11 +2269,14 @@
                     <img
                         src="graphicdesign2.png"
                         alt="Design Project 02"
+                        loading="lazy"
                     >
 
                     <div class="design-info">
 
-                        <h3>Design Project 02</h3>
+                        <h3>
+                            Design Project 02
+                        </h3>
 
                         <p>
                             Canva-Based Design Customization
@@ -1523,11 +2292,14 @@
                     <img
                         src="graphicdesign3.png"
                         alt="Design Project 03"
+                        loading="lazy"
                     >
 
                     <div class="design-info">
 
-                        <h3>Design Project 03</h3>
+                        <h3>
+                            Design Project 03
+                        </h3>
 
                         <p>
                             Canva-Based Design Customization
@@ -1543,11 +2315,14 @@
                     <img
                         src="graphicdesign4.png"
                         alt="Design Project 04"
+                        loading="lazy"
                     >
 
                     <div class="design-info">
 
-                        <h3>Design Project 04</h3>
+                        <h3>
+                            Design Project 04
+                        </h3>
 
                         <p>
                             Canva-Based Design Customization
@@ -1563,11 +2338,14 @@
                     <img
                         src="graphicdesign5.png"
                         alt="Design Project 05"
+                        loading="lazy"
                     >
 
                     <div class="design-info">
 
-                        <h3>Design Project 05</h3>
+                        <h3>
+                            Design Project 05
+                        </h3>
 
                         <p>
                             Canva-Based Design Customization
@@ -1583,11 +2361,14 @@
                     <img
                         src="graphicdesign6.png"
                         alt="Design Project 06"
+                        loading="lazy"
                     >
 
                     <div class="design-info">
 
-                        <h3>Design Project 06</h3>
+                        <h3>
+                            Design Project 06
+                        </h3>
 
                         <p>
                             Canva-Based Design Customization
@@ -1604,19 +2385,26 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          PORTFOLIO
-    ========================== -->
+    ================================================== -->
 
-    <section class="portfolio" id="portfolio">
+    <section
+        class="portfolio"
+        id="portfolio"
+    >
 
         <div class="container">
 
             <div class="section-heading">
 
-                <span>Our Work</span>
+                <span>
+                    Our Work
+                </span>
 
-                <h2>Creative Portfolio</h2>
+                <h2>
+                    Creative Portfolio
+                </h2>
 
                 <p>
                     A growing collection of creative digital projects
@@ -1628,11 +2416,16 @@
 
             <div class="portfolio-grid">
 
+
                 <div class="portfolio-card">
 
-                    <span>01</span>
+                    <span>
+                        01
+                    </span>
 
-                    <h3>Video Projects</h3>
+                    <h3>
+                        Video Projects
+                    </h3>
 
                     <p>
                         Creative video editing and digital storytelling projects.
@@ -1643,9 +2436,13 @@
 
                 <div class="portfolio-card">
 
-                    <span>02</span>
+                    <span>
+                        02
+                    </span>
 
-                    <h3>Social Media Content</h3>
+                    <h3>
+                        Social Media Content
+                    </h3>
 
                     <p>
                         Visual content created for social media platforms.
@@ -1656,9 +2453,13 @@
 
                 <div class="portfolio-card">
 
-                    <span>03</span>
+                    <span>
+                        03
+                    </span>
 
-                    <h3>Infographics</h3>
+                    <h3>
+                        Infographics
+                    </h3>
 
                     <p>
                         Clear and engaging visual presentations of information.
@@ -1669,9 +2470,13 @@
 
                 <div class="portfolio-card">
 
-                    <span>04</span>
+                    <span>
+                        04
+                    </span>
 
-                    <h3>Academic Materials</h3>
+                    <h3>
+                        Academic Materials
+                    </h3>
 
                     <p>
                         Digital materials designed for academic and educational use.
@@ -1682,9 +2487,13 @@
 
                 <div class="portfolio-card">
 
-                    <span>05</span>
+                    <span>
+                        05
+                    </span>
 
-                    <h3>Digital Layouts</h3>
+                    <h3>
+                        Digital Layouts
+                    </h3>
 
                     <p>
                         Creative layouts for posters, publications,
@@ -1696,9 +2505,13 @@
 
                 <div class="portfolio-card">
 
-                    <span>06</span>
+                    <span>
+                        06
+                    </span>
 
-                    <h3>Custom Projects</h3>
+                    <h3>
+                        Custom Projects
+                    </h3>
 
                     <p>
                         Customized creative materials based on
@@ -1714,19 +2527,26 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          POSTER DESIGN
-    ========================== -->
+    ================================================== -->
 
-    <section class="poster-design" id="posters">
+    <section
+        class="poster-design"
+        id="posters"
+    >
 
         <div class="container">
 
             <div class="section-heading">
 
-                <span>Poster Collection</span>
+                <span>
+                    Poster Collection
+                </span>
 
-                <h2>Poster Design</h2>
+                <h2>
+                    Poster Design
+                </h2>
 
                 <p>
                     Selected poster designs created and customized
@@ -1738,32 +2558,81 @@
 
             <div class="poster-grid">
 
-                <div class="poster-card">
-                    <img src="poster1.jpg" alt="Poster Design 01">
-                </div>
 
                 <div class="poster-card">
-                    <img src="Poster2.jpg" alt="Poster Design 02">
+
+                    <img
+                        src="poster1.jpg"
+                        alt="Poster Design 01"
+                        loading="lazy"
+                    >
+
                 </div>
 
-                <div class="poster-card">
-                    <img src="poster3.jpg" alt="Poster Design 03">
-                </div>
 
                 <div class="poster-card">
-                    <img src="poster4.jpg" alt="Poster Design 04">
+
+                    <img
+                        src="Poster2.jpg"
+                        alt="Poster Design 02"
+                        loading="lazy"
+                    >
+
                 </div>
 
-                <div class="poster-card">
-                    <img src="poster5.jpg" alt="Poster Design 05">
-                </div>
 
                 <div class="poster-card">
-                    <img src="poster6.jpg" alt="Poster Design 06">
+
+                    <img
+                        src="poster3.jpg"
+                        alt="Poster Design 03"
+                        loading="lazy"
+                    >
+
                 </div>
 
+
                 <div class="poster-card">
-                    <img src="poster7.jpg" alt="Poster Design 07">
+
+                    <img
+                        src="poster4.jpg"
+                        alt="Poster Design 04"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="poster-card">
+
+                    <img
+                        src="poster5.jpg"
+                        alt="Poster Design 05"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="poster-card">
+
+                    <img
+                        src="poster6.jpg"
+                        alt="Poster Design 06"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="poster-card">
+
+                    <img
+                        src="poster7.jpg"
+                        alt="Poster Design 07"
+                        loading="lazy"
+                    >
+
                 </div>
 
             </div>
@@ -1773,19 +2642,26 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          CREATIVE PROCESS
-    ========================== -->
+    ================================================== -->
 
-    <section class="process" id="process">
+    <section
+        class="process"
+        id="process"
+    >
 
         <div class="container">
 
             <div class="section-heading">
 
-                <span>How We Work</span>
+                <span>
+                    How We Work
+                </span>
 
-                <h2>Our Creative Process</h2>
+                <h2>
+                    Our Creative Process
+                </h2>
 
                 <p>
                     A simple process that helps us turn ideas
@@ -1797,11 +2673,16 @@
 
             <div class="process-grid">
 
+
                 <div class="process-card">
 
-                    <div class="process-number">1</div>
+                    <div class="process-number">
+                        1
+                    </div>
 
-                    <h3>Understand</h3>
+                    <h3>
+                        Understand
+                    </h3>
 
                     <p>
                         We learn about your idea, purpose, audience,
@@ -1813,9 +2694,13 @@
 
                 <div class="process-card">
 
-                    <div class="process-number">2</div>
+                    <div class="process-number">
+                        2
+                    </div>
 
-                    <h3>Create</h3>
+                    <h3>
+                        Create
+                    </h3>
 
                     <p>
                         We plan and turn your ideas into engaging
@@ -1827,9 +2712,13 @@
 
                 <div class="process-card">
 
-                    <div class="process-number">3</div>
+                    <div class="process-number">
+                        3
+                    </div>
 
-                    <h3>Refine</h3>
+                    <h3>
+                        Refine
+                    </h3>
 
                     <p>
                         We review the work and make adjustments
@@ -1841,9 +2730,13 @@
 
                 <div class="process-card">
 
-                    <div class="process-number">4</div>
+                    <div class="process-number">
+                        4
+                    </div>
 
-                    <h3>Deliver</h3>
+                    <h3>
+                        Deliver
+                    </h3>
 
                     <p>
                         We finalize and provide your completed
@@ -1859,9 +2752,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          CREATIVE STYLE
-    ========================== -->
+    ================================================== -->
 
     <section class="design-style">
 
@@ -1869,7 +2762,9 @@
 
             <div class="style-box">
 
-                <h3>Our Creative Style</h3>
+                <h3>
+                    Our Creative Style
+                </h3>
 
                 <p>
                     NFCreatives uses digital design tools to create
@@ -1885,28 +2780,35 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          CONTACT
-    ========================== -->
+    ================================================== -->
 
-    <section class="contact" id="contact">
+    <section
+        class="contact"
+        id="contact"
+    >
 
         <div class="container">
 
             <div class="contact-box">
 
-                <h2>Have an Idea?</h2>
+                <h2>
+                    Have an Idea?
+                </h2>
 
                 <p>
                     Let's turn your idea into something creative,
                     meaningful, and visually engaging.
                 </p>
 
-                 <a
+
+                <a
                     href="https://www.facebook.com/profile.php?id=61594493092946"
                     class="btn btn-primary"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                >
                     Message Us on Facebook
                 </a>
 
@@ -1917,9 +2819,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          FOOTER
-    ========================== -->
+    ================================================== -->
 
     <footer>
 
@@ -1927,7 +2829,11 @@
 
             <p>
                 © 2026
-                <span class="footer-brand">NFCreatives</span>.
+
+                <span class="footer-brand">
+                    NFCreatives
+                </span>.
+
                 All rights reserved.
             </p>
 
@@ -1938,6 +2844,134 @@
         </div>
 
     </footer>
+
+
+    <!-- ==================================================
+         MOBILE MENU JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const mainNav =
+            document.getElementById("mainNav");
+
+
+        /* Open / Close Mobile Menu */
+
+        menuToggle.addEventListener("click", function () {
+
+            const isOpen =
+                mainNav.classList.toggle("active");
+
+            menuToggle.classList.toggle(
+                "active",
+                isOpen
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+        });
+
+
+        /* Close menu when a navigation link is selected */
+
+        const navLinks =
+            mainNav.querySelectorAll("a");
+
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mainNav.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+            });
+
+        });
+
+
+        /* Close menu when clicking outside the header */
+
+        document.addEventListener("click", function (event) {
+
+            const header =
+                document.querySelector("header");
+
+            if (
+                !header.contains(event.target) &&
+                mainNav.classList.contains("active")
+            ) {
+
+                mainNav.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+            }
+
+        });
+
+
+        /* Reset mobile menu when returning to desktop */
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 750) {
+
+                mainNav.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+            }
+
+        });
+
+    </script>
+
 
 </body>
 </html>
