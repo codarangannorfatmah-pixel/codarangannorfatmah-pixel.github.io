@@ -453,12 +453,15 @@
     ========================== -->
 
     <header>
+
         <div class="nav-container">
 
             <a href="index.html" class="logo">
 
-                <!-- Change this image filename if your logo has a different name -->
-                <img src="logo.png" alt="NFCreatives Logo">
+                <img
+                    src="logo.png"
+                    alt="NFCreatives Logo"
+                >
 
                 <div class="logo-text">
                     NF<span>Creatives</span>
@@ -467,16 +470,30 @@
             </a>
 
             <nav>
-                <a href="index.html">Home</a>
-                <a href="index.html#services">Services</a>
-                <a href="index.html#portfolio">Portfolio</a>
 
-                <a href="commission.html" class="nav-button">
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#services">
+                    Services
+                </a>
+
+                <a href="index.html#portfolio">
+                    Portfolio
+                </a>
+
+                <a
+                    href="commission.html"
+                    class="nav-button"
+                >
                     Commission
                 </a>
+
             </nav>
 
         </div>
+
     </header>
 
 
@@ -500,7 +517,7 @@
 
 
     <!-- =========================
-         COMMISSION FORM
+         FORM
     ========================== -->
 
     <section class="form-section">
@@ -509,11 +526,13 @@
 
             <div class="section-title">
 
-                <h2>Commission Request Form</h2>
+                <h2>
+                    Commission Request Form
+                </h2>
 
                 <p>
-                    Please provide the details below so we can better
-                    understand your project.
+                    Please provide the details below so we can
+                    better understand your project.
                 </p>
 
             </div>
@@ -523,7 +542,7 @@
 
                 <div class="form-grid">
 
-                    <!-- CUSTOMER NAME -->
+                    <!-- FULL NAME -->
 
                     <div class="form-group">
 
@@ -725,7 +744,7 @@
                     </div>
 
 
-                    <!-- FILE -->
+                    <!-- REFERENCE FILE -->
 
                     <div class="form-group full-width">
 
@@ -768,7 +787,7 @@
                 </div>
 
 
-                <!-- INFO -->
+                <!-- INFORMATION BOX -->
 
                 <div class="info-box">
 
@@ -786,7 +805,7 @@
                 </div>
 
 
-                <!-- SUBMIT -->
+                <!-- SUBMIT BUTTON -->
 
                 <div class="submit-area">
 
@@ -826,7 +845,7 @@
 
 
     <!-- ==================================================
-         SUPABASE
+         SUPABASE JAVASCRIPT
     ================================================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -851,9 +870,8 @@
         =====================================================
         CREATE SUPABASE CLIENT
 
-        IMPORTANT:
         We use "supabaseClient" instead of "supabase"
-        to avoid the previous duplicate declaration error.
+        to avoid duplicate declaration problems.
         =====================================================
         */
 
@@ -871,16 +889,24 @@
         */
 
         const commissionForm =
-            document.getElementById("commissionForm");
+            document.getElementById(
+                "commissionForm"
+            );
 
         const submitButton =
-            document.getElementById("submitButton");
+            document.getElementById(
+                "submitButton"
+            );
 
         const formMessage =
-            document.getElementById("formMessage");
+            document.getElementById(
+                "formMessage"
+            );
 
         const referenceFile =
-            document.getElementById("reference_file");
+            document.getElementById(
+                "reference_file"
+            );
 
 
         /*
@@ -889,9 +915,13 @@
         =====================================================
         */
 
-        function showMessage(message, type) {
+        function showMessage(
+            message,
+            type
+        ) {
 
-            formMessage.textContent = message;
+            formMessage.textContent =
+                message;
 
             formMessage.className =
                 "form-message " + type;
@@ -901,7 +931,7 @@
 
         /*
         =====================================================
-        FORM SUBMISSION
+        COMMISSION FORM SUBMISSION
         =====================================================
         */
 
@@ -923,10 +953,11 @@
 
 
                 /*
-                Disable button
+                Disable submit button
                 */
 
-                submitButton.disabled = true;
+                submitButton.disabled =
+                    true;
 
                 submitButton.textContent =
                     "Submitting...";
@@ -935,64 +966,103 @@
                 try {
 
                     /*
-                    =============================================
+                    =========================================
                     GET FORM VALUES
-                    =============================================
+                    =========================================
                     */
 
                     const customerName =
-                        document.getElementById("customer_name")
+                        document
+                        .getElementById(
+                            "customer_name"
+                        )
                         .value
                         .trim();
+
 
                     const email =
-                        document.getElementById("email")
+                        document
+                        .getElementById(
+                            "email"
+                        )
                         .value
                         .trim();
+
 
                     const phone =
-                        document.getElementById("phone")
+                        document
+                        .getElementById(
+                            "phone"
+                        )
                         .value
                         .trim();
+
 
                     const service =
-                        document.getElementById("service")
+                        document
+                        .getElementById(
+                            "service"
+                        )
                         .value;
+
 
                     const output =
-                        document.getElementById("output")
+                        document
+                        .getElementById(
+                            "output"
+                        )
                         .value
                         .trim();
+
 
                     const description =
-                        document.getElementById("description")
+                        document
+                        .getElementById(
+                            "description"
+                        )
                         .value
                         .trim();
+
 
                     const size =
-                        document.getElementById("size")
+                        document
+                        .getElementById(
+                            "size"
+                        )
                         .value
                         .trim();
+
 
                     const deadline =
-                        document.getElementById("deadline")
+                        document
+                        .getElementById(
+                            "deadline"
+                        )
                         .value;
 
+
                     const budget =
-                        document.getElementById("budget")
+                        document
+                        .getElementById(
+                            "budget"
+                        )
                         .value
                         .trim();
 
+
                     const referenceLink =
-                        document.getElementById("reference_link")
+                        document
+                        .getElementById(
+                            "reference_link"
+                        )
                         .value
                         .trim();
 
 
                     /*
-                    =============================================
-                    VALIDATE FILE
-                    =============================================
+                    =========================================
+                    CHECK FILE
+                    =========================================
                     */
 
                     let selectedFile = null;
@@ -1012,6 +1082,7 @@
 
                         const maxSize =
                             10 * 1024 * 1024;
+
 
                         if (
                             selectedFile.size >
@@ -1053,18 +1124,19 @@
 
 
                     /*
-                    =============================================
-                    FILE URL / PATH
-                    =============================================
+                    =========================================
+                    UPLOADED FILE PATH
+                    =========================================
                     */
 
-                    let uploadedFilePath = null;
+                    let uploadedFilePath =
+                        null;
 
 
                     /*
-                    =============================================
+                    =========================================
                     UPLOAD FILE IF PROVIDED
-                    =============================================
+                    =========================================
                     */
 
                     if (selectedFile) {
@@ -1074,8 +1146,7 @@
 
 
                         const safeName =
-                            originalName
-                            .replace(
+                            originalName.replace(
                                 /[^a-zA-Z0-9._-]/g,
                                 "-"
                             );
@@ -1093,13 +1164,18 @@
                         } =
                             await supabaseClient
                             .storage
-                            .from("commission-references")
+                            .from(
+                                "commission-references"
+                            )
                             .upload(
                                 filePath,
                                 selectedFile,
                                 {
-                                    cacheControl: "3600",
-                                    upsert: false
+                                    cacheControl:
+                                        "3600",
+
+                                    upsert:
+                                        false
                                 }
                             );
 
@@ -1125,19 +1201,26 @@
 
 
                     /*
-                    =============================================
-                    INSERT COMMISSION REQUEST
-                    =============================================
+                    =========================================
+                    INSERT INTO DATABASE
+                    =========================================
+
+                    IMPORTANT:
+                    There is NO .select() here.
+
+                    This prevents Supabase from requesting
+                    the inserted row back.
+                    =========================================
                     */
 
-                    const {
-                        data,
-                        error
-                    } =
+                    const { error } =
                         await supabaseClient
-                        .from("commission_requests")
+                        .from(
+                            "commission_requests"
+                        )
                         .insert([
                             {
+
                                 customer_name:
                                     customerName,
 
@@ -1172,15 +1255,15 @@
 
                                 status:
                                     "Pending"
+
                             }
-                        ])
-                        .select();
+                        ]);
 
 
                     /*
-                    =============================================
-                    CHECK DATABASE ERROR
-                    =============================================
+                    =========================================
+                    DATABASE ERROR
+                    =========================================
                     */
 
                     if (error) {
@@ -1198,14 +1281,13 @@
 
 
                     /*
-                    =============================================
+                    =========================================
                     SUCCESS
-                    =============================================
+                    =========================================
                     */
 
                     console.log(
-                        "Commission request submitted:",
-                        data
+                        "Commission request submitted successfully."
                     );
 
 
@@ -1243,7 +1325,8 @@
                     Re-enable button
                     */
 
-                    submitButton.disabled = false;
+                    submitButton.disabled =
+                        false;
 
                     submitButton.textContent =
                         "Submit Commission Request";
