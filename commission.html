@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NFCreatives | Creative Digital Services</title>
+    <title>NFCreatives | Commission Request</title>
 
     <style>
         :root {
@@ -15,16 +15,13 @@
             --cyan: #10c7d8;
             --yellow: #ffc928;
             --orange: #ff8a34;
-
-            /* Soft off-white background */
-            --background: #f7f7f3;
-
-            /* White for cards and content sections */
-            --white: #ffffff;
-
             --dark: #172033;
             --gray: #667085;
-            --light-gray: #eef1f6;
+            --light: #f6f8fc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --success: #16803c;
+            --danger: #d92d20;
         }
 
         * {
@@ -39,64 +36,56 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: var(--background);
+            background: var(--white);
             color: var(--dark);
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
         /* =========================
            HEADER
-        ========================== */
+        ========================= */
 
         header {
-            background: rgba(255, 255, 255, 0.96);
-            padding: 14px 6%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
         }
 
         .logo img {
-            width: 52px;
-            height: 52px;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: var(--deep-blue);
+            width: 125px;
+            height: auto;
+            display: block;
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 25px;
         }
 
         nav a {
+            text-decoration: none;
+            color: var(--dark);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 15px;
             transition: 0.3s ease;
         }
 
@@ -104,58 +93,40 @@
             color: var(--blue);
         }
 
-        .nav-button {
+        .commission-nav {
             background: linear-gradient(
                 135deg,
                 var(--blue),
                 var(--purple)
             );
             color: white !important;
-            padding: 10px 18px;
+            padding: 9px 16px;
             border-radius: 25px;
         }
 
-        .nav-button:hover {
-            transform: translateY(-2px);
+        .commission-nav:hover {
+            color: white !important;
+            transform: translateY(-1px);
         }
 
         /* =========================
            HERO
-        ========================== */
+        ========================= */
 
         .hero {
-            min-height: 78vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 6%;
             background:
-                radial-gradient(
-                    circle at top left,
-                    rgba(23, 105, 255, 0.10),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at bottom right,
-                    rgba(240, 79, 157, 0.10),
-                    transparent 35%
-                ),
-                var(--background);
-        }
+                radial-gradient(circle at top left, rgba(23, 105, 255, 0.14), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(240, 79, 157, 0.13), transparent 35%),
+                var(--light);
 
-        .hero-content {
-            max-width: 850px;
+            padding: 75px 20px 65px;
+            text-align: center;
         }
 
         .hero h1 {
-            font-size: clamp(2.4rem, 6vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 22px;
-            font-weight: 900;
-        }
-
-        .hero h1 span {
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.15;
+            margin-bottom: 15px;
             background: linear-gradient(
                 90deg,
                 var(--blue),
@@ -164,385 +135,370 @@
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero p {
             max-width: 700px;
             margin: auto;
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 18px;
         }
 
-        .hero-buttons {
-            margin-top: 32px;
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        .main-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 20px;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 45px;
+            align-items: start;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 13px 24px;
-            border-radius: 30px;
-            font-weight: 700;
-            transition: 0.3s ease;
+        /* =========================
+           LEFT SIDE
+        ========================= */
+
+        .left-content h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
         }
 
-        .btn-primary {
-            color: white;
+        .left-content > p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            padding: 25px;
+            background: var(--light);
+            border-radius: 18px;
+            margin-bottom: 18px;
+            border: 1px solid var(--border);
+        }
+
+        .info-card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .info-card p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            color: var(--gray);
+        }
+
+        .service-list li::before {
+            content: "✓";
+            color: var(--blue);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .contact-box {
             background: linear-gradient(
                 135deg,
                 var(--blue),
                 var(--purple)
             );
+            color: white;
+            border: none;
         }
 
-        .btn-secondary {
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-container {
             background: white;
-            color: var(--deep-blue);
-            border: 2px solid var(--blue);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 35px;
+            box-shadow: 0 15px 45px rgba(23, 32, 51, 0.08);
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(23, 105, 255, 0.15);
+        .form-container h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
         }
 
-        /* =========================
-           GENERAL SECTIONS
-        ========================== */
-
-        section {
-            padding: 80px 6%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 2.3rem;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
+        .form-subtitle {
             color: var(--gray);
-            max-width: 650px;
-            margin: auto;
+            margin-bottom: 30px;
         }
 
-        /* =========================
-           ABOUT
-        ========================== */
-
-        .about {
-            background: var(--white);
-        }
-
-        .about-container {
-            max-width: 1000px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about-container p {
-            color: var(--gray);
-            margin-bottom: 18px;
-        }
-
-        .highlight {
-            color: var(--blue);
-            font-weight: 700;
-        }
-
-        /* =========================
-           SERVICES
-        ========================== */
-
-        .services {
-            background: var(--background);
-        }
-
-        .service-grid {
-            max-width: 1100px;
-            margin: auto;
+        .form-row {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
         }
 
-        .service-card {
-            background: var(--white);
-            padding: 30px 22px;
-            border-radius: 18px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-            transition: 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        .service-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 7px;
         }
 
-        .service-icon {
-            width: 65px;
-            height: 65px;
-            margin: 0 auto 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 18px;
-            color: white;
-            font-size: 1.7rem;
-            font-weight: bold;
+        .required {
+            color: var(--danger);
         }
 
-        .icon-blue {
-            background: var(--blue);
-        }
-
-        .icon-purple {
-            background: var(--purple);
-        }
-
-        .icon-pink {
-            background: var(--pink);
-        }
-
-        .icon-orange {
-            background: var(--orange);
-        }
-
-        .service-card h3 {
-            margin-bottom: 10px;
-            font-size: 1.15rem;
-        }
-
-        .service-card p {
-            color: var(--gray);
-            font-size: 0.92rem;
-        }
-
-        /* =========================
-           PORTFOLIO
-        ========================== */
-
-        .portfolio {
-            background: var(--white);
-        }
-
-        .portfolio-grid {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            background: var(--light-gray);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: 0.3s ease;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .portfolio-item img {
+        input,
+        select,
+        textarea {
             width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
+            padding: 13px 14px;
+            border: 1px solid #d0d5dd;
+            border-radius: 10px;
+            background: white;
+            color: var(--dark);
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s ease;
         }
 
-        /* =========================
-           COMMISSION CTA
-        ========================== */
-
-        .commission {
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(23, 105, 255, 0.08),
-                    rgba(123, 77, 255, 0.08),
-                    rgba(240, 79, 157, 0.08)
-                ),
-                var(--background);
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.10);
         }
 
-        .commission-box {
-            max-width: 950px;
-            margin: auto;
-            text-align: center;
-            background: var(--white);
-            border-radius: 24px;
-            padding: 55px 30px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+        textarea {
+            min-height: 130px;
+            resize: vertical;
         }
 
-        .commission-box h2 {
-            font-size: 2.2rem;
-            margin-bottom: 14px;
+        input[type="file"] {
+            padding: 10px;
+            background: var(--light);
         }
 
-        .commission-box p {
-            max-width: 650px;
-            margin: 0 auto 25px;
+        .file-note {
+            margin-top: 6px;
             color: var(--gray);
+            font-size: 12px;
         }
 
-        .bargain {
-            margin-top: 18px;
-            font-weight: 700;
-            color: var(--pink);
-        }
-
-        /* =========================
-           CONTACT
-        ========================== */
-
-        .contact {
-            background: var(--white);
-        }
-
-        .contact-container {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .contact-container p {
-            color: var(--gray);
-            margin-bottom: 25px;
-        }
-
-        .facebook-button {
-            display: inline-flex;
-            align-items: center;
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
             gap: 10px;
-            background: #1877f2;
+            margin: 5px 0 25px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-top: 5px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            font-size: 13px;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 12px;
             color: white;
-            padding: 13px 24px;
-            border-radius: 30px;
+            font-size: 16px;
             font-weight: 700;
+            cursor: pointer;
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                var(--purple),
+                var(--pink)
+            );
             transition: 0.3s ease;
         }
 
-        .facebook-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(24, 119, 242, 0.25);
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(123, 77, 255, 0.25);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* =========================
+           STATUS MESSAGE
+        ========================= */
+
+        .status-message {
+            display: none;
+            margin-bottom: 20px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .status-message.success {
+            display: block;
+            background: #ecfdf3;
+            color: var(--success);
+            border: 1px solid #abefc6;
+        }
+
+        .status-message.error {
+            display: block;
+            background: #fef3f2;
+            color: var(--danger);
+            border: 1px solid #fecdca;
         }
 
         /* =========================
            FOOTER
-        ========================== */
+        ========================= */
 
         footer {
             background: var(--dark);
             color: white;
             text-align: center;
-            padding: 30px 6%;
+            padding: 30px 20px;
         }
 
         footer p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .footer-brand {
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin-bottom: 8px;
+            color: #b7c0d1;
+            font-size: 14px;
         }
 
         /* =========================
-           MOBILE RESPONSIVE
-        ========================== */
+           MOBILE
+        ========================= */
 
         @media (max-width: 900px) {
 
-            .service-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
             }
 
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .left-content {
+                order: 2;
             }
 
-            nav {
-                gap: 14px;
+            .form-container {
+                order: 1;
             }
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
 
-            header {
-                padding: 12px 5%;
+            .nav-container {
+                padding: 9px 15px;
             }
 
             .logo img {
-                width: 45px;
-                height: 45px;
-            }
-
-            .logo-text {
-                font-size: 1.1rem;
+                width: 105px;
             }
 
             nav {
-                display: none;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .commission-nav {
+                padding: 7px 10px;
             }
 
             .hero {
-                min-height: 70vh;
-                padding: 65px 5%;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
+                padding: 55px 18px 45px;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 16px;
             }
 
-            section {
-                padding: 60px 5%;
+            .main-container {
+                padding: 45px 15px;
             }
 
-            .section-title h2 {
-                font-size: 1.9rem;
+            .form-container {
+                padding: 22px 18px;
+                border-radius: 17px;
             }
 
-            .service-grid {
+            .form-container h2 {
+                font-size: 25px;
+            }
+
+            .form-row {
                 grid-template-columns: 1fr;
+                gap: 0;
             }
 
-            .portfolio-grid {
-                grid-template-columns: 1fr;
+            .left-content h2 {
+                font-size: 25px;
             }
+        }
 
-            .commission-box {
-                padding: 40px 22px;
-            }
+        @media (max-width: 480px) {
 
-            .commission-box h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero-buttons {
+            .nav-container {
                 flex-direction: column;
-                align-items: stretch;
+                gap: 7px;
             }
 
-            .btn {
-                text-align: center;
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .info-card {
+                padding: 20px;
+            }
+
+            input,
+            select,
+            textarea {
+                font-size: 16px;
             }
         }
     </style>
@@ -552,333 +508,815 @@
 
     <!-- =========================
          HEADER
-    ========================== -->
+    ========================= -->
 
     <header>
+        <div class="nav-container">
 
-        <a href="#" class="logo">
-            <!-- Replace with your actual logo file -->
-            <img src="logo.png" alt="NFCreatives Logo">
-            <span class="logo-text">NFCreatives</span>
-        </a>
-
-        <nav>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-            <a href="commission.html" class="nav-button">
-                Commission
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="NFCreatives Logo">
             </a>
-        </nav>
 
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#portfolio">Portfolio</a>
+                <a href="commission.html" class="commission-nav">
+                    Commission
+                </a>
+            </nav>
+
+        </div>
     </header>
 
 
     <!-- =========================
          HERO
-    ========================== -->
+    ========================= -->
 
     <section class="hero">
 
-        <div class="hero-content">
+        <h1>Let's Bring Your Ideas to Life!</h1>
 
-            <h1>
-                Creative Ideas,
-                <span>Made Digital.</span>
-            </h1>
+        <p>
+            Tell us what you need, and let's create something
+            meaningful, creative, and made especially for you.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main class="main-container">
+
+        <!-- LEFT CONTENT -->
+
+        <section class="left-content">
+
+            <h2>Creative Services Made for You</h2>
 
             <p>
-                NFCreatives provides creative digital services designed
-                to turn ideas into engaging, useful, and meaningful
-                digital materials.
+                Whether you need something for school, work,
+                business, social media, or a personal project,
+                NFCreatives is here to help turn your ideas into
+                polished digital outputs.
             </p>
 
-            <div class="hero-buttons">
 
-                <a href="#services" class="btn btn-primary">
-                    Explore Services
+            <div class="info-card">
+
+                <h3>Our Services</h3>
+
+                <ul class="service-list">
+
+                    <li>Video Editing</li>
+
+                    <li>Graphic Design</li>
+
+                    <li>Posters & Infographics</li>
+
+                    <li>Layouts & Presentations</li>
+
+                    <li>Proofreading</li>
+
+                    <li>Academic Materials</li>
+
+                    <li>Custom Creative Projects</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>Why Commission?</h3>
+
+                <p>
+                    Every project is different. By submitting a
+                    commission request, you can tell us exactly
+                    what you need, your preferred output, deadline,
+                    budget, and other important details.
+                </p>
+
+            </div>
+
+
+            <div class="info-card contact-box">
+
+                <h3>Have Questions?</h3>
+
+                <p>
+                    If you want to ask something before submitting
+                    your request, feel free to contact NFCreatives
+                    through our Facebook page.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=61594493092946"
+                    target="_blank"
+                    style="
+                        display:inline-block;
+                        background:white;
+                        color:#1769ff;
+                        padding:9px 16px;
+                        border-radius:20px;
+                        text-decoration:none;
+                        font-weight:700;
+                    "
+                >
+                    Contact Us on Facebook
                 </a>
 
-                <a href="commission.html" class="btn btn-secondary">
-                    Request a Commission
-                </a>
-
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
+        <!-- FORM -->
 
-    <section class="about" id="about">
+        <section class="form-container">
 
-        <div class="section-title">
+            <h2>Commission Request</h2>
 
-            <h2>About NFCreatives</h2>
-
-            <p>
-                Creative digital services for students, individuals,
-                organizations, and small businesses.
+            <p class="form-subtitle">
+                Please provide the details below so we can
+                understand your project better.
             </p>
 
-        </div>
 
-        <div class="about-container">
+            <!-- STATUS -->
 
-            <p>
-                <span class="highlight">NFCreatives</span> is a growing
-                creative digital services page focused on helping people
-                transform their ideas into visually engaging and useful
-                digital materials.
-            </p>
+            <div
+                id="statusMessage"
+                class="status-message"
+            ></div>
 
-            <p>
-                We offer services such as video editing, graphic design,
-                layouts, proofreading, academic materials, posters,
-                infographics, and customized digital projects.
-            </p>
 
-            <p>
-                We are continuously improving our services, building our
-                portfolio, and creating meaningful connections with our
-                audience.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         SERVICES
-    ========================== -->
-
-    <section class="services" id="services">
-
-        <div class="section-title">
-
-            <h2>Our Services</h2>
-
-            <p>
-                Choose from our creative digital services or talk to us
-                about a customized project.
-            </p>
-
-        </div>
-
-        <div class="service-grid">
-
-            <!-- Service 1 -->
-
-            <div class="service-card">
-
-                <div class="service-icon icon-blue">
-                    🎬
-                </div>
-
-                <h3>Video & Media</h3>
-
-                <p>
-                    Video editing, short-form content, presentations,
-                    and other digital media projects.
-                </p>
-
-            </div>
-
-
-            <!-- Service 2 -->
-
-            <div class="service-card">
-
-                <div class="service-icon icon-purple">
-                    🎨
-                </div>
-
-                <h3>Graphic Design</h3>
-
-                <p>
-                    Posters, flyers, infographics, social media graphics,
-                    and other visual materials.
-                </p>
-
-            </div>
-
-
-            <!-- Service 3 -->
-
-            <div class="service-card">
-
-                <div class="service-icon icon-pink">
-                    📚
-                </div>
-
-                <h3>Academic Materials</h3>
-
-                <p>
-                    Presentation materials, proofreading, layouts,
-                    research-related assistance, and other academic
-                    digital materials.
-                </p>
-
-            </div>
-
-
-            <!-- Service 4 -->
-
-            <div class="service-card">
-
-                <div class="service-icon icon-orange">
-                    ✨
-                </div>
-
-                <h3>Custom Projects</h3>
-
-                <p>
-                    Have a specific idea? Let's discuss your project and
-                    create something suited to your needs.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         PORTFOLIO
-    ========================== -->
-
-    <section class="portfolio" id="portfolio">
-
-        <div class="section-title">
-
-            <h2>Our Portfolio</h2>
-
-            <p>
-                A collection of selected creative and digital works.
-            </p>
-
-        </div>
-
-        <div class="portfolio-grid">
-
-            <div class="portfolio-item">
-                <img src="poster1.jpg" alt="NFCreatives Poster Design">
-            </div>
-
-            <div class="portfolio-item">
-                <img src="poster2.jpg" alt="NFCreatives Poster Design">
-            </div>
-
-            <div class="portfolio-item">
-                <img src="poster3.jpg" alt="NFCreatives Poster Design">
-            </div>
-
-            <div class="portfolio-item">
-                <img src="poster4.jpg" alt="NFCreatives Poster Design">
-            </div>
-
-            <div class="portfolio-item">
-                <img src="poster5.jpg" alt="NFCreatives Poster Design">
-            </div>
-
-            <div class="portfolio-item">
-                <img src="poster6.jpg" alt="NFCreatives Poster Design">
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         COMMISSION
-    ========================== -->
-
-    <section class="commission">
-
-        <div class="commission-box">
-
-            <h2>Have a Project in Mind?</h2>
-
-            <p>
-                Tell us what you need, and let's work together to turn
-                your idea into a creative digital project.
-            </p>
-
-            <a href="commission.html" class="btn btn-primary">
-                Request a Commission
-            </a>
-
-            <p class="bargain">
-                💬 Let's talk and bargain!
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
-    <section class="contact" id="contact">
-
-        <div class="section-title">
-
-            <h2>Let's Connect</h2>
-
-            <p>
-                Have questions, ideas, or a project you'd like to discuss?
-                Send us a message through our Facebook page.
-            </p>
-
-        </div>
-
-        <div class="contact-container">
-
-            <a
-                href="https://www.facebook.com/profile.php?id=61594493092946"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="facebook-button"
+            <form
+                id="commissionForm"
+                novalidate
             >
-                <span>f</span>
-                Visit Our Facebook Page
-            </a>
 
-        </div>
+                <!-- NAME + EMAIL -->
 
-    </section>
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            autocomplete="name"
+                            placeholder="Enter your full name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            autocomplete="email"
+                            placeholder="example@email.com"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT + SERVICE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="contact">
+                            Contact Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="contact"
+                            name="contact"
+                            autocomplete="tel"
+                            placeholder="09XXXXXXXXX"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="service">
+                            Service
+                            <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="service"
+                            name="service"
+                            required
+                        >
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option value="Video Editing">
+                                Video Editing
+                            </option>
+
+                            <option value="Graphic Design">
+                                Graphic Design
+                            </option>
+
+                            <option value="Poster / Infographic">
+                                Poster / Infographic
+                            </option>
+
+                            <option value="Layout / Presentation">
+                                Layout / Presentation
+                            </option>
+
+                            <option value="Proofreading">
+                                Proofreading
+                            </option>
+
+                            <option value="Academic Materials">
+                                Academic Materials
+                            </option>
+
+                            <option value="Custom Project">
+                                Custom Project
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OUTPUT -->
+
+                <div class="form-group">
+
+                    <label for="output">
+                        Desired Output
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="output"
+                        name="output"
+                        required
+                        placeholder="Example: 5-minute video, A4 poster, PowerPoint presentation"
+                    >
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Project Description
+                        <span class="required">*</span>
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        required
+                        placeholder="Tell us about your project, preferred style, content, instructions, or other important details."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SIZE + DEADLINE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="size">
+                            Size / Dimensions
+                        </label>
+
+                        <input
+                            type="text"
+                            id="size"
+                            name="size"
+                            placeholder="Example: A4, 1080 × 1920 px"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="deadline">
+                            Preferred Deadline
+                        </label>
+
+                        <input
+                            type="date"
+                            id="deadline"
+                            name="deadline"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- REFERENCE FILE -->
+
+                <div class="form-group">
+
+                    <label for="reference">
+                        Reference File
+                    </label>
+
+                    <input
+                        type="file"
+                        id="reference"
+                        name="reference"
+                        accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.ppt,.pptx"
+                    >
+
+                    <div class="file-note">
+                        Optional. Accepted: JPG, PNG, PDF, DOC, DOCX,
+                        PPT, PPTX.
+                    </div>
+
+                </div>
+
+
+                <!-- BUDGET -->
+
+                <div class="form-group">
+
+                    <label for="budget">
+                        Estimated Budget
+                    </label>
+
+                    <input
+                        type="number"
+                        id="budget"
+                        name="budget"
+                        min="0"
+                        step="1"
+                        placeholder="Example: 500"
+                    >
+
+                </div>
+
+
+                <!-- CONFIRMATION -->
+
+                <div class="checkbox-group">
+
+                    <input
+                        type="checkbox"
+                        id="confirmation"
+                        name="confirmation"
+                        required
+                    >
+
+                    <label for="confirmation">
+
+                        I confirm that the information I provided
+                        is accurate and I understand that submitting
+                        this form is a request and not yet a confirmed
+                        order.
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="submitButton"
+                >
+                    Submit Commission Request
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
 
 
     <!-- =========================
          FOOTER
-    ========================== -->
+    ========================= -->
 
     <footer>
 
-        <div class="footer-brand">
-            NFCreatives
-        </div>
-
         <p>
-            Creative Digital Services
-        </p>
-
-        <p>
-            © 2026 NFCreatives. All rights reserved.
+            © 2026 NFCreatives. Creative Digital Services.
         </p>
 
     </footer>
 
+
+    <!-- =========================
+         SUPABASE
+    ========================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <script>
+
+        /* =========================================
+           SUPABASE CONFIGURATION
+        ========================================= */
+
+        const SUPABASE_URL =
+            "https://fdahlwkhcgsisvyupxom.supabase.co";
+
+        const SUPABASE_PUBLISHABLE_KEY =
+            "sb_publishable_FgUaEbGQphxWKRzo5dGJ4A_5fopRfch";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_PUBLISHABLE_KEY
+            );
+
+
+        /* =========================================
+           FORM ELEMENTS
+        ========================================= */
+
+        const commissionForm =
+            document.getElementById("commissionForm");
+
+        const submitButton =
+            document.getElementById("submitButton");
+
+        const statusMessage =
+            document.getElementById("statusMessage");
+
+
+        /* =========================================
+           STATUS MESSAGE
+        ========================================= */
+
+        function showStatus(message, type) {
+
+            statusMessage.textContent = message;
+
+            statusMessage.className =
+                "status-message " + type;
+
+            statusMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
+
+        function clearStatus() {
+
+            statusMessage.textContent = "";
+
+            statusMessage.className =
+                "status-message";
+
+        }
+
+
+        /* =========================================
+           FORM SUBMISSION
+        ========================================= */
+
+        commissionForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                clearStatus();
+
+                /* -----------------------------
+                   GET FORM VALUES
+                ----------------------------- */
+
+                const customerName =
+                    document.getElementById("name").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const phone =
+                    document.getElementById("contact").value.trim();
+
+                const service =
+                    document.getElementById("service").value;
+
+                const output =
+                    document.getElementById("output").value.trim();
+
+                const description =
+                    document.getElementById("description").value.trim();
+
+                const size =
+                    document.getElementById("size").value.trim();
+
+                const deadline =
+                    document.getElementById("deadline").value;
+
+                const budget =
+                    document.getElementById("budget").value;
+
+                const referenceFile =
+                    document.getElementById("reference").files[0];
+
+
+                /* -----------------------------
+                   BASIC VALIDATION
+                ----------------------------- */
+
+                if (
+                    !customerName ||
+                    !email ||
+                    !service ||
+                    !output ||
+                    !description
+                ) {
+
+                    showStatus(
+                        "Please complete all required fields.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                if (
+                    !document.getElementById(
+                        "confirmation"
+                    ).checked
+                ) {
+
+                    showStatus(
+                        "Please confirm the information before submitting.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                /* -----------------------------
+                   DISABLE BUTTON
+                ----------------------------- */
+
+                submitButton.disabled = true;
+
+                submitButton.textContent =
+                    "Submitting...";
+
+
+                try {
+
+                    let referenceLink = null;
+
+
+                    /* =================================
+                       FILE UPLOAD
+                    ================================= */
+
+                    if (referenceFile) {
+
+                        console.log(
+                            "Uploading reference file to commission-link..."
+                        );
+
+
+                        const timestamp =
+                            Date.now();
+
+                        const safeFileName =
+                            referenceFile.name
+                                .replace(
+                                    /[^a-zA-Z0-9._-]/g,
+                                    "-"
+                                );
+
+
+                        const filePath =
+                            timestamp +
+                            "-" +
+                            safeFileName;
+
+
+                        console.log(
+                            "File path:",
+                            filePath
+                        );
+
+
+                        const {
+                            data: uploadData,
+                            error: uploadError
+                        } =
+                            await supabaseClient
+                                .storage
+                                .from("commission-link")
+                                .upload(
+                                    filePath,
+                                    referenceFile,
+                                    {
+                                        cacheControl: "3600",
+                                        upsert: false
+                                    }
+                                );
+
+
+                        if (uploadError) {
+
+                            console.error(
+                                "Supabase storage error:",
+                                uploadError
+                            );
+
+                            throw new Error(
+                                "The reference file could not be uploaded: " +
+                                uploadError.message
+                            );
+
+                        }
+
+
+                        console.log(
+                            "File uploaded successfully:",
+                            uploadData
+                        );
+
+
+                        referenceLink =
+                            filePath;
+
+                    }
+
+
+                    /* =================================
+                       DATABASE INSERT
+                    ================================= */
+
+                    console.log(
+                        "Saving commission request..."
+                    );
+
+
+                    const {
+                        error: databaseError
+                    } =
+                        await supabaseClient
+                            .from(
+                                "commission_requests"
+                            )
+                            .insert({
+
+                                customer_name:
+                                    customerName,
+
+                                email:
+                                    email,
+
+                                phone:
+                                    phone || null,
+
+                                service:
+                                    service,
+
+                                output:
+                                    output,
+
+                                description:
+                                    description,
+
+                                size:
+                                    size || null,
+
+                                deadline:
+                                    deadline || null,
+
+                                budget:
+                                    budget
+                                        ? Number(budget)
+                                        : null,
+
+                                reference_link:
+                                    referenceLink,
+
+                                status:
+                                    "Pending"
+
+                            });
+
+
+                    if (databaseError) {
+
+                        console.error(
+                            "Database error:",
+                            databaseError
+                        );
+
+                        throw new Error(
+                            "Your request could not be saved: " +
+                            databaseError.message
+                        );
+
+                    }
+
+
+                    /* =================================
+                       SUCCESS
+                    ================================= */
+
+                    console.log(
+                        "Commission request submitted successfully."
+                    );
+
+
+                    showStatus(
+                        "Your commission request has been sent successfully! We will review your request and contact you soon.",
+                        "success"
+                    );
+
+
+                    commissionForm.reset();
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Commission submission error:",
+                        error
+                    );
+
+
+                    showStatus(
+                        error.message ||
+                        "Something went wrong while submitting your request. Please try again.",
+                        "error"
+                    );
+
+
+                } finally {
+
+                    submitButton.disabled = false;
+
+                    submitButton.textContent =
+                        "Submit Commission Request";
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 </html>
