@@ -39,6 +39,7 @@
             background: var(--white);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* =========================
@@ -47,7 +48,7 @@
 
         header {
             width: 100%;
-            background: rgba(255, 255, 255, 0.97);
+            background: rgba(255, 255, 255, 0.98);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -57,7 +58,8 @@
         .nav-container {
             max-width: 1200px;
             margin: auto;
-            padding: 10px 24px;
+            min-height: 68px;
+            padding: 8px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -67,10 +69,15 @@
         .logo {
             display: flex;
             align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
         }
 
+        /* Smaller logo to match the index page */
+
         .logo img {
-            width: 125px;
+            width: 88px;
+            max-width: 100%;
             height: auto;
             display: block;
         }
@@ -78,15 +85,17 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 25px;
+            justify-content: flex-end;
+            gap: 24px;
         }
 
         nav a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             transition: 0.3s ease;
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -100,7 +109,7 @@
                 var(--purple)
             );
             color: white !important;
-            padding: 9px 16px;
+            padding: 8px 15px;
             border-radius: 25px;
         }
 
@@ -115,11 +124,19 @@
 
         .hero {
             background:
-                radial-gradient(circle at top left, rgba(23, 105, 255, 0.14), transparent 35%),
-                radial-gradient(circle at bottom right, rgba(240, 79, 157, 0.13), transparent 35%),
+                radial-gradient(
+                    circle at top left,
+                    rgba(23, 105, 255, 0.14),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(240, 79, 157, 0.13),
+                    transparent 35%
+                ),
                 var(--light);
 
-            padding: 75px 20px 65px;
+            padding: 65px 20px 55px;
             text-align: center;
         }
 
@@ -127,12 +144,14 @@
             font-size: clamp(34px, 5vw, 58px);
             line-height: 1.15;
             margin-bottom: 15px;
+
             background: linear-gradient(
                 90deg,
                 var(--blue),
                 var(--purple),
                 var(--pink)
             );
+
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -151,7 +170,8 @@
         .main-container {
             max-width: 1200px;
             margin: auto;
-            padding: 70px 20px;
+            padding: 65px 20px;
+
             display: grid;
             grid-template-columns: 0.85fr 1.15fr;
             gap: 45px;
@@ -164,6 +184,7 @@
 
         .left-content h2 {
             font-size: 30px;
+            line-height: 1.25;
             margin-bottom: 15px;
         }
 
@@ -220,6 +241,22 @@
             color: rgba(255, 255, 255, 0.9);
         }
 
+        .facebook-button {
+            display: inline-block;
+            background: white;
+            color: var(--blue);
+            padding: 9px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s ease;
+        }
+
+        .facebook-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+        }
+
         /* =========================
            FORM
         ========================= */
@@ -234,6 +271,7 @@
 
         .form-container h2 {
             font-size: 30px;
+            line-height: 1.25;
             margin-bottom: 8px;
         }
 
@@ -282,7 +320,8 @@
         select:focus,
         textarea:focus {
             border-color: var(--blue);
-            box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.10);
+            box-shadow:
+                0 0 0 3px rgba(23, 105, 255, 0.10);
         }
 
         textarea {
@@ -293,6 +332,7 @@
         input[type="file"] {
             padding: 10px;
             background: var(--light);
+            cursor: pointer;
         }
 
         .file-note {
@@ -310,6 +350,7 @@
 
         .checkbox-group input {
             width: auto;
+            min-width: 16px;
             margin-top: 5px;
         }
 
@@ -329,18 +370,21 @@
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
+
             background: linear-gradient(
                 135deg,
                 var(--blue),
                 var(--purple),
                 var(--pink)
             );
+
             transition: 0.3s ease;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(123, 77, 255, 0.25);
+            box-shadow:
+                0 10px 25px rgba(123, 77, 255, 0.25);
         }
 
         .submit-btn:disabled {
@@ -394,7 +438,7 @@
         }
 
         /* =========================
-           MOBILE
+           TABLET
         ========================= */
 
         @media (max-width: 900px) {
@@ -413,22 +457,28 @@
             }
         }
 
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 700px) {
 
             .nav-container {
+                min-height: auto;
                 padding: 9px 15px;
+                gap: 8px;
             }
 
             .logo img {
-                width: 105px;
+                width: 78px;
             }
 
             nav {
-                gap: 10px;
+                gap: 9px;
             }
 
             nav a {
-                font-size: 12px;
+                font-size: 11px;
             }
 
             .commission-nav {
@@ -436,24 +486,35 @@
             }
 
             .hero {
-                padding: 55px 18px 45px;
+                padding: 50px 18px 42px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
             }
 
             .hero p {
                 font-size: 16px;
+                line-height: 1.55;
             }
 
             .main-container {
                 padding: 45px 15px;
+                gap: 30px;
             }
 
             .form-container {
-                padding: 22px 18px;
+                padding: 24px 18px;
                 border-radius: 17px;
             }
 
             .form-container h2 {
                 font-size: 25px;
+            }
+
+            .form-subtitle {
+                font-size: 14px;
+                margin-bottom: 24px;
             }
 
             .form-row {
@@ -464,41 +525,96 @@
             .left-content h2 {
                 font-size: 25px;
             }
+
+            .info-card {
+                padding: 20px;
+            }
         }
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
 
         @media (max-width: 480px) {
 
             .nav-container {
                 flex-direction: column;
-                gap: 7px;
+                gap: 6px;
+                padding: 8px 12px;
+            }
+
+            .logo img {
+                width: 82px;
             }
 
             nav {
                 width: 100%;
                 justify-content: center;
                 flex-wrap: wrap;
+                gap: 8px;
             }
 
             nav a {
                 font-size: 11px;
             }
 
+            .commission-nav {
+                padding: 6px 10px;
+            }
+
+            .hero {
+                padding: 42px 15px 38px;
+            }
+
             .hero h1 {
-                font-size: 35px;
+                font-size: 32px;
             }
 
             .hero p {
                 font-size: 15px;
             }
 
+            .main-container {
+                padding: 35px 12px;
+            }
+
+            .form-container {
+                padding: 22px 15px;
+            }
+
+            .form-container h2 {
+                font-size: 23px;
+            }
+
+            .left-content h2 {
+                font-size: 23px;
+            }
+
             .info-card {
-                padding: 20px;
+                padding: 18px;
+                border-radius: 15px;
+            }
+
+            .info-card h3 {
+                font-size: 18px;
             }
 
             input,
             select,
             textarea {
                 font-size: 16px;
+            }
+
+            .submit-btn {
+                padding: 14px 16px;
+            }
+
+            footer {
+                padding: 25px 15px;
+            }
+
+            footer p {
+                font-size: 13px;
             }
         }
     </style>
@@ -511,22 +627,41 @@
     ========================= -->
 
     <header>
+
         <div class="nav-container">
 
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="NFCreatives Logo">
+                <img
+                    src="logo.png"
+                    alt="NFCreatives Logo"
+                >
             </a>
 
             <nav>
-                <a href="index.html">Home</a>
-                <a href="index.html#services">Services</a>
-                <a href="index.html#portfolio">Portfolio</a>
-                <a href="commission.html" class="commission-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#services">
+                    Services
+                </a>
+
+                <a href="index.html#portfolio">
+                    Portfolio
+                </a>
+
+                <a
+                    href="commission.html"
+                    class="commission-nav"
+                >
                     Commission
                 </a>
+
             </nav>
 
         </div>
+
     </header>
 
 
@@ -536,7 +671,9 @@
 
     <section class="hero">
 
-        <h1>Let's Bring Your Ideas to Life!</h1>
+        <h1>
+            Let's Bring Your Ideas to Life!
+        </h1>
 
         <p>
             Tell us what you need, and let's create something
@@ -547,16 +684,20 @@
 
 
     <!-- =========================
-         MAIN
+         MAIN CONTENT
     ========================= -->
 
     <main class="main-container">
 
-        <!-- LEFT CONTENT -->
+        <!-- =====================
+             LEFT CONTENT
+        ====================== -->
 
         <section class="left-content">
 
-            <h2>Creative Services Made for You</h2>
+            <h2>
+                Creative Services Made for You
+            </h2>
 
             <p>
                 Whether you need something for school, work,
@@ -568,23 +709,39 @@
 
             <div class="info-card">
 
-                <h3>Our Services</h3>
+                <h3>
+                    Our Services
+                </h3>
 
                 <ul class="service-list">
 
-                    <li>Video Editing</li>
+                    <li>
+                        Video Editing
+                    </li>
 
-                    <li>Graphic Design</li>
+                    <li>
+                        Graphic Design
+                    </li>
 
-                    <li>Posters & Infographics</li>
+                    <li>
+                        Posters & Infographics
+                    </li>
 
-                    <li>Layouts & Presentations</li>
+                    <li>
+                        Layouts & Presentations
+                    </li>
 
-                    <li>Proofreading</li>
+                    <li>
+                        Proofreading
+                    </li>
 
-                    <li>Academic Materials</li>
+                    <li>
+                        Academic Materials
+                    </li>
 
-                    <li>Custom Creative Projects</li>
+                    <li>
+                        Custom Creative Projects
+                    </li>
 
                 </ul>
 
@@ -593,7 +750,9 @@
 
             <div class="info-card">
 
-                <h3>Why Commission?</h3>
+                <h3>
+                    Why Commission?
+                </h3>
 
                 <p>
                     Every project is different. By submitting a
@@ -607,7 +766,9 @@
 
             <div class="info-card contact-box">
 
-                <h3>Have Questions?</h3>
+                <h3>
+                    Have Questions?
+                </h3>
 
                 <p>
                     If you want to ask something before submitting
@@ -620,15 +781,8 @@
                 <a
                     href="https://www.facebook.com/profile.php?id=61594493092946"
                     target="_blank"
-                    style="
-                        display:inline-block;
-                        background:white;
-                        color:#1769ff;
-                        padding:9px 16px;
-                        border-radius:20px;
-                        text-decoration:none;
-                        font-weight:700;
-                    "
+                    rel="noopener noreferrer"
+                    class="facebook-button"
                 >
                     Contact Us on Facebook
                 </a>
@@ -638,11 +792,15 @@
         </section>
 
 
-        <!-- FORM -->
+        <!-- =====================
+             COMMISSION FORM
+        ====================== -->
 
         <section class="form-container">
 
-            <h2>Commission Request</h2>
+            <h2>
+                Commission Request
+            </h2>
 
             <p class="form-subtitle">
                 Please provide the details below so we can
@@ -872,8 +1030,8 @@
                     >
 
                     <div class="file-note">
-                        Optional. Accepted: JPG, PNG, PDF, DOC, DOCX,
-                        PPT, PPTX.
+                        Optional. Accepted: JPG, PNG, PDF, DOC,
+                        DOCX, PPT, PPTX.
                     </div>
 
                 </div>
@@ -1036,44 +1194,61 @@
 
                 clearStatus();
 
-                /* -----------------------------
+
+                /* ===============================
                    GET FORM VALUES
-                ----------------------------- */
+                =============================== */
 
                 const customerName =
-                    document.getElementById("name").value.trim();
+                    document.getElementById("name")
+                        .value
+                        .trim();
 
                 const email =
-                    document.getElementById("email").value.trim();
+                    document.getElementById("email")
+                        .value
+                        .trim();
 
                 const phone =
-                    document.getElementById("contact").value.trim();
+                    document.getElementById("contact")
+                        .value
+                        .trim();
 
                 const service =
-                    document.getElementById("service").value;
+                    document.getElementById("service")
+                        .value;
 
                 const output =
-                    document.getElementById("output").value.trim();
+                    document.getElementById("output")
+                        .value
+                        .trim();
 
                 const description =
-                    document.getElementById("description").value.trim();
+                    document.getElementById("description")
+                        .value
+                        .trim();
 
                 const size =
-                    document.getElementById("size").value.trim();
+                    document.getElementById("size")
+                        .value
+                        .trim();
 
                 const deadline =
-                    document.getElementById("deadline").value;
+                    document.getElementById("deadline")
+                        .value;
 
                 const budget =
-                    document.getElementById("budget").value;
+                    document.getElementById("budget")
+                        .value;
 
                 const referenceFile =
-                    document.getElementById("reference").files[0];
+                    document.getElementById("reference")
+                        .files[0];
 
 
-                /* -----------------------------
+                /* ===============================
                    BASIC VALIDATION
-                ----------------------------- */
+                =============================== */
 
                 if (
                     !customerName ||
@@ -1107,9 +1282,9 @@
                 }
 
 
-                /* -----------------------------
+                /* ===============================
                    DISABLE BUTTON
-                ----------------------------- */
+                =============================== */
 
                 submitButton.disabled = true;
 
@@ -1136,12 +1311,12 @@
                         const timestamp =
                             Date.now();
 
+
                         const safeFileName =
-                            referenceFile.name
-                                .replace(
-                                    /[^a-zA-Z0-9._-]/g,
-                                    "-"
-                                );
+                            referenceFile.name.replace(
+                                /[^a-zA-Z0-9._-]/g,
+                                "-"
+                            );
 
 
                         const filePath =
