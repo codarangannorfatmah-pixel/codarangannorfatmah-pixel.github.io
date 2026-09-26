@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Commission Request | NFCreatives</title>
-
-    <meta
-        name="description"
-        content="Submit a creative project commission request to NFCreatives."
-    >
 
     <style>
         * {
@@ -26,55 +19,41 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #ffffff;
-            color: #17152d;
+            color: #111b55;
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button,
-        input,
-        select,
-        textarea {
-            font-family: inherit;
         }
 
         /* =========================
            HEADER
-        ========================== */
+        ========================= */
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(40, 30, 90, 0.08);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #eeeeff;
         }
 
         .navbar {
-            width: min(1200px, 92%);
-            min-height: 78px;
+            max-width: 1200px;
             margin: auto;
+            padding: 14px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 30px;
+            gap: 20px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            flex-shrink: 0;
+            text-decoration: none;
         }
 
         .logo img {
-            width: 145px;
+            width: 155px;
             height: auto;
             display: block;
         }
@@ -82,52 +61,45 @@
         nav {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            gap: 25px;
-            flex-wrap: wrap;
+            gap: 28px;
         }
 
         nav a {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #25223d;
-            transition: 0.25s ease;
+            text-decoration: none;
+            color: #101747;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #7b2cff;
+            color: #5b35f5;
         }
 
         .commission-nav {
-            color: #ffffff !important;
+            background: linear-gradient(135deg, #5b35f5, #8b35f5);
+            color: white !important;
             padding: 10px 18px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, #7b2cff, #d946ef);
-            box-shadow: 0 8px 20px rgba(123, 44, 255, 0.22);
-        }
-
-        .commission-nav:hover {
-            color: #ffffff !important;
-            transform: translateY(-2px);
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(91, 53, 245, 0.2);
         }
 
         /* =========================
            HERO
-        ========================== */
+        ========================= */
 
         .hero {
             position: relative;
             overflow: hidden;
-            padding: 90px 0 75px;
+            padding: 70px 25px 45px;
             background:
-                radial-gradient(circle at 10% 20%, rgba(217, 70, 239, 0.13), transparent 28%),
-                radial-gradient(circle at 90% 15%, rgba(0, 210, 255, 0.12), transparent 27%),
-                radial-gradient(circle at 50% 100%, rgba(123, 44, 255, 0.10), transparent 35%),
-                #ffffff;
+                radial-gradient(circle at 85% 20%, rgba(85, 220, 255, 0.18), transparent 20%),
+                radial-gradient(circle at 75% 70%, rgba(255, 87, 190, 0.12), transparent 25%),
+                linear-gradient(135deg, #ffffff, #f8f7ff);
         }
 
         .hero-container {
-            width: min(1150px, 92%);
+            max-width: 1150px;
             margin: auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -135,201 +107,154 @@
             gap: 50px;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            color: #18215d;
+            border: 1px solid #ccd2ed;
+            padding: 8px 16px;
+            border-radius: 25px;
+            background: white;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 30, 100, 0.08);
         }
 
         .hero-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 15px;
-            margin-bottom: 18px;
-            border-radius: 999px;
-            background: rgba(123, 44, 255, 0.09);
-            color: #6d25df;
-            font-size: 0.82rem;
+            color: #5b35f5;
             font-weight: 800;
-            letter-spacing: 0.05em;
+            font-size: 15px;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
         .hero h1 {
-            max-width: 700px;
-            margin-bottom: 20px;
-            font-size: clamp(42px, 6vw, 66px);
+            font-size: clamp(42px, 5vw, 66px);
             line-height: 1.05;
-            letter-spacing: -0.04em;
-            color: #17152d;
+            color: #11185d;
+            margin-bottom: 22px;
         }
 
         .hero h1 span {
-            background: linear-gradient(
-                135deg,
-                #7b2cff,
-                #d946ef,
-                #00bcd4
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: #ec238d;
         }
 
-        .hero-text {
-            max-width: 620px;
-            color: #66627a;
-            font-size: 1.08rem;
-            line-height: 1.8;
+        .hero p {
+            max-width: 550px;
+            color: #4e5778;
+            font-size: 17px;
+            margin-bottom: 25px;
         }
 
         .hero-visual {
+            position: relative;
             min-height: 360px;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
         }
 
         .creative-card {
             position: relative;
-            width: min(430px, 90%);
-            min-height: 310px;
-            padding: 50px 42px;
+            width: 430px;
+            max-width: 100%;
+            padding: 40px;
             border-radius: 35px;
-            color: #ffffff;
-            background:
-                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.20), transparent 22%),
-                radial-gradient(circle at 85% 80%, rgba(0,210,255,0.20), transparent 28%),
-                linear-gradient(135deg, #6d25df, #a12bdc 55%, #d946ef);
-            box-shadow: 0 30px 70px rgba(74, 35, 145, 0.25);
-            transform: rotate(2deg);
-            overflow: hidden;
-        }
-
-        .creative-card::before,
-        .creative-card::after {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.13);
-        }
-
-        .creative-card::before {
-            width: 150px;
-            height: 150px;
-            top: -55px;
-            right: -40px;
-        }
-
-        .creative-card::after {
-            width: 90px;
-            height: 90px;
-            bottom: -25px;
-            left: -20px;
-        }
-
-        .creative-card-content {
-            position: relative;
-            z-index: 2;
+            background: linear-gradient(135deg, #5b35f5, #8d36ed);
+            color: white;
+            box-shadow: 0 25px 55px rgba(91, 53, 245, 0.25);
+            transform: rotate(-2deg);
         }
 
         .creative-card h2 {
-            margin-bottom: 15px;
-            font-size: 2rem;
+            font-size: 32px;
             line-height: 1.15;
+            margin-bottom: 15px;
         }
 
         .creative-card p {
-            color: rgba(255, 255, 255, 0.88);
-            line-height: 1.75;
+            color: #ffffff;
+            font-size: 15px;
+            margin: 0;
         }
 
-        .creative-star {
-            display: inline-block;
-            margin-top: 25px;
-            font-size: 2.4rem;
-        }
-
-        .floating-circle {
+        .floating {
             position: absolute;
             border-radius: 50%;
-            z-index: 1;
+            opacity: 0.9;
         }
 
         .circle-one {
-            width: 65px;
-            height: 65px;
-            top: 12%;
-            left: 3%;
-            background: #ffd83d;
+            width: 95px;
+            height: 95px;
+            background: #ff4cae;
+            top: 20px;
+            right: 5px;
         }
 
         .circle-two {
-            width: 40px;
-            height: 40px;
-            right: 2%;
-            bottom: 15%;
-            background: #00c9db;
+            width: 75px;
+            height: 75px;
+            background: #49d8f5;
+            bottom: 15px;
+            left: 10px;
         }
 
         .circle-three {
-            width: 28px;
-            height: 28px;
-            left: 8%;
-            bottom: 12%;
-            background: #ff6b9a;
+            width: 45px;
+            height: 45px;
+            background: #ffd83d;
+            top: 55px;
+            left: 25px;
         }
 
         /* =========================
-           MAIN SECTION
-        ========================== */
+           MAIN CONTENT
+        ========================= */
 
         .main-section {
-            width: min(1200px, 92%);
+            max-width: 1200px;
             margin: auto;
-            padding: 75px 0 100px;
+            padding: 65px 25px 90px;
         }
 
-        .main-layout {
+        .layout {
             display: grid;
             grid-template-columns: 0.85fr 1.35fr;
             gap: 35px;
             align-items: start;
         }
 
-        .side-card,
-        .form-card {
-            background: #ffffff;
-            border: 1px solid rgba(40, 30, 90, 0.09);
-            box-shadow: 0 18px 50px rgba(31, 24, 75, 0.08);
-        }
+        /* =========================
+           LEFT SIDE
+        ========================= */
 
         .side-card {
+            background: white;
             border-radius: 25px;
             padding: 30px;
-        }
-
-        .side-card + .side-card {
-            margin-top: 22px;
+            margin-bottom: 25px;
+            border: 1px solid #ececff;
+            box-shadow: 0 12px 35px rgba(35, 35, 100, 0.07);
         }
 
         .side-card h2 {
-            margin-bottom: 12px;
-            color: #211c3b;
-            font-size: 1.45rem;
-            line-height: 1.25;
+            color: #131b61;
+            font-size: 25px;
+            margin-bottom: 8px;
         }
 
         .side-card > p {
-            margin-bottom: 25px;
-            color: #6b677c;
-            line-height: 1.75;
+            color: #626987;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
-
-        /* =========================
-           SERVICES
-        ========================== */
 
         .services-grid {
             display: grid;
@@ -337,494 +262,335 @@
             gap: 12px;
         }
 
-        .service-item {
-            padding: 15px;
-            border-radius: 15px;
-            background: #f7f5ff;
-            color: #302a50;
-            font-size: 0.9rem;
+        .service {
+            padding: 18px 10px;
+            border-radius: 18px;
+            text-align: center;
             font-weight: 700;
-            border-left: 4px solid #7b2cff;
+            font-size: 14px;
+            color: #171d5c;
         }
 
-        .service-item:nth-child(2) {
-            border-left-color: #d946ef;
+        .service:nth-child(1) {
+            background: #ffe7f5;
         }
 
-        .service-item:nth-child(3) {
-            border-left-color: #00bcd4;
+        .service:nth-child(2) {
+            background: #eee8ff;
         }
 
-        .service-item:nth-child(4) {
-            border-left-color: #ffd43b;
+        .service:nth-child(3) {
+            background: #dff8ff;
         }
 
-        .service-item:nth-child(5) {
-            border-left-color: #ff6b9a;
+        .service:nth-child(4) {
+            background: #e3faef;
         }
 
-        .service-item:nth-child(6) {
-            border-left-color: #7b2cff;
+        .service:nth-child(5) {
+            background: #fff5ce;
         }
 
-        .service-item:nth-child(7) {
-            border-left-color: #00bcd4;
+        .service:nth-child(6) {
+            background: #ffe9dc;
         }
 
-        /* =========================
-           WHY COMMISSION
-        ========================== */
+        .service:nth-child(7) {
+            background: #eee8ff;
+            grid-column: span 2;
+        }
+
+        .service-icon {
+            font-size: 25px;
+            display: block;
+            margin-bottom: 5px;
+        }
 
         .why-list {
             list-style: none;
-            display: grid;
-            gap: 13px;
+            margin-top: 15px;
         }
 
         .why-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            color: #57536b;
-            font-size: 0.95rem;
+            margin: 12px 0;
+            color: #333b65;
+            font-size: 14px;
         }
 
         .why-list li::before {
             content: "✓";
-            flex-shrink: 0;
-            width: 23px;
-            height: 23px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(123, 44, 255, 0.10);
-            color: #7b2cff;
-            font-size: 0.75rem;
+            color: #5b35f5;
             font-weight: 900;
+            margin-right: 10px;
         }
-
-        /* =========================
-           CONTACT CARD
-        ========================== */
 
         .question-card {
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(123, 44, 255, 0.08),
-                    rgba(217, 70, 239, 0.08),
-                    rgba(0, 188, 212, 0.08)
-                );
-        }
-
-        .question-card p {
-            margin-bottom: 18px;
+            background: linear-gradient(135deg, #fff0fb, #f1ecff);
         }
 
         .contact-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 11px 18px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, #7b2cff, #d946ef);
-            color: #ffffff;
-            font-size: 0.9rem;
-            font-weight: 800;
-            box-shadow: 0 10px 25px rgba(123, 44, 255, 0.20);
-            transition: 0.25s ease;
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(135deg, #5b35f5, #8d35ef);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-weight: 700;
+            margin-top: 12px;
+            transition: 0.3s;
         }
 
         .contact-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 30px rgba(123, 44, 255, 0.28);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(91, 53, 245, 0.25);
         }
 
         /* =========================
-           FORM CARD
-        ========================== */
+           FORM
+        ========================= */
 
         .form-card {
+            background: white;
             border-radius: 28px;
             padding: 38px;
+            border: 1px solid #e7e6fa;
+            box-shadow: 0 18px 50px rgba(36, 32, 100, 0.09);
         }
 
-        .form-header {
+        .form-heading {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         .form-icon {
-            width: 52px;
-            height: 52px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #7b2cff, #d946ef);
-            color: #ffffff;
-            font-size: 1.35rem;
-            box-shadow: 0 10px 25px rgba(123, 44, 255, 0.18);
+            border-radius: 15px;
+            background: linear-gradient(135deg, #5b35f5, #9c37ed);
+            color: white;
+            font-size: 24px;
         }
 
-        .form-header h2 {
-            margin-bottom: 3px;
-            color: #211c3b;
-            font-size: 1.65rem;
+        .form-heading h2 {
+            color: #141b61;
+            font-size: 27px;
         }
 
-        .form-header p {
-            color: #777287;
-            font-size: 0.9rem;
-        }
-
-        #commissionForm {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
+        .form-intro {
+            color: #606984;
+            font-size: 14px;
+            margin-bottom: 32px;
         }
 
         .form-section {
-            padding-top: 4px;
+            margin-bottom: 32px;
         }
 
         .section-title {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 18px;
-            color: #27213f;
-            font-size: 1.05rem;
-            font-weight: 800;
+            color: #161d5d;
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
-        .section-number {
-            width: 28px;
-            height: 28px;
+        .number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #5b35f5, #8e35ef);
+            color: white;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            border-radius: 50%;
-            background: rgba(123, 44, 255, 0.10);
-            color: #7b2cff;
-            font-size: 0.78rem;
-            font-weight: 900;
+            font-size: 13px;
+            font-weight: 800;
         }
 
         .form-row {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 18px;
-            margin-bottom: 18px;
         }
 
         .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
+            margin-bottom: 18px;
         }
 
         label {
-            color: #353049;
-            font-size: 0.9rem;
-            font-weight: 800;
+            display: block;
+            color: #252b59;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 7px;
         }
 
         .required {
-            color: #d9468d;
+            color: #ec238d;
         }
 
         input,
         select,
         textarea {
             width: 100%;
-            padding: 13px 15px;
-            border: 1px solid #ddd9e8;
-            border-radius: 13px;
-            outline: none;
+            border: 1px solid #d4d8e9;
+            border-radius: 11px;
+            padding: 13px 14px;
+            font-family: inherit;
+            font-size: 14px;
+            color: #252b59;
             background: #ffffff;
-            color: #28243d;
-            font-size: 0.93rem;
-            transition: 0.25s ease;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #aaa6b5;
+            outline: none;
+            transition: 0.25s;
         }
 
         input:focus,
         select:focus,
         textarea:focus {
-            border-color: #7b2cff;
-            box-shadow: 0 0 0 4px rgba(123, 44, 255, 0.08);
+            border-color: #6c45f5;
+            box-shadow: 0 0 0 3px rgba(108, 69, 245, 0.1);
         }
 
         textarea {
-            min-height: 135px;
+            min-height: 130px;
             resize: vertical;
         }
 
-        input[type="date"] {
-            color: #454057;
-        }
-
-        input[type="file"] {
-            padding: 10px;
-            border-style: dashed;
-            background: #faf9fd;
+        .upload-box {
+            border: 2px dashed #c8c9e8;
+            border-radius: 15px;
+            padding: 28px 20px;
+            text-align: center;
+            background: #fafaff;
             cursor: pointer;
+            transition: 0.3s;
         }
 
-        .field-note {
-            color: #8b8796;
-            font-size: 0.78rem;
+        .upload-box:hover {
+            border-color: #6c45f5;
+            background: #f8f6ff;
         }
 
-        /* =========================
-           CONFIRMATION
-        ========================== */
+        .upload-icon {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .upload-box strong {
+            display: block;
+            color: #4d35d7;
+            font-size: 14px;
+        }
+
+        .upload-box small {
+            color: #777e99;
+            font-size: 12px;
+        }
 
         .confirmation {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            padding: 16px;
-            border-radius: 14px;
-            background: #faf9ff;
-            border: 1px solid #ebe7f5;
+            margin-bottom: 20px;
         }
 
         .confirmation input {
-            width: auto;
-            margin-top: 4px;
-            accent-color: #7b2cff;
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            accent-color: #5b35f5;
         }
 
         .confirmation label {
-            color: #656076;
-            font-size: 0.84rem;
-            line-height: 1.6;
-            font-weight: 600;
+            font-weight: 500;
+            font-size: 13px;
+            margin: 0;
+            color: #454c6a;
         }
-
-        /* =========================
-           SUBMIT BUTTON
-        ========================== */
 
         .submit-button {
             width: 100%;
-            padding: 16px 22px;
             border: none;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #7b2cff, #d946ef);
-            color: #ffffff;
-            font-size: 1rem;
-            font-weight: 900;
             cursor: pointer;
-            box-shadow: 0 15px 30px rgba(123, 44, 255, 0.22);
-            transition: 0.25s ease;
+            padding: 15px 20px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #5b35f5, #8c36ef);
+            color: white;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 800;
+            transition: 0.3s;
         }
 
-        .submit-button:hover:not(:disabled) {
+        .submit-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 20px 35px rgba(123, 44, 255, 0.28);
+            box-shadow: 0 12px 28px rgba(91, 53, 245, 0.25);
         }
 
         .submit-button:disabled {
-            opacity: 0.65;
+            opacity: 0.7;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
         }
 
         .form-note {
             text-align: center;
-            color: #8a8695;
-            font-size: 0.78rem;
-        }
-
-        /* =========================
-           STATUS MESSAGE
-        ========================== */
-
-        .status-message {
-            display: none;
-            padding: 14px 16px;
-            margin-bottom: 20px;
-            border-radius: 13px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            line-height: 1.5;
-        }
-
-        .status-message.success {
-            display: block;
-            background: #ecfdf3;
-            border: 1px solid #b7ebcb;
-            color: #187443;
-        }
-
-        .status-message.error {
-            display: block;
-            background: #fff1f2;
-            border: 1px solid #fecdd3;
-            color: #be123c;
+            color: #7a8097;
+            font-size: 11px;
+            margin-top: 12px;
         }
 
         /* =========================
            FOOTER
-        ========================== */
+        ========================= */
 
         footer {
-            padding: 45px 20px;
-            background: #17152d;
-            color: #ffffff;
+            background: #11184f;
+            color: white;
             text-align: center;
+            padding: 30px 20px;
         }
 
-        .footer-title {
-            margin-bottom: 6px;
-            font-size: 1.2rem;
-            font-weight: 900;
+        footer p {
+            margin: 5px 0;
+            font-size: 13px;
+            color: #d8daf0;
         }
 
-        .footer-text {
-            color: rgba(255, 255, 255, 0.68);
-            font-size: 0.85rem;
-        }
-
-        .footer-tagline {
-            margin-top: 8px;
-            color: rgba(255, 255, 255, 0.45);
-            font-size: 0.75rem;
+        .footer-brand {
+            color: white;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 5px;
         }
 
         /* =========================
            RESPONSIVE
-        ========================== */
+        ========================= */
 
         @media (max-width: 900px) {
-            .navbar {
-                min-height: 70px;
-            }
-
-            .logo img {
-                width: 125px;
-            }
-
             nav {
-                gap: 15px;
+                gap: 14px;
             }
 
             nav a {
-                font-size: 0.88rem;
+                font-size: 12px;
+            }
+
+            .hero-container,
+            .layout {
+                grid-template-columns: 1fr;
             }
 
             .hero {
-                padding: 65px 0 60px;
-            }
-
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero-content {
-                text-align: center;
-            }
-
-            .hero-text {
-                margin: auto;
-            }
-
-            .hero-visual {
-                min-height: 320px;
-            }
-
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 650px) {
-            .navbar {
-                width: 94%;
-                flex-direction: column;
-                justify-content: center;
-                padding: 13px 0;
-                gap: 10px;
-            }
-
-            nav {
-                justify-content: center;
-                gap: 10px 16px;
-            }
-
-            nav a {
-                font-size: 0.82rem;
-            }
-
-            .commission-nav {
-                padding: 8px 13px;
-            }
-
-            .hero {
-                padding: 50px 0;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero-text {
-                font-size: 0.96rem;
-            }
-
-            .creative-card {
-                min-height: 285px;
-                padding: 38px 30px;
-                transform: none;
-            }
-
-            .creative-card h2 {
-                font-size: 1.7rem;
-            }
-
-            .main-section {
-                padding: 55px 0 75px;
-            }
-
-            .form-card {
-                padding: 25px 20px;
-                border-radius: 22px;
-            }
-
-            .side-card {
-                padding: 24px 20px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 34px;
+                padding-top: 45px;
             }
 
             .hero-visual {
@@ -832,45 +598,49 @@
             }
 
             .creative-card {
-                width: 100%;
-                min-height: 260px;
-                padding: 32px 25px;
-                border-radius: 27px;
-            }
-
-            .creative-card h2 {
-                font-size: 1.5rem;
-            }
-
-            .form-header {
-                align-items: flex-start;
-            }
-
-            .form-header h2 {
-                font-size: 1.4rem;
-            }
-
-            .form-icon {
-                width: 45px;
-                height: 45px;
+                width: 500px;
             }
         }
 
-        @media (max-width: 380px) {
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                padding: 12px 18px;
+            }
+
             nav {
-                gap: 8px 11px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             nav a {
-                font-size: 0.76rem;
+                font-size: 12px;
             }
 
             .hero h1 {
-                font-size: 31px;
+                font-size: 42px;
             }
 
-            .form-card {
-                padding: 22px 16px;
+            .hero p {
+                font-size: 15px;
+            }
+
+            .form-card,
+            .side-card {
+                padding: 24px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .creative-card {
+                padding: 30px;
             }
         }
     </style>
@@ -885,11 +655,11 @@
     <header>
         <div class="navbar">
 
-            <a href="index.html" class="logo" aria-label="NFCreatives Home">
+            <a href="index.html" class="logo">
                 <img src="logo.png" alt="NFCreatives Logo">
             </a>
 
-            <nav aria-label="Main navigation">
+            <nav>
                 <a href="index.html">Home</a>
                 <a href="index.html#services">Services</a>
                 <a href="index.html#portfolio">Portfolio</a>
@@ -899,6 +669,7 @@
         </div>
     </header>
 
+
     <!-- =========================
          HERO
     ========================== -->
@@ -907,18 +678,22 @@
 
         <div class="hero-container">
 
-            <div class="hero-content">
+            <div>
+
+                <a href="index.html" class="back-button">
+                    ← Back to Home
+                </a>
 
                 <div class="hero-label">
-                    ✦ Commission Request
+                    Commission Request
                 </div>
 
                 <h1>
                     Let's Bring Your
-                    <span>Ideas to Life!</span>
+                    <span>Ideas</span> to Life!
                 </h1>
 
-                <p class="hero-text">
+                <p>
                     Tell us about your project, and we'll review your
                     requirements and get back to you with the details.
                     We're excited to work with you!
@@ -926,30 +701,24 @@
 
             </div>
 
+
             <div class="hero-visual">
 
-                <div class="floating-circle circle-one"></div>
-                <div class="floating-circle circle-two"></div>
-                <div class="floating-circle circle-three"></div>
+                <div class="floating circle-one"></div>
+                <div class="floating circle-two"></div>
+                <div class="floating circle-three"></div>
 
                 <div class="creative-card">
 
-                    <div class="creative-card-content">
+                    <h2>
+                        Turn Your Ideas Into Something Amazing ✦
+                    </h2>
 
-                        <h2>
-                            Turn Your Ideas Into Something Amazing ✦
-                        </h2>
-
-                        <p>
-                            From posters and graphics to videos,
-                            infographics, social media content, and
-                            customized creative projects, NFCreatives
-                            is here to help bring your vision to life.
-                        </p>
-
-                        <span class="creative-star">✦</span>
-
-                    </div>
+                    <p>
+                        From posters and graphics to videos,
+                        infographics, social media content, and
+                        customized creative projects.
+                    </p>
 
                 </div>
 
@@ -959,60 +728,65 @@
 
     </section>
 
+
     <!-- =========================
-         MAIN CONTENT
+         MAIN
     ========================== -->
 
     <main class="main-section">
 
-        <div class="main-layout">
+        <div class="layout">
+
 
             <!-- =========================
-                 LEFT SIDE
+                 LEFT COLUMN
             ========================== -->
 
-            <aside>
+            <div>
 
                 <div class="side-card">
 
-                    <h2>
-                        Creative Services Made for You
-                    </h2>
+                    <h2>Our Services</h2>
 
                     <p>
-                        Whether you need something for school, work,
-                        business, social media, or a personal project,
-                        NFCreatives can help turn your ideas into
-                        creative and meaningful outputs.
+                        We offer a variety of creative digital services,
+                        including:
                     </p>
 
                     <div class="services-grid">
 
-                        <div class="service-item">
+                        <div class="service">
+                            <span class="service-icon">🎨</span>
                             Graphic Design
                         </div>
 
-                        <div class="service-item">
+                        <div class="service">
+                            <span class="service-icon">🎬</span>
                             Video Editing
                         </div>
 
-                        <div class="service-item">
+                        <div class="service">
+                            <span class="service-icon">🖼️</span>
                             Posters
                         </div>
 
-                        <div class="service-item">
+                        <div class="service">
+                            <span class="service-icon">📊</span>
                             Infographics
                         </div>
 
-                        <div class="service-item">
+                        <div class="service">
+                            <span class="service-icon">📱</span>
                             Social Media Content
                         </div>
 
-                        <div class="service-item">
+                        <div class="service">
+                            <span class="service-icon">📚</span>
                             Academic Materials
                         </div>
 
-                        <div class="service-item">
+                        <div class="service">
+                            <span class="service-icon">✨</span>
                             Custom Projects
                         </div>
 
@@ -1020,115 +794,85 @@
 
                 </div>
 
+
                 <div class="side-card">
 
-                    <h2>
-                        Why Commission With NFCreatives?
-                    </h2>
+                    <h2>Why Commission With NFCreatives?</h2>
 
                     <ul class="why-list">
 
-                        <li>
-                            Creative and personalized designs
-                        </li>
+                        <li>Creative and personalized designs</li>
 
-                        <li>
-                            Attention to detail and quality
-                        </li>
+                        <li>Attention to detail and quality</li>
 
-                        <li>
-                            Clear and friendly communication
-                        </li>
+                        <li>Clear and friendly communication</li>
 
-                        <li>
-                            Flexible creative solutions
-                        </li>
+                        <li>Flexible creative solutions</li>
 
-                        <li>
-                            On-time delivery as much as possible
-                        </li>
+                        <li>On-time delivery as much as possible</li>
 
-                        <li>
-                            Support for ideas — big or small!
-                        </li>
+                        <li>Support for ideas — big or small!</li>
 
                     </ul>
 
                 </div>
 
+
                 <div class="side-card question-card">
 
-                    <h2>
-                        Have a question before submitting?
-                    </h2>
+                    <h2>Have a question before submitting?</h2>
 
                     <p>
-                        If you want to ask something before submitting
-                        your request, feel free to contact NFCreatives
-                        through our Facebook page.
+                        Feel free to reach out through our contact
+                        information if you want to discuss your idea
+                        first.
                     </p>
 
-                    <a
-                        href="https://www.facebook.com/profile.php?id=61594493092946"
-                        class="contact-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Contact NFCreatives
+                    <a href="index.html#contact" class="contact-button">
+                        Contact Us →
                     </a>
 
                 </div>
 
-            </aside>
+            </div>
+
 
             <!-- =========================
-                 COMMISSION FORM
+                 FORM COLUMN
             ========================== -->
 
-            <section class="form-card">
+            <div class="form-card">
 
-                <div class="form-header">
+                <div class="form-heading">
 
                     <div class="form-icon">
-                        ✦
+                        📝
                     </div>
 
-                    <div>
-                        <h2>
-                            Commission Request Form
-                        </h2>
-
-                        <p>
-                            Please provide the details below so we can
-                            understand your project better.
-                        </p>
-                    </div>
+                    <h2>
+                        Commission Request Form
+                    </h2>
 
                 </div>
 
-                <div
-                    id="statusMessage"
-                    class="status-message"
-                    role="alert"
-                    aria-live="polite"
-                ></div>
+                <p class="form-intro">
+                    Fill out the form below with as much detail as possible.
+                    The more information you provide, the better we can
+                    understand your project.
+                </p>
 
-                <form
-                    id="commissionForm"
-                    method="post"
-                    novalidate
-                >
 
-                    <!-- =========================
-                         SECTION 1
-                    ========================== -->
+                <form id="commissionForm">
+
+
+                    <!-- CUSTOMER INFORMATION -->
 
                     <div class="form-section">
 
-                        <div class="section-title">
-                            <span class="section-number">1</span>
-                            Your Information
-                        </div>
+                        <h3 class="section-title">
+                            <span class="number">1</span>
+                            Customer Information
+                        </h3>
 
                         <div class="form-row">
 
@@ -1143,12 +887,12 @@
                                     type="text"
                                     id="name"
                                     name="name"
-                                    placeholder="Enter your full name"
-                                    autocomplete="name"
+                                    placeholder="Your name"
                                     required
                                 >
 
                             </div>
+
 
                             <div class="form-group">
 
@@ -1161,8 +905,7 @@
                                     type="email"
                                     id="email"
                                     name="email"
-                                    placeholder="example@email.com"
-                                    autocomplete="email"
+                                    placeholder="you@example.com"
                                     required
                                 >
 
@@ -1170,28 +913,42 @@
 
                         </div>
 
+
+                        <div class="form-group">
+
+                            <label for="contact">
+                                Contact Number
+                                (Optional)
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="contact"
+                                name="contact"
+                                placeholder="+63 9XX XXX XXXX"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROJECT DETAILS -->
+
+                    <div class="form-section">
+
+                        <h3 class="section-title">
+                            <span class="number">2</span>
+                            Project Details
+                        </h3>
+
+
                         <div class="form-row">
 
                             <div class="form-group">
 
-                                <label for="contact">
-                                    Contact Number
-                                </label>
-
-                                <input
-                                    type="tel"
-                                    id="contact"
-                                    name="contact"
-                                    placeholder="+63 9XX XXX XXXX"
-                                    autocomplete="tel"
-                                >
-
-                            </div>
-
-                            <div class="form-group">
-
                                 <label for="service">
-                                    Service Needed
+                                    Type of Project
                                     <span class="required">*</span>
                                 </label>
 
@@ -1200,39 +957,36 @@
                                     name="service"
                                     required
                                 >
+
                                     <option value="">
                                         Select a service
                                     </option>
 
-                                    <option value="Video Editing">
-                                        Video Editing
-                                    </option>
-
-                                    <option value="Graphic Design">
+                                    <option>
                                         Graphic Design
                                     </option>
 
-                                    <option value="Poster / Infographic">
-                                        Poster / Infographic
+                                    <option>
+                                        Video Editing
                                     </option>
 
-                                    <option value="Layout / Presentation">
-                                        Layout / Presentation
+                                    <option>
+                                        Poster Design
                                     </option>
 
-                                    <option value="Social Media Content">
+                                    <option>
+                                        Infographics
+                                    </option>
+
+                                    <option>
                                         Social Media Content
                                     </option>
 
-                                    <option value="Proofreading">
-                                        Proofreading
-                                    </option>
-
-                                    <option value="Academic Materials">
+                                    <option>
                                         Academic Materials
                                     </option>
 
-                                    <option value="Custom Project">
+                                    <option>
                                         Custom Project
                                     </option>
 
@@ -1240,27 +994,11 @@
 
                             </div>
 
-                        </div>
-
-                    </div>
-
-                    <!-- =========================
-                         SECTION 2
-                    ========================== -->
-
-                    <div class="form-section">
-
-                        <div class="section-title">
-                            <span class="section-number">2</span>
-                            Project Details
-                        </div>
-
-                        <div class="form-row">
 
                             <div class="form-group">
 
                                 <label for="output">
-                                    Desired Output
+                                    What do you need?
                                     <span class="required">*</span>
                                 </label>
 
@@ -1271,34 +1009,34 @@
                                 >
 
                                     <option value="">
-                                        Select an output
+                                        Select an option
                                     </option>
 
-                                    <option value="One design">
+                                    <option>
                                         One design
                                     </option>
 
-                                    <option value="Multiple designs">
+                                    <option>
                                         Multiple designs
                                     </option>
 
-                                    <option value="Short video">
+                                    <option>
                                         Short video
                                     </option>
 
-                                    <option value="Long video">
+                                    <option>
                                         Long video
                                     </option>
 
-                                    <option value="Social media content">
+                                    <option>
                                         Social media content
                                     </option>
 
-                                    <option value="Academic material">
+                                    <option>
                                         Academic material
                                     </option>
 
-                                    <option value="Other">
+                                    <option>
                                         Other
                                     </option>
 
@@ -1306,58 +1044,50 @@
 
                             </div>
 
-                            <div class="form-group">
-
-                                <label for="size">
-                                    Size / Dimensions
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="size"
-                                    name="size"
-                                    placeholder="e.g. 1080 × 1920 px, A4, MP4"
-                                >
-
-                            </div>
-
                         </div>
 
-                        <div class="form-group full-width">
+
+                        <div class="form-group">
 
                             <label for="description">
-                                Project Description
+                                Description / Instructions
                                 <span class="required">*</span>
                             </label>
 
                             <textarea
                                 id="description"
                                 name="description"
-                                placeholder="Tell us about your project, preferred style, content, colors, instructions, or anything else we should know."
+                                placeholder="Tell us more about your project, idea, preferred style, content, colors, text, or other instructions..."
                                 required
                             ></textarea>
 
                         </div>
 
-                    </div>
-
-                    <!-- =========================
-                         SECTION 3
-                    ========================== -->
-
-                    <div class="form-section">
-
-                        <div class="section-title">
-                            <span class="section-number">3</span>
-                            Schedule & Budget
-                        </div>
 
                         <div class="form-row">
 
                             <div class="form-group">
 
+                                <label for="size">
+                                    Preferred Size / Format
+                                    (Optional)
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="size"
+                                    name="size"
+                                    placeholder="e.g. 1080x1080 px, A4, MP4"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
                                 <label for="deadline">
-                                    Desired Deadline
+                                    Deadline
+                                    (Optional)
                                 </label>
 
                                 <input
@@ -1368,17 +1098,49 @@
 
                             </div>
 
-                            <div class="form-group">
+                        </div>
 
-                                <label for="budget">
-                                    Estimated Budget
-                                </label>
+                    </div>
+
+
+                    <!-- REFERENCE -->
+
+                    <div class="form-section">
+
+                        <h3 class="section-title">
+                            <span class="number">3</span>
+                            Reference / Upload
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="reference">
+                                Share a reference image, file,
+                                or additional material
+                                (Optional)
+                            </label>
+
+                            <div class="upload-box">
+
+                                <div class="upload-icon">
+                                    ☁️
+                                </div>
+
+                                <strong>
+                                    Click to select a file
+                                </strong>
+
+                                <small>
+                                    Images, PDFs, documents, or other
+                                    references
+                                </small>
 
                                 <input
-                                    type="text"
-                                    id="budget"
-                                    name="budget"
-                                    placeholder="e.g. ₱500–₱1,000 or your preferred range"
+                                    type="file"
+                                    id="reference"
+                                    name="reference"
+                                    accept=".jpg,.jpeg,.png,.webp,.pdf"
+                                    style="margin-top:15px;"
                                 >
 
                             </div>
@@ -1387,87 +1149,83 @@
 
                     </div>
 
-                    <!-- =========================
-                         SECTION 4
-                    ========================== -->
+
+                    <!-- BUDGET -->
 
                     <div class="form-section">
 
-                        <div class="section-title">
-                            <span class="section-number">4</span>
-                            Reference File
-                        </div>
+                        <h3 class="section-title">
+                            <span class="number">4</span>
+                            Budget
+                        </h3>
 
                         <div class="form-group">
 
-                            <label for="reference">
-                                Upload a Reference File
+                            <label for="budget">
+                                Estimated Budget
+                                (Optional)
                             </label>
 
                             <input
-                                type="file"
-                                id="reference"
-                                name="reference"
-                                accept=".jpg,.jpeg,.png,.webp,.pdf"
+                                type="text"
+                                id="budget"
+                                name="budget"
+                                placeholder="e.g. ₱500–₱1,000 or your preferred range"
                             >
-
-                            <div class="field-note">
-                                Accepted formats: JPG, PNG, WEBP, or PDF.
-                                Maximum file size: 10 MB.
-                            </div>
 
                         </div>
 
                     </div>
 
-                    <!-- =========================
-                         CONFIRMATION
-                    ========================== -->
 
-                    <div class="confirmation">
+                    <!-- CONFIRMATION -->
 
-                        <input
-                            type="checkbox"
-                            id="confirmation"
-                            name="confirmation"
-                            required
+                    <div class="form-section">
+
+                        <h3 class="section-title">
+                            <span class="number">5</span>
+                            Confirmation
+                        </h3>
+
+                        <div class="confirmation">
+
+                            <input
+                                type="checkbox"
+                                id="confirm"
+                                required
+                            >
+
+                            <label for="confirm">
+                                I understand that the final price and
+                                completion time will depend on the
+                                project's requirements.
+                            </label>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="submit-button"
                         >
+                            Submit Commission Request →
+                        </button>
 
-                        <label for="confirmation">
-                            I confirm that the information I provided is
-                            accurate and understand that submitting this
-                            form is a request, not a confirmed order.
-                            I also understand that the final price and
-                            completion time depend on the project's
-                            requirements.
-                        </label>
+                        <div class="form-note">
+                            🔒 Your information will only be used to
+                            discuss your project.
+                        </div>
 
-                    </div>
-
-                    <!-- =========================
-                         SUBMIT
-                    ========================== -->
-
-                    <button
-                        type="submit"
-                        id="submitButton"
-                        class="submit-button"
-                    >
-                        Submit Commission Request →
-                    </button>
-
-                    <div class="form-note">
-                        🔒 Your information will only be used to discuss
-                        your project.
                     </div>
 
                 </form>
 
-            </section>
+            </div>
 
         </div>
 
     </main>
+
 
     <!-- =========================
          FOOTER
@@ -1475,27 +1233,29 @@
 
     <footer>
 
-        <div class="footer-title">
+        <div class="footer-brand">
             NFCreatives
         </div>
 
-        <div class="footer-text">
-            © 2026 NFCreatives. Creative Digital Services.
-        </div>
-
-        <div class="footer-tagline">
+        <p>
             Designs • Edits • Ideas
-        </div>
+        </p>
+
+        <p>
+            © 2026 NFCreatives. All rights reserved.
+        </p>
 
     </footer>
 
+
     <!-- =========================
-         SUPABASE
+         SUPABASE CONNECTION
     ========================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
+
         /* =========================
            SUPABASE CONFIGURATION
         ========================== */
@@ -1504,95 +1264,33 @@
             "https://fdahlwkhcgsisvyupxom.supabase.co";
 
         const SUPABASE_PUBLISHABLE_KEY =
-            "sb_publishable_FgUaEbGQphXWKRzo5dGJ4A_5fopRfch";
-
-        const supabaseClient =
-            window.supabase.createClient(
-                SUPABASE_URL,
-                SUPABASE_PUBLISHABLE_KEY
-            );
+            "sb_publishable_FgUaEbGQphxWKRzo5dGJ4A_5fopRfch";
 
 
-        /* =========================
-           FORM ELEMENTS
-        ========================== */
-
-        const commissionForm =
-            document.getElementById("commissionForm");
-
-        const submitButton =
-            document.getElementById("submitButton");
-
-        const statusMessage =
-            document.getElementById("statusMessage");
+        const supabase = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
 
 
         /* =========================
-           STATUS MESSAGE
+           COMMISSION FORM
         ========================== */
 
-        function showStatus(message, type) {
-
-            statusMessage.textContent = message;
-
-            statusMessage.className =
-                "status-message " + type;
-
-            statusMessage.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-        }
-
-
-        function clearStatus() {
-
-            statusMessage.textContent = "";
-
-            statusMessage.className =
-                "status-message";
-        }
-
-
-        /* =========================
-           FORM SUBMISSION
-        ========================== */
-
-        commissionForm.addEventListener(
-            "submit",
-            async function (event) {
+        document
+            .getElementById("commissionForm")
+            .addEventListener("submit", async function(event) {
 
                 event.preventDefault();
 
-                clearStatus();
 
-                /* Check browser validation */
+                const form = this;
 
-                if (!commissionForm.checkValidity()) {
-
-                    commissionForm.reportValidity();
-
-                    return;
-                }
+                const submitButton =
+                    form.querySelector(".submit-button");
 
 
-                /* Check confirmation */
-
-                const confirmation =
-                    document.getElementById("confirmation");
-
-                if (!confirmation.checked) {
-
-                    showStatus(
-                        "Please confirm the information before submitting.",
-                        "error"
-                    );
-
-                    return;
-                }
-
-
-                /* Disable submit button */
+                /* Disable button while submitting */
 
                 submitButton.disabled = true;
 
@@ -1604,87 +1302,87 @@
 
                     /* =========================
                        GET FORM VALUES
-                    ========================== */
+                    ========================= */
 
-                    const name =
-                        document.getElementById("name")
+                    const customerName =
+                        document
+                            .getElementById("name")
                             .value
                             .trim();
 
                     const email =
-                        document.getElementById("email")
+                        document
+                            .getElementById("email")
                             .value
                             .trim();
 
-                    const contact =
-                        document.getElementById("contact")
+                    const phone =
+                        document
+                            .getElementById("contact")
                             .value
                             .trim();
 
                     const service =
-                        document.getElementById("service")
-                            .value
-                            .trim();
+                        document
+                            .getElementById("service")
+                            .value;
 
                     const output =
-                        document.getElementById("output")
-                            .value
-                            .trim();
+                        document
+                            .getElementById("output")
+                            .value;
 
                     const description =
-                        document.getElementById("description")
+                        document
+                            .getElementById("description")
                             .value
                             .trim();
 
                     const size =
-                        document.getElementById("size")
+                        document
+                            .getElementById("size")
                             .value
                             .trim();
 
                     const deadline =
-                        document.getElementById("deadline")
+                        document
+                            .getElementById("deadline")
                             .value;
 
                     const budget =
-                        document.getElementById("budget")
+                        document
+                            .getElementById("budget")
                             .value
                             .trim();
+
+
+                    /* =========================
+                       UPLOAD REFERENCE FILE
+                    ========================= */
 
                     const fileInput =
                         document.getElementById("reference");
 
                     const file =
-                        fileInput.files[0] || null;
-
-
-                    /* =========================
-                       BASIC VALIDATION
-                    ========================== */
-
-                    if (
-                        !name ||
-                        !email ||
-                        !service ||
-                        !output ||
-                        !description
-                    ) {
-
-                        throw new Error(
-                            "Please complete all required fields."
-                        );
-                    }
-
-
-                    /* =========================
-                       FILE UPLOAD
-                    ========================== */
+                        fileInput.files[0];
 
                     let referenceLink = null;
 
+
                     if (file) {
 
-                        const maxFileSize =
-                            10 * 1024 * 1024;
+                        /* Check file size */
+
+                        if (file.size > 10 * 1024 * 1024) {
+
+                            throw new Error(
+                                "The reference file is larger than 10 MB."
+                            );
+
+                        }
+
+
+                        /* Check allowed file types */
 
                         const allowedTypes = [
                             "image/jpeg",
@@ -1694,120 +1392,136 @@
                         ];
 
 
-                        if (file.size > maxFileSize) {
+                        if (!allowedTypes.includes(file.type)) {
 
                             throw new Error(
-                                "The reference file must not exceed 10 MB."
+                                "Please upload a JPG, PNG, WEBP, or PDF file."
                             );
+
                         }
 
 
-                        if (
-                            !allowedTypes.includes(
-                                file.type
-                            )
-                        ) {
+                        /* Create safe file name */
 
-                            throw new Error(
-                                "Please upload only JPG, PNG, WEBP, or PDF files."
+                        const safeName =
+                            file.name.replace(
+                                /[^a-zA-Z0-9._-]/g,
+                                "_"
                             );
-                        }
-
-
-                        /* Clean filename */
-
-                        const cleanFileName =
-                            file.name
-                                .replace(
-                                    /[^a-zA-Z0-9._-]/g,
-                                    "-"
-                                )
-                                .replace(
-                                    /-+/g,
-                                    "-"
-                                );
 
 
                         const filePath =
-                            Date.now() +
-                            "-" +
-                            cleanFileName;
+                            `${Date.now()}-${safeName}`;
 
+
+                        /* Upload to Supabase Storage */
 
                         const {
                             error: uploadError
-                        } =
-                            await supabaseClient
-                                .storage
-                                .from("commission-link")
-                                .upload(
-                                    filePath,
-                                    file,
-                                    {
-                                        cacheControl: "3600",
-                                        upsert: false
-                                    }
-                                );
+                        } = await supabase
+                            .storage
+                            .from("commission-references")
+                            .upload(
+                                filePath,
+                                file,
+                                {
+                                    cacheControl: "3600",
+                                    upsert: false
+                                }
+                            );
 
 
                         if (uploadError) {
 
                             throw uploadError;
+
                         }
 
 
                         /*
-                         * Save the storage path rather than
-                         * exposing a temporary public URL.
+                         * Store the file path in the database.
+                         * The bucket is private, so this is NOT
+                         * a public URL.
                          */
 
                         referenceLink =
                             filePath;
+
                     }
 
 
                     /* =========================
-                       DATABASE INSERT
+                       SAVE COMMISSION REQUEST
                     ========================== */
 
                     const {
-                        error: insertError
-                    } =
-                        await supabaseClient
-                            .from("commission_requests")
-                            .insert([
-                                {
-                                    customer_name: name,
-                                    email: email,
-                                    phone: contact || null,
-                                    service: service,
-                                    output: output,
-                                    description: description,
-                                    size: size || null,
-                                    deadline: deadline || null,
-                                    budget: budget || null,
-                                    reference_link: referenceLink,
-                                    status: "Pending"
-                                }
-                            ]);
+                        error: databaseError
+                    } = await supabase
+                        .from("commission_requests")
+                        .insert([
+
+                            {
+
+                                customer_name:
+                                    customerName,
+
+                                email:
+                                    email,
+
+                                phone:
+                                    phone || null,
+
+                                service:
+                                    service,
+
+                                output:
+                                    output,
+
+                                description:
+                                    description,
+
+                                size:
+                                    size || null,
+
+                                deadline:
+                                    deadline || null,
+
+                                budget:
+                                    budget || null,
+
+                                reference_link:
+                                    referenceLink,
+
+                                status:
+                                    "Pending"
+
+                            }
+
+                        ]);
 
 
-                    if (insertError) {
+                    if (databaseError) {
 
-                        throw insertError;
+                        throw databaseError;
+
                     }
 
 
                     /* =========================
-                       SUCCESS
+                       SUCCESS MESSAGE
                     ========================== */
 
-                    showStatus(
-                        "Your commission request has been sent successfully! We will review your request and contact you soon.",
-                        "success"
+                    alert(
+                        "Thank you for your commission request! ✨\n\n" +
+                        "Your request has been submitted successfully.\n\n" +
+                        "NFCreatives will review your details and " +
+                        "get back to you soon."
                     );
 
-                    commissionForm.reset();
+
+                    /* Clear the form */
+
+                    form.reset();
 
 
                 } catch (error) {
@@ -1817,10 +1531,17 @@
                         error
                     );
 
-                    showStatus(
-                        error.message ||
-                        "Something went wrong while submitting your request. Please try again.",
-                        "error"
+
+                    /* =========================
+                       ERROR MESSAGE
+                    ========================== */
+
+                    alert(
+                        "Sorry, your commission request could not be submitted.\n\n" +
+                        "Please try again. If the problem continues, " +
+                        "please contact NFCreatives directly.\n\n" +
+                        "Error: " +
+                        error.message
                     );
 
 
@@ -1832,10 +1553,11 @@
 
                     submitButton.textContent =
                         "Submit Commission Request →";
+
                 }
 
-            }
-        );
+            });
+
     </script>
 
 </body>
